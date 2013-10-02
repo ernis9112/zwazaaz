@@ -22,7 +22,7 @@
 <body>
 <ul>
     <?php
-    $files = glob('./*.php');
+    $files = glob('./*.html');
     echo "<li style='font-weight: bold'>File name<span class='pull-right'>Modified</span></li>";
     foreach ($files as &$f) {
         echo "<li><a href='".$f."'>";
