@@ -10,5 +10,12 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+
+// Show main page - login page
 Route::get('/', 'HomeController@showWelcome');
+
+// Show registration page
+Route::get('/registration', 'HomeController@showRegistration');
+
+// Show user profile page
 Route::get('/profile', 'HomeController@showProfile');

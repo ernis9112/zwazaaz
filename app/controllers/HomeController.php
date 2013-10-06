@@ -15,15 +15,30 @@ class HomeController extends BaseController {
 	|
 	*/
 
+	/**
+     * Show home page - the login page.
+     */
 	public function showWelcome()
 	{
-		return View::make('hello');
+		$this->layout->content = View::make('hello');
+		$this->layout->bodyclass = "sign-in-page";
 	}
 
-	public function showProfile()
-	{
-
-        return View::make('profile');
-	}
+	/**
+     * Show the user profile.
+     */
+    public function showProfile()
+    {
+        $this->layout->content = View::make('profile');
+    }
+	
+	/**
+     * Show the registration page.
+     */
+    public function showRegistration()
+    {
+        $this->layout->content = View::make('registration');
+		$this->layout->bodyclass = "register-page";
+    }
 
 }

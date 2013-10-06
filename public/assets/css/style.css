@@ -1,0 +1,110 @@
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    background: #ace3f0;
+}
+body.sign-in-page {
+}
+body.register-page {
+}
+body.home-page {
+    height: 100%;
+}
+body.home-page .container,
+body.home-page .container>.row {
+    height: 100%;
+}
+
+.va-middle {
+    vertical-align: middle;
+}
+.custom-checkbox {
+    background: url("../img/custom-checkbox.png") 0 50% no-repeat !important;
+    box-shadow: none !important;
+    padding: 6px 12px 6px 24px !important;
+}
+.custom-checkbox.active {
+    background-image: url("../img/custom-checkbox-checked.png") !important;
+}
+form span.required {
+    font-size: 1.5em;
+    line-height: 0;
+    color: #f33;
+    font-weight: bold;
+}
+
+
+
+body.sign-in-page form,
+body.register-page form {
+    padding: 50px 0;
+}
+
+.main-sidebar {
+    transition: width 1s;
+    height: 100%;
+    width: 30%;
+    float: left;
+    position: relative;
+    background: #501;
+    border: 1px solid #eee;
+    border-right: none;
+    padding: 10px;
+}
+.main-content {
+    float: right;
+    height: 100%;
+    width: 70%;
+    background: #000;
+    position: relative;
+    border: 1px solid #eee;
+    padding: 10px;
+}
+.main-content .web-cam-wrapper {
+    height: 100%;
+    position: relative;
+    font-size: 0;
+}
+
+
+.main-content .web-cam-wrapper:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+.friend-camera {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    max-height: 100%;
+}
+.friend-camera *{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
+
+@media (min-width: 992px) {
+    .container {
+        transition: max-width 0.5s;
+    }
+}
+@media (max-width: 992px)
+{
+    .main-sidebar {
+        padding: 0;
+        border: none;
+        position: absolute;
+        right: 100%;
+    }
+    .main-content {
+        padding: 0;
+        border: none;
+        width: 100%;
+    }
+}
