@@ -11,4 +11,5 @@
 |
 */
 Route::get('/', 'HomeController@showWelcome');
+Route::get('/call', 'HomeController@showCall');
 Route::get('/profile', 'HomeController@showProfile');

@@ -26,4 +26,9 @@ class HomeController extends BaseController {
         return View::make('profile');
 	}
 
+	public function showCall()
+	{
+        return View::make('call');
+	}
+
 }
