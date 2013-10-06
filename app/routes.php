@@ -13,6 +13,7 @@
 
 // Show main page - login page
 Route::get('/', 'HomeController@showWelcome');
+Route::get('/call', 'HomeController@showCall');
 
 // Show registration page
 Route::get('/registration', 'HomeController@showRegistration');

@@ -41,4 +41,10 @@ class HomeController extends BaseController {
 		$this->layout->bodyclass = "register-page";
     }
 
+	public function showCall()
+	{
+		$this->layout->content = View::make('call');
+		$this->layout->bodyclass = "sign-in-page";
+	}
+
 }
