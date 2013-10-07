@@ -19,3 +19,12 @@ Route::get('/registration', 'HomeController@showRegistration');
 
 // Show user profile page
 Route::get('/profile', 'HomeController@showProfile');
+
+// Show dashboard
+Route::get('/dashboard', 'HomeController@showDashboard');
+
+// For registration AJAX query
+Route::post('validate-registration', array(
+  'uses' => 'RegistrationController@storeGet',
+  'as' => 'registration.store'
+));
