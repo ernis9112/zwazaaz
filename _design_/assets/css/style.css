@@ -41,6 +41,10 @@ body.sign-in-page form,
 body.register-page form {
     padding: 50px 0;
 }
+.logo-link {
+    margin: 10px 0;
+    display: inline-block;
+}
 
 .main-sidebar {
     transition: width 1s;
