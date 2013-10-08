@@ -126,12 +126,6 @@
                                         <input type="text" class="form-control" id="register-last-name" value="" required>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="control-label col-lg-4" for="register-name">Your email address<span class="required">*</span></label>
-                                    <div class="col-lg-8">
-                                        <input type="email" class="form-control" id="register-name" placeholder="example@example.exm" required>
-                                    </div>
-                                </div>
                                 <div class="form-submit">
                                     <button type="submit" class="btn btn-sm btn-success">Update information</button>
                                 </div>

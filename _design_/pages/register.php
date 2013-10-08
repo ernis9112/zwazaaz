@@ -38,6 +38,14 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label" for="register-name">Your email address<span class="required">*</span></label>
+                                <input type="email" class="form-control" id="register-name" placeholder="example@example.exm" required>
+                            </div>
+                        </div>
+                    </div>
                 </fieldset>
             </div>
             <div class="col-sm-6">
