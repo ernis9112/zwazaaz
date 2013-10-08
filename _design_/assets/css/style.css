@@ -117,6 +117,7 @@ body.register-page form {
 }
 .contacts-list li {
     list-style: none none;
+    position: relative;
 }
 .contacts-list li a {
     height: 40px;
@@ -150,7 +151,7 @@ body.register-page form {
     position: absolute;
     top: 50%;
     right: 0;
-    margin: -5px 20px -5px 0;
+    margin: -10px 20px -10px 0;
 }
 .contacts-list li a .user-img {
     display: inline-block;
@@ -162,6 +163,29 @@ body.register-page form {
 .contacts-list li a .user-img img {
     max-width: 100%;
     max-height: 100%;
+}
+.contacts-list li .contact-actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    max-width: 0;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+.contacts-list li .contact-actions .action {
+    text-align: center;
+    padding: 0;
+    margin: 5px;
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+}
+.contacts-list li:hover .contact-actions {
+    max-width: 500px;
+    opacity: 1;
 }
 .user-status {
     position: relative;

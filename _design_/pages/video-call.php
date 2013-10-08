@@ -37,59 +37,94 @@
                                 <span class="user-img">
                                     <img src="../assets/img/user-blank.jpg">
                                 </span>
-                                    <span class="display-name">Aidas Klimas</span>
-                                    <span class="new-message-num">5</span>
+                                <span class="display-name">Aidas Klimas</span>
+                                <span class="new-message-num">5</span>
                                 </a>
+                                <div class="contact-actions">
+                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                                    <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                </div>
                             </li>
                             <li class="active">
                                 <a href="#">
                                 <span class="user-img">
                                     <img src="../assets/img/user-blank.jpg">
                                 </span>
-                                    <span class="display-name">Rokas Budnikas</span>
+                                <span class="display-name">Rokas Budnikas</span>
                                 </a>
+                                <div class="contact-actions">
+                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                                    <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                </div>
                             </li>
                             <li>
                                 <a href="#">
                                 <span class="user-img">
                                     <img src="../assets/img/user-blank.jpg">
                                 </span>
-                                    <span class="display-name">Simas</span>
-                                    <span class="new-message-num">83</span>
+                                <span class="display-name">Simas</span>
+                                <span class="new-message-num">83</span>
                                 </a>
+                                <div class="contact-actions">
+                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                                    <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                </div>
                             </li>
                             <li>
                                 <a href="#">
                                 <span class="user-img">
                                     <img src="../assets/img/user-blank.jpg">
                                 </span>
-                                    <span class="display-name">Elvis</span>
+                                <span class="display-name">Elvis</span>
                                 </a>
+                                <div class="contact-actions">
+                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                                    <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                </div>
                             </li>
                             <li>
                                 <a href="#">
                                 <span class="user-img">
                                     <img src="../assets/img/user-blank.jpg">
                                 </span>
-                                    <span class="display-name">Ernestas</span>
-                                    <span class="new-message-num">9+</span>
+                                <span class="display-name">Ernestas</span>
+                                <span class="new-message-num">9+</span>
                                 </a>
+                                <div class="contact-actions">
+                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                                    <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                </div>
                             </li>
                             <li>
                                 <a href="#">
                                 <span class="user-img">
                                     <img src="../assets/img/user-blank.jpg">
                                 </span>
-                                    <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
+                                <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
                                 </a>
+                                <div class="contact-actions">
+                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                                    <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                </div>
                             </li>
                             <li>
                                 <a href="#">
                                 <span class="user-img">
                                     <img src="../assets/img/user-blank.jpg">
                                 </span>
-                                    <span class="display-name">Senasis_Greideris</span>
+                                <span class="display-name">Senasis_Greideris</span>
                                 </a>
+                                <div class="contact-actions">
+                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                                    <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                                </div>
                             </li>
                         </ul>
                     </div>

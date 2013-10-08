@@ -41,7 +41,7 @@
                                     <span class="new-message-num">5</span>
                                 </a>
                             </li>
-                            <li class="active">
+                            <li>
                                 <a href="#">
                                 <span class="user-img">
                                     <img src="../assets/img/user-blank.jpg">
