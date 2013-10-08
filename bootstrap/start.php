@@ -26,11 +26,12 @@ $app->redirectIfTrailingSlash();
 |
 */
 
-$env = $app->detectEnvironment(array(
-
-	'local' => array('your-machine-name'),
-
-));
+$env = $app->detectEnvironment(function () {
+	if (isset($_SERVER['OPENSHIFT_APP_DNS'])) {
+		return 'openshift';
+	}
+	return 'production';
+});
 
 /*
 |--------------------------------------------------------------------------
