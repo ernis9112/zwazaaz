@@ -55,7 +55,7 @@ body.register-page form {
     background: #fff;
     border: 1px solid #eee;
     border-right: none;
-    padding: 10px;
+    padding: 15px;
 }
 .main-content {
     float: right;
@@ -64,7 +64,7 @@ body.register-page form {
     background: #fff;
     position: relative;
     border: 1px solid #eee;
-    padding: 10px;
+    padding: 15px;
     overflow: auto;
 }
 .main-content .web-cam-wrapper {
@@ -74,9 +74,11 @@ body.register-page form {
     font-size: 0;
 }
 .profile-edit {
-    padding: 10px;
+    padding: 15px;
 }
-
+.profile-edit .profile-img {
+    text-align: center;
+}
 
 .main-content .web-cam-wrapper:before {
     content: '';

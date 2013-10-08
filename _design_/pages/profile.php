@@ -102,11 +102,13 @@
             <div class="profile-edit">
                 <div class="row">
                     <div class="col-sm-3">
-                        <div class="profile-image-wrapper">
-                            <img src="../assets/img/user-blank.jpg" alt="Simas">
+                        <div class="profile-img">
+                            <div class="profile-img-wrapper">
+                                <img src="../assets/img/user-blank.jpg" alt="Simas">
+                            </div>
+                            <!-- this will open popup-->
+                            <button class="btn btn-default btn-xs">change image</button>
                         </div>
-                        <!-- this will open popup-->
-                        <button class="btn btn-default btn-xs">change image</button>
                     </div>
                     <div class="col-sm-9">
                         <form class="form-horizontal">
