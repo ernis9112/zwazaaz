@@ -61,15 +61,20 @@ body.register-page form {
     float: right;
     height: 100%;
     width: 70%;
-    background: #000;
+    background: #fff;
     position: relative;
     border: 1px solid #eee;
     padding: 10px;
+    overflow: auto;
 }
 .main-content .web-cam-wrapper {
+    background: #000;
     height: 100%;
     position: relative;
     font-size: 0;
+}
+.profile-edit {
+    padding: 10px;
 }
 
 
@@ -145,7 +150,32 @@ body.register-page form {
     max-width: 100%;
     max-height: 100%;
 }
-
+.user-status {
+    position: relative;
+}
+.user-status .online-status {
+    position: absolute;
+    top: 50%;
+    margin: -10px 0 -10px 5px;
+    height: 20px;
+    left: 0;
+}
+.user-status .profile-link {
+    margin-bottom: 5px;
+    padding-left: 80px;
+    line-height: 40px;
+    position: relative;
+    display: block;
+    height: 40px;
+}
+.user-status .profile-link:hover {
+    background-color: #ccc;
+    text-decoration: none;
+}
+.user-status .profile-link.active {
+    background-color: #0095cc;
+    color: #fff;
+}
 
 @media (min-width: 992px) {
     .container {
