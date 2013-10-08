@@ -304,6 +304,7 @@ body.register-page form {
         width: 100%;
     }
     .main-sidebar.active {
+        border-right: 1px solid #eee;
         left: 0%;
         right: 10%;
         width: 100%;

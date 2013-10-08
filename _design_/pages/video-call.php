@@ -42,7 +42,7 @@
                             <li>
                                 <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
                                 <span class="display-name">Aidas Klimas</span>
                                 <span class="new-message-num">5</span>
@@ -56,7 +56,7 @@
                             <li class="active">
                                 <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
                                 <span class="display-name">Rokas Budnikas</span>
                                 </a>
@@ -69,7 +69,7 @@
                             <li>
                                 <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
                                 <span class="display-name">Simas</span>
                                 <span class="new-message-num">83</span>
@@ -83,7 +83,7 @@
                             <li>
                                 <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
                                 <span class="display-name">Elvis</span>
                                 </a>
@@ -96,7 +96,7 @@
                             <li>
                                 <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
                                 <span class="display-name">Ernestas</span>
                                 <span class="new-message-num">9+</span>
@@ -110,7 +110,7 @@
                             <li>
                                 <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
                                 <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
                                 </a>
@@ -123,7 +123,7 @@
                             <li>
                                 <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
                                 <span class="display-name">Senasis_Greideris</span>
                                 </a>
@@ -141,7 +141,7 @@
                             <li>
                                 <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
                                     <span class="display-name">Aidas Klimas</span>
                                     <span class="new-message-num">5</span>
@@ -155,7 +155,7 @@
                             <li class="active">
                                 <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
                                     <span class="display-name">Rokas Budnikas</span>
                                 </a>
@@ -168,7 +168,7 @@
                             <li>
                                 <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
                                     <span class="display-name">Simas</span>
                                     <span class="new-message-num">83</span>
@@ -182,7 +182,7 @@
                             <li>
                                 <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
                                     <span class="display-name">Elvis</span>
                                 </a>
@@ -198,7 +198,7 @@
                             <li>
                                 <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
                                     <span class="display-name">Ernestas</span>
                                     <span class="new-message-num">9+</span>
@@ -215,7 +215,7 @@
                             <li>
                                 <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
                                     <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
                                 </a>
@@ -228,7 +228,7 @@
                             <li>
                                 <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
                                     <span class="display-name">Senasis_Greideris</span>
                                 </a>
@@ -241,7 +241,7 @@
                             <li>
                                 <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
                                     <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
                                 </a>
@@ -254,7 +254,7 @@
                             <li>
                                 <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
                                     <span class="display-name">Senasis_Greideris</span>
                                 </a>
@@ -267,7 +267,7 @@
                             <li>
                                 <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
                                     <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
                                 </a>
@@ -280,7 +280,7 @@
                             <li>
                                 <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
                                     <span class="display-name">Senasis_Greideris</span>
                                 </a>
@@ -293,7 +293,7 @@
                             <li>
                                 <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
                                     <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
                                 </a>
@@ -306,7 +306,7 @@
                             <li>
                                 <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
                                     <span class="display-name">Senasis_Greideris</span>
                                 </a>
@@ -319,7 +319,7 @@
                             <li>
                                 <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
                                     <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
                                 </a>
@@ -332,7 +332,7 @@
                             <li>
                                 <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
                                     <span class="display-name">Senasis_Greideris</span>
                                 </a>
@@ -345,7 +345,7 @@
                             <li>
                                 <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
                                     <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
                                 </a>
@@ -358,7 +358,7 @@
                             <li>
                                 <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
                                     <span class="display-name">Senasis_Greideris</span>
                                 </a>
@@ -371,7 +371,7 @@
                             <li>
                                 <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
                                     <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
                                 </a>
@@ -384,7 +384,7 @@
                             <li>
                                 <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
                                     <span class="display-name">Senasis_Greideris</span>
                                 </a>

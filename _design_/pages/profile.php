@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 
 <head>
 
@@ -11,7 +11,14 @@
 
 
 <body class="home-page">
-
+<div class="mobile-navigation hidden-md hidden-lg">
+    <button class="toggle-sidebar" type="button" data-target=".main-sidebar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+</div>
 <div class="container">
     <div class="row">
         <aside class="main-sidebar">
@@ -25,112 +32,371 @@
                 </form>
             </div>
             <div class="tabs">
-                <ul class="nav nav-tabs" id="sidebarTabs1">
-                    <li class="active"><a href="#contacts">Contacts</a></li>
-                    <li><a href="#recent">Recent</a></li>
+            <ul class="nav nav-tabs" id="sidebarTabs1">
+                <li class="active"><a href="#contacts">Contacts</a></li>
+                <li><a href="#recent">Recent</a></li>
+            </ul>
+            <div class="tab-content">
+            <div class="tab-pane active" id="contacts">
+                <ul class="contacts-list">
+                    <li>
+                        <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                            <span class="display-name">Aidas Klimas</span>
+                            <span class="new-message-num">5</span>
+                        </a>
+                        <div class="contact-actions">
+                            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                            <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                        </div>
+                    </li>
+                    <li class="active">
+                        <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                            <span class="display-name">Rokas Budnikas</span>
+                        </a>
+                        <div class="contact-actions">
+                            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                            <button class="action btn btn-danger"><i class="glyphicon glyphicon-earphone"></i></button>
+                            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                            <span class="display-name">Simas</span>
+                            <span class="new-message-num">83</span>
+                        </a>
+                        <div class="contact-actions">
+                            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                            <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                            <span class="display-name">Elvis</span>
+                        </a>
+                        <div class="contact-actions">
+                            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                            <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                            <span class="display-name">Ernestas</span>
+                            <span class="new-message-num">9+</span>
+                        </a>
+                        <div class="contact-actions">
+                            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                            <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                            <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
+                        </a>
+                        <div class="contact-actions">
+                            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                            <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                            <span class="display-name">Senasis_Greideris</span>
+                        </a>
+                        <div class="contact-actions">
+                            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                            <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                        </div>
+                    </li>
                 </ul>
-                <div class="tab-content">
-                    <div class="tab-pane active" id="contacts">
-                        <ul class="contacts-list">
-                            <li>
-                                <a href="#">
+            </div>
+            <div class="tab-pane chat-history" id="recent">
+            <time class="chat-time" datetime="2013-10-09">Today</time>
+            <ul class="contacts-list">
+                <li>
+                    <a href="#">
                                 <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
-                                    <span class="display-name">Aidas Klimas</span>
-                                    <span class="new-message-num">5</span>
-                                </a>
-                                <div class="contact-actions">
-                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-                                    <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-                                </div>
-                            </li>
-                            <li class="active">
-                                <a href="#">
-                                <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
-                                </span>
-                                    <span class="display-name">Rokas Budnikas</span>
-                                </a>
-                                <div class="contact-actions">
-                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-                                    <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#">
-                                <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
-                                </span>
-                                    <span class="display-name">Simas</span>
-                                    <span class="new-message-num">83</span>
-                                </a>
-                                <div class="contact-actions">
-                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-                                    <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#">
-                                <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
-                                </span>
-                                    <span class="display-name">Elvis</span>
-                                </a>
-                                <div class="contact-actions">
-                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-                                    <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#">
-                                <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
-                                </span>
-                                    <span class="display-name">Ernestas</span>
-                                    <span class="new-message-num">9+</span>
-                                </a>
-                                <div class="contact-actions">
-                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-                                    <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#">
-                                <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
-                                </span>
-                                    <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
-                                </a>
-                                <div class="contact-actions">
-                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-                                    <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#">
-                                <span class="user-img">
-                                    <img src="../assets/img/user-blank.jpg">
-                                </span>
-                                    <span class="display-name">Senasis_Greideris</span>
-                                </a>
-                                <div class="contact-actions">
-                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-                                    <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-                                    <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-                                </div>
-                            </li>
-                        </ul>
+                        <span class="display-name">Aidas Klimas</span>
+                        <span class="new-message-num">5</span>
+                    </a>
+                    <div class="contact-actions">
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                        <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
                     </div>
-                    <div class="tab-pane" id="recent">
+                </li>
+                <li class="active">
+                    <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                        <span class="display-name">Rokas Budnikas</span>
+                    </a>
+                    <div class="contact-actions">
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                        <button class="action btn btn-danger"><i class="glyphicon glyphicon-earphone"></i></button>
+                        <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
                     </div>
-                </div>
+                </li>
+                <li>
+                    <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                        <span class="display-name">Simas</span>
+                        <span class="new-message-num">83</span>
+                    </a>
+                    <div class="contact-actions">
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                        <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                        <span class="display-name">Elvis</span>
+                    </a>
+                    <div class="contact-actions">
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                        <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                    </div>
+                </li>
+            </ul>
+            <time class="chat-time" datetime="2013-10-08">Yesterday</time>
+            <ul class="contacts-list">
+                <li>
+                    <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                        <span class="display-name">Ernestas</span>
+                        <span class="new-message-num">9+</span>
+                    </a>
+                    <div class="contact-actions">
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                        <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                    </div>
+                </li>
+            </ul>
+            <time class="chat-time" datetime="2013-10-05">2013-10-05</time>
+            <ul class="contacts-list">
+                <li>
+                    <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                        <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
+                    </a>
+                    <div class="contact-actions">
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                        <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                        <span class="display-name">Senasis_Greideris</span>
+                    </a>
+                    <div class="contact-actions">
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                        <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                        <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
+                    </a>
+                    <div class="contact-actions">
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                        <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                        <span class="display-name">Senasis_Greideris</span>
+                    </a>
+                    <div class="contact-actions">
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                        <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                        <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
+                    </a>
+                    <div class="contact-actions">
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                        <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                        <span class="display-name">Senasis_Greideris</span>
+                    </a>
+                    <div class="contact-actions">
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                        <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                        <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
+                    </a>
+                    <div class="contact-actions">
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                        <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                        <span class="display-name">Senasis_Greideris</span>
+                    </a>
+                    <div class="contact-actions">
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                        <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                        <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
+                    </a>
+                    <div class="contact-actions">
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                        <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                        <span class="display-name">Senasis_Greideris</span>
+                    </a>
+                    <div class="contact-actions">
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                        <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                        <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
+                    </a>
+                    <div class="contact-actions">
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                        <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                        <span class="display-name">Senasis_Greideris</span>
+                    </a>
+                    <div class="contact-actions">
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                        <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                        <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
+                    </a>
+                    <div class="contact-actions">
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                        <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                        <span class="display-name">Senasis_Greideris</span>
+                    </a>
+                    <div class="contact-actions">
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                        <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                        <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                    </div>
+                </li>
+            </ul>
+            </div>
+            </div>
             </div>
         </aside>
         <div class="main-content">
@@ -150,15 +416,15 @@
                             <fieldset>
                                 <legend>Personal information</legend>
                                 <div class="form-group">
-                                    <label class="control-label col-lg-4" for="register-first-name">First name<span class="required">*</span></label>
+                                    <label class="control-label col-lg-4" for="edit-first-name">First name<span class="required">*</span></label>
                                     <div class="col-lg-8">
-                                        <input type="text" class="form-control" id="register-first-name" value="zwazaazius" required>
+                                        <input type="text" class="form-control" id="edit-first-name" value="zwazaazius" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-lg-4" for="register-last-name">Last name<span class="required">*</span></label>
+                                    <label class="control-label col-lg-4" for="edit-last-name">Last name<span class="required">*</span></label>
                                     <div class="col-lg-8">
-                                        <input type="text" class="form-control" id="register-last-name" value="" required>
+                                        <input type="text" class="form-control" id="edit-last-name" value="" required>
                                     </div>
                                 </div>
                                 <div class="form-submit">
@@ -170,16 +436,16 @@
                             <fieldset>
                                 <legend>Change email:</legend>
                                 <div class="form-group">
-                                    <label class="control-label col-lg-4" for="register-name">Your email address<span class="required">*</span></label>
+                                    <label class="control-label col-lg-4" for="edit-email">Your email address<span class="required">*</span></label>
                                     <div class="col-lg-8">
-                                        <input type="email" class="form-control" id="register-name" placeholder="example@example.exm" required>
+                                        <input type="email" class="form-control" id="edit-email" placeholder="example@example.exm" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-lg-4" for="register-password">Current password<span class="required">*</span></label>
+                                    <label class="control-label col-lg-4" for="edit-email-current-password">Current password<span class="required">*</span></label>
                                     <div class="col-lg-8">
+                                        <input type="password" class="form-control" id="edit-email-current-password" value="sgaahf" required>
                                         <p class="help-block">We need you to confirm your password to change your email.</p>
-                                        <input type="password" class="form-control" id="register-password" value="sgaahf" required>
                                     </div>
                                 </div>
                                 <div class="form-submit">
@@ -191,21 +457,21 @@
                             <fieldset>
                                 <legend>Change password</legend>
                                 <div class="form-group">
-                                    <label class="control-label col-lg-4" for="register-password">Current password<span class="required">*</span></label>
+                                    <label class="control-label col-lg-4" for="edit-password-current-password">Current password<span class="required">*</span></label>
                                     <div class="col-lg-8">
-                                        <input type="password" class="form-control" id="register-password" value="sgaahf" required>
+                                        <input type="password" class="form-control" id="edit-password-current-password" value="sgaahf" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-lg-4" for="register-password">New password<span class="required">*</span></label>
+                                    <label class="control-label col-lg-4" for="edit-password-new-password">New password<span class="required">*</span></label>
                                     <div class="col-lg-8">
-                                        <input type="password" class="form-control" id="register-password" value="sgasdgasdghahf" required>
+                                        <input type="password" class="form-control" id="edit-password-new-password" value="sgasdgasdghahf" required>
                                     </div>
                                 </div>
                                 <div class="form-group has-error">
-                                    <label class="control-label col-lg-4" for="register-repeat-password">Repeat password<span class="required">*</span></label>
+                                    <label class="control-label col-lg-4" for="edit-password-repeat-password">Repeat password<span class="required">*</span></label>
                                     <div class="col-lg-8">
-                                        <input type="password" class="form-control" id="register-repeat-password" value="sgasghahf" required>
+                                        <input type="password" class="form-control" id="edit-password-repeat-password" value="sgasghahf" required>
                                         <p class="help-block">Passwords do not match!</p>
                                     </div>
                                 </div>
