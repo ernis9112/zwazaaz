@@ -113,7 +113,7 @@
                     <div class="col-sm-9">
                         <form class="form-horizontal">
                             <fieldset>
-                                <legend>Personal information:</legend>
+                                <legend>Personal information</legend>
                                 <div class="form-group">
                                     <label class="control-label col-lg-4" for="register-first-name">First name<span class="required">*</span></label>
                                     <div class="col-lg-8">
@@ -131,6 +131,30 @@
                                     <div class="col-lg-8">
                                         <input type="email" class="form-control" id="register-name" placeholder="example@example.exm" required>
                                     </div>
+                                </div>
+                                <div class="form-submit">
+                                    <button type="submit" class="btn btn-sm btn-success">Update information</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                        <form class="form-horizontal">
+                            <fieldset>
+                                <legend>Change email:</legend>
+                                <div class="form-group">
+                                    <label class="control-label col-lg-4" for="register-name">Your email address<span class="required">*</span></label>
+                                    <div class="col-lg-8">
+                                        <input type="email" class="form-control" id="register-name" placeholder="example@example.exm" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-lg-4" for="register-password">Current password<span class="required">*</span></label>
+                                    <div class="col-lg-8">
+                                        <p class="help-block">We need you to confirm your password to change your email.</p>
+                                        <input type="password" class="form-control" id="register-password" value="sgaahf" required>
+                                    </div>
+                                </div>
+                                <div class="form-submit">
+                                    <button type="submit" class="btn btn-sm btn-success">Change</button>
                                 </div>
                             </fieldset>
                         </form>
@@ -155,6 +179,9 @@
                                         <input type="password" class="form-control" id="register-repeat-password" value="sgasghahf" required>
                                         <p class="help-block">Passwords do not match!</p>
                                     </div>
+                                </div>
+                                <div class="form-submit">
+                                    <button type="submit" class="btn btn-sm btn-success">Change</button>
                                 </div>
                             </fieldset>
                         </form>

@@ -79,6 +79,17 @@ body.register-page form {
 .profile-edit .profile-img {
     text-align: center;
 }
+.profile-edit .profile-img-wrapper {
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #ddd;
+    width: 150px;
+    height: 150px;
+    max-width: 100%;
+}
+.profile-edit .form-submit {
+    text-align: right;
+}
 
 .main-content .web-cam-wrapper:before {
     content: '';
@@ -127,11 +138,11 @@ body.register-page form {
 }
 .contacts-list li a .new-message-num {
     border-radius: 100%;
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     text-align: center;
-    font-weight: 600;
-    line-height: 15px;
+    font-weight: 800;
+    line-height: 20px;
     font-size: 10px;
     display: block;
     background: #ff6500;

@@ -55,7 +55,6 @@
                         <label class="control-label" for="register-username">Zwazaaz Name<span class="required">*</span></label>
                         <input type="text" class="form-control" id="register-username" value="sup" required>
                         <p class="help-block">Your Zwazaaz Name must be between 6-32 characters, start with a letter and contain only letters and numbers (no spaces or special characters).</p>
-<!--                        <p class="help-block">Name taken! Choose another.</p>-->
                     </div>
                     <div class="row">
                         <div class="col-md-6">
