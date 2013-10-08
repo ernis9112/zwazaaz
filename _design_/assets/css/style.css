@@ -52,7 +52,7 @@ body.register-page form {
     width: 30%;
     float: left;
     position: relative;
-    background: #501;
+    background: #fff;
     border: 1px solid #eee;
     border-right: none;
     padding: 10px;
@@ -89,8 +89,65 @@ body.register-page form {
     max-width: 100%;
     max-height: 100%;
 }
-
-
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus,
+.nav-tabs {
+    border-color: #eee;
+}
+.main-sidebar .tab-content {
+    border: 1px solid #eee;
+}
+.contacts-list {
+    margin: 0;
+    padding: 0;
+}
+.contacts-list li {
+    list-style: none none;
+}
+.contacts-list li a {
+    height: 40px;
+    color: #000;
+    display: block;
+    position: relative;
+}
+.contacts-list li a:hover {
+    text-decoration: none;
+    background-color: #ccc;
+}
+.contacts-list li.active a {
+    background-color: #0095cc;
+    color: #fff;
+}
+.contacts-list li a .display-name {
+    display: inline-block;
+    vertical-align: middle;
+}
+.contacts-list li a .new-message-num {
+    border-radius: 100%;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    font-weight: 600;
+    line-height: 15px;
+    font-size: 10px;
+    display: block;
+    background: #ff6500;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin: -5px 20px -5px 0;
+}
+.contacts-list li a .user-img {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px;
+    height: 30px;
+    max-width: 30px;
+}
+.contacts-list li a .user-img img {
+    max-width: 100%;
+    max-height: 100%;
+}
 
 
 @media (min-width: 992px) {
