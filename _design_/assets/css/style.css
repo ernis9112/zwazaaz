@@ -89,12 +89,9 @@ body.register-page form {
     max-width: 100%;
     max-height: 100%;
 }
-.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus,
-.nav-tabs {
-    border-color: #eee;
-}
 .main-sidebar .tab-content {
-    border: 1px solid #eee;
+    border: 1px solid #ddd;
+    border-top: none;
 }
 .contacts-list {
     margin: 0;

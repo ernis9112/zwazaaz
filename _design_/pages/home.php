@@ -116,6 +116,9 @@
 <script src="../assets/bootstrap-3.0.0/assets/js/application.js"></script>
 
 
+<script src="../assets/js/script.js"></script>
+
+
 </body>
 
 </html>

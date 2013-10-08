@@ -1,6 +1,7 @@
 $(document).ready(function(){
-    $('#myTab a').click(function (e) {
-        e.preventDefault()
-        $(this).tab('show')
+    $('#sidebarTabs1 a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+        console.log("test1");
     })
 });
