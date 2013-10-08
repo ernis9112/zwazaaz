@@ -1,7 +1,7 @@
 <form>
     <div class="row">
         <div class="col-sm-12 text-center">
-            <a href="#">
+            <a class="logo-link" href="#">
                 <img src="assets/img/logo.png" alt="Zwazaaz">
             </a>
         </div>
