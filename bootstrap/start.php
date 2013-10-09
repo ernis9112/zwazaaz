@@ -27,7 +27,7 @@ $app->redirectIfTrailingSlash();
 */
 
 $env = $app->detectEnvironment(function () {
-	if (isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] == 'php-zwazaaz.rhcloud.com') {
+	if (isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] == 'nkv.lt') {
 		return 'openshift';
 	}
 	return 'production';
