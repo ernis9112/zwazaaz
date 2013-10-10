@@ -22,12 +22,14 @@
 <body>
 <ul>
     <?php
-    $files = glob('./*.html');
+    $files = glob('./*.php');
     echo "<li style='font-weight: bold'>File name<span class='pull-right'>Modified</span></li>";
     foreach ($files as &$f) {
-        echo "<li><a href='".$f."'>";
-        echo $f;
-        echo "</a><span class='pull-right'>".date("Y m d H:i:s.", filemtime($f))."</span></li>";
+        if ($f != './index.php') {
+            echo "<li><a href='".$f."'>";
+            echo $f;
+            echo "</a><span class='pull-right'>".date("Y m d H:i:s.", filemtime($f))."</span></li>";
+        }
     }
     ?>
 </ul>
