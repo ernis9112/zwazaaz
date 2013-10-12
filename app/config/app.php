@@ -80,6 +80,8 @@ return array(
 
 	'providers' => array(
 
+		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+
 		'Illuminate\Foundation\Providers\ArtisanServiceProvider',
 		'Illuminate\Auth\AuthServiceProvider',
 		'Illuminate\Cache\CacheServiceProvider',
