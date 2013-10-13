@@ -86,7 +86,9 @@ body.register-page form {
     max-height: 100%;
 }
 
-
+.loading {
+    background: white url(../img/packman.gif)  no-repeat right center;
+}
 
 
 @media (min-width: 992px) {
