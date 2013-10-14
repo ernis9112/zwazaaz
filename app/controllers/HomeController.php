@@ -34,6 +34,7 @@ class HomeController extends BaseController {
      */
     public function showDashboard() {
         $this->layout->content = View::make('dashboard');
+        $this->layout->bodyclass = "home-page";
     }
 
     /**
