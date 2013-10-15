@@ -23,7 +23,7 @@
 <div class="row">
 <aside class="main-sidebar">
 <div class="user-status">
-    <a href="#profile" class="profile-link active">Simas</a>
+    <a href="#profile" class="profile-link">Simas</a>
     <form class="online-status">
         <select>
             <option>Online</option>
