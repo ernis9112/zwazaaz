@@ -420,7 +420,7 @@
                         Name
                     </div>
                     <div class="info-value col-md-7">
-                        Simas Skilinskas
+                        Rokas Budnikas
                     </div>
                 </div>
                 <div class="profile-info-row row">
@@ -428,7 +428,7 @@
                         Zwazaaz name
                     </div>
                     <div class="info-value col-md-7">
-                        simaks
+                        rokasbud
                     </div>
                 </div>
             </div>

@@ -58,7 +58,7 @@
                             <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
                         </div>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="#">
                                 <span class="user-img">
                                     <img src="../assets/img/user-blank.jpg" alt="username">
