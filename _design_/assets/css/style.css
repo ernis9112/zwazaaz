@@ -104,24 +104,61 @@ body.register-page form {
     margin: 5px;
     outline: none;
 }
+.profile-view,
 .profile-edit {
     padding: 15px;
 }
+.profile-view .profile-img,
 .profile-edit .profile-img {
     text-align: center;
 }
+.profile-view .profile-img-wrapper,
 .profile-edit .profile-img-wrapper {
     display: inline-block;
+    vertical-align: middle;
     text-align: center;
     border: 1px solid #ddd;
     width: 150px;
     height: 150px;
     max-width: 100%;
+    font-size: 0;
+}
+.profile-view .profile-img-wrapper:before,
+.profile-edit .profile-img-wrapper:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 0;
+    overflow: hidden;
+    vertical-align: middle;
 }
 .profile-edit .form-submit {
     text-align: right;
 }
+.profile-info-row {
 
+}
+.profile-info-row+.profile-info-row {
+    margin-top: 5px;
+}
+.info-label {
+    font-weight: bold;
+}
+.info-value {
+}
+.profile-view .contact-actions {
+    background: #eee;
+    text-align: center;
+    border-radius: 2em;
+    padding: 1em;
+    margin: 10px auto;
+}
+.profile-view .contact-actions .action {
+    border-radius: 2em;
+}
+.profile-view .contact-actions .action .text {
+    padding: 0 5px;
+}
 .main-content .web-cam-wrapper:before {
     content: '';
     display: inline-block;
@@ -146,8 +183,8 @@ body.register-page form {
     height: 30px;
     border-radius: 5px;
     width: 40px;
-    background: #444;
-    border: 1px solid #000;
+    background: #00bdff;
+    border: 1px solid #0095cc;
     outline: none;
     margin: 5px 0 5px 5px;
     padding: 7px;
@@ -162,7 +199,7 @@ body.register-page form {
     display: block;
     height: 2px;
     border-radius: 1px;
-    background-color: #ddd;
+    background-color: #fff;
 }
 .mobile-navigation .toggle-sidebar .icon-bar+.icon-bar {
     margin-top: 4px;
@@ -252,12 +289,14 @@ body.register-page form {
     line-height: 30px;
     outline: none;
 }
+.contacts-list li.hover .contact-actions,
 .contacts-list li:hover .contact-actions {
-    right: 0px;
+    right: 0;
     max-width: 500px;
     opacity: 1;
 }
 .user-status {
+    margin-bottom: 5px;
     position: relative;
 }
 .user-status .online-status {
@@ -268,7 +307,6 @@ body.register-page form {
     left: 0;
 }
 .user-status .profile-link {
-    margin-bottom: 5px;
     padding-left: 80px;
     line-height: 40px;
     position: relative;
@@ -283,10 +321,42 @@ body.register-page form {
     background-color: #0095cc;
     color: #fff;
 }
-
+.contact-search {
+    margin-bottom: 5px;
+}
+.incoming-call {
+    transform: translateX(-50%) translateY(-50%);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background: #333;
+    background: rgba(0,0,0,0.75);
+    padding: 1em;
+    border-radius: 4em;
+    height: 8em;
+    width: 32em;
+    margin-left: -16em;
+    margin-top: -4em;
+    text-align: center;
+}
+.incoming-call .caller-info {
+    font-size: 2em;
+    color: #fff;
+    margin-top: -0.25em;
+}
+.incoming-call .call-actions {
+}
 @media (min-width: 992px) {
     .container {
         transition: max-width 0.5s;
+        padding: 10px 0;
+    }
+    .info-label {
+        text-align: right;
+        font-weight: bold;
+    }
+    .info-label:after {
+        content: ":";
     }
 }
 @media (max-width: 992px)
