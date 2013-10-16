@@ -437,7 +437,10 @@
             <div class="col-sm-12">
                 <div class="contact-actions">
                     <a href="#" class="action btn btn-success btn-lg"><i class="glyphicon glyphicon-earphone"></i><span class="text">Call</span></a>
-                    <a href="#" class="action btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove"></i><span class="text">remove contact</span></a>
+                </div>
+                <div class="contact-actions pull-right">
+                    <a href="#" class="action btn btn-warning btn-xs"><i class="glyphicon glyphicon-trash"></i><span class="text">Remove</span></a>
+                    <a href="#" class="action btn btn-danger btn-xs"><i class="glyphicon glyphicon-ban-circle"></i><span class="text">Block</span></a>
                 </div>
             </div>
         </div>

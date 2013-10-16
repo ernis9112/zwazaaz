@@ -406,8 +406,23 @@
         </aside>
         <div class="main-content">
             <div class="web-cam-wrapper">
-                <div class="friend-camera va-middle">
-                    <img style="width: 100%;" src="http://awesomegifs.com/wp-content/uploads/jony-ive-ios-7-googly-eyes.gif" alt="friend camera">
+                <div class="video-container friend-camera va-middle">
+                    <video class="video-cam" autoplay>
+                        <source src="http://www.w3schools.com/html/movie.ogg" type="video/ogg">
+                        <source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4">
+                        <object data="http://www.w3schools.com/html/movie.mp4">
+                            <embed src="http://www.w3schools.com/html/movie.swf">
+                        </object>
+                    </video>
+                </div>
+                <div class="video-container my-camera">
+                    <video class="video-cam" autoplay>
+                        <source src="http://www.w3schools.com/html/movie.ogg" type="video/ogg">
+                        <source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4">
+                        <object data="http://www.w3schools.com/html/movie.mp4">
+                            <embed src="http://www.w3schools.com/html/movie.swf">
+                        </object>
+                    </video>
                 </div>
                 <div class="call-controls">
                     <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>

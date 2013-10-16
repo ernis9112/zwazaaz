@@ -171,9 +171,27 @@ body.register-page form {
     width: 100%;
     max-height: 100%;
 }
-.friend-camera *{
+.friend-camera * {
     max-width: 100%;
     max-height: 100%;
+}
+.friend-camera .video-cam {
+    width: 100%;
+}
+.my-camera {
+    transition: opacity 0.5s;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 15px;
+    opacity: 0.5;
+    max-width: 25%;
+}
+.my-camera:hover {
+    opacity: 1;
+}
+.my-camera .video-cam {
+    width: 100%;
 }
 .mobile-navigation {
     position: fixed;
@@ -329,6 +347,7 @@ body.register-page form {
     position: fixed;
     top: 50%;
     left: 50%;
+    z-index: 100;
     background: #333;
     background: rgba(0,0,0,0.75);
     padding: 1em;
@@ -345,6 +364,11 @@ body.register-page form {
     margin-top: -0.25em;
 }
 .incoming-call .call-actions {
+}
+.incoming-call .call-actions .action {
+}
+.incoming-call .call-actions .action .text {
+    padding: 0 5px;
 }
 @media (min-width: 992px) {
     .container {
@@ -367,6 +391,13 @@ body.register-page form {
         border: none;
         position: absolute;
         left: -100%;
+
+        border-right: 1px solid #eee;
+        right: 10%;
+        width: 100%;
+        max-width: 400px;
+        padding: 35px 15px 15px;
+        z-index: 5;
     }
     .main-content {
         padding: 0;
@@ -374,12 +405,6 @@ body.register-page form {
         width: 100%;
     }
     .main-sidebar.active {
-        border-right: 1px solid #eee;
         left: 0%;
-        right: 10%;
-        width: 100%;
-        max-width: 400px;
-        padding: 35px 15px 15px;
-        z-index: 5;
     }
 }
