@@ -47,7 +47,6 @@ body.register-page form {
 }
 
 .main-sidebar {
-    transition: width 1s;
     height: 100%;
     width: 30%;
     float: left;
@@ -406,10 +405,16 @@ body.register-page form {
         content: ":";
     }
 }
+@media (max-width: 900px)
+{
+    .main-sidebar {
+        /*animation fix on resize*/
+        transition: left 0.5s;
+    }
+}
 @media (max-width: 992px)
 {
     .main-sidebar {
-        transition: left 0.5s;
         padding: 0;
         border: none;
         position: absolute;
