@@ -31,6 +31,11 @@
                     </select>
                 </form>
             </div>
+            <div class="contact-search">
+                <form>
+                    <input type="search" placeholder="Search contacts" class="form-control" value="Zwaz">
+                </form>
+            </div>
             <div class="tabs">
                 <ul class="nav nav-tabs" id="sidebarTabs1">
                     <li class="active"><a href="#contacts">Contacts</a></li>
@@ -401,13 +406,24 @@
         </aside>
         <div class="main-content">
             <div class="web-cam-wrapper">
-                <div class="friend-camera va-middle">
-                    <img style="width: 100%;" src="http://awesomegifs.com/wp-content/uploads/jony-ive-ios-7-googly-eyes.gif" alt="friend camera">
+                <div class="video-container friend-camera va-middle">
+                    <video class="video-cam" autoplay>
+                        <source src="http://www.w3schools.com/html/movie.ogg" type="video/ogg">
+                        <source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4">
+                        <span class="incompatibility-msg">Oh no! Your browser dows not support video tag!</span>
+                    </video>
+                </div>
+                <div class="video-container my-camera">
+                    <video class="video-cam" autoplay>
+                        <source src="http://www.w3schools.com/html/movie.ogg" type="video/ogg">
+                        <source src="http://www.w3schools.com/html/movie.mp4" type="video/mp4">
+                    </video>
                 </div>
                 <div class="call-controls">
                     <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
                     <button class="action btn btn-danger"><i class="glyphicon glyphicon-earphone"></i></button>
                     <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                    <button id="video-full-screen-toggle" class="action btn btn-primary"><i class="glyphicon glyphicon-fullscreen"></i></button>
                 </div>
             </div>
         </div>
