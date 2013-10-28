@@ -30,11 +30,14 @@ class HomeController extends BaseController {
     }
 
     /**
-     * Show the dashboard.
+     * Show the dashboard page.
      */
     public function showDashboard() {
         $this->layout->content = View::make('dashboard');
         $this->layout->bodyclass = "home-page";
+
+        $dash = new DashboardController();
+        $dash->setDataVars($this->layout->content);
     }
 
     /**
