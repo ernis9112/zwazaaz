@@ -1,6 +1,7 @@
 <?php
 
-class HomeController extends BaseController {
+class HomeController extends BaseController
+{
     /*
       |--------------------------------------------------------------------------
       | Default Home Controller
@@ -17,7 +18,8 @@ class HomeController extends BaseController {
     /**
      * Show home page - the login page.
      */
-    public function showWelcome() {
+    public function showWelcome()
+    {
         $this->layout->content = View::make('hello');
         $this->layout->bodyclass = "sign-in-page";
     }
@@ -25,14 +27,33 @@ class HomeController extends BaseController {
     /**
      * Show the user profile.
      */
-    public function showProfile() {
+    public function showProfile()
+    {
         $this->layout->content = View::make('profile');
+        $this->layout->bodyclass = "home-page";
+        $value = Session::get('user.id', 114);
+
+        $this->layout->content = View::make('profile', array('user' => User::find($value)));
     }
+
+
+    public function showProfilePost()
+    {
+        $rules = array('first_name' => 'required|min:3|max:80|alpha',
+            'last_name' => 'required|min:3|max:80|alpha');
+
+        $validator = Validator::make(Input::all(), $rules);
+        if ($validator->fails()) {
+            return Redirect::to('profile')->withErrors($validator);
+        }
+    }
+
 
     /**
      * Show the dashboard page.
      */
-    public function showDashboard() {
+    public function showDashboard()
+    {
         $this->layout->content = View::make('dashboard');
         $this->layout->bodyclass = "home-page";
 
@@ -43,15 +64,16 @@ class HomeController extends BaseController {
     /**
      * Show the registration page.
      */
-    public function showRegistration() {
+    public function showRegistration()
+    {
         $this->layout->content = View::make('registration');
         $this->layout->bodyclass = "register-page";
     }
 
-	public function showCall()
-	{
-		$this->layout->content = View::make('call');
-		$this->layout->bodyclass = "sign-in-page";
-	}
+    public function showCall()
+    {
+        $this->layout->content = View::make('call');
+        $this->layout->bodyclass = "sign-in-page";
+    }
 
 }
