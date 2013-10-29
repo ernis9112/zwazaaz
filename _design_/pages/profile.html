@@ -1,18 +1,32 @@
-{{-----------------------------Do not delete this code------------------------}}
-@if (Session::get('just_reg') == "yes")
-<div class="row">
-    <div class="col-sm-12">
-        <div class="alert alert-success">
-            <strong>@lang('registration.great')</strong>
-            @lang('registration.success')
-        </div>
-    </div>
-</div>
-{{ Session::forget('just_reg') }}
-@endif
-{{----------------------------------------------------------------------------}}
+<!DOCTYPE html>
 
-<h1>Dashboard</h1>
+<html lang="en">
+
+<head>
+
+    <link href="../assets/bootstrap-3.0.0/dist/css/bootstrap.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../assets/favicon.png">
+    <title>Zwazzaz</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/bootstrap-3.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../assets/css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../assets/bootstrap-3.0.0/assets/js/html5shiv.js"></script>
+    <script src="../assets/bootstrap-3.0.0/assets/js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
 
 <body class="home-page">
 <div class="mobile-navigation hidden-md hidden-lg">
@@ -27,7 +41,7 @@
 <div class="row">
 <aside class="main-sidebar">
 <div class="user-status">
-    <a href="#profile" class="profile-link">{{ $userName }}</a>
+    <a href="#profile" class="profile-link active">Simas</a>
     <form class="online-status">
         <select>
             <option>Online</option>
@@ -47,33 +61,26 @@
 </ul>
 <div class="tab-content">
 <div class="tab-pane active" id="contacts">
-
     <ul class="contacts-list">
-
-        @for ($i = 0; $i < sizeOf($contacts); $i++)
         <li>
             <a href="#">
-                    <span class="user-img">
-                        <img src="../_design_/assets/img/user-blank.jpg" alt="username">
-                    </span>
-                <span class="display-name">{{ $contacts[$i] }}</span>
-                <span class="new-message-num">9+</span>
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                <span class="display-name">Aidas Klimas</span>
+                <span class="new-message-num">5</span>
             </a>
             <div class="contact-actions">
                 <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
                 <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
                 <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
             </div>
-
         </li>
-
-        @endfor
-
-        <?php /*<li class="active">
+        <li>
             <a href="#">
-                <span class="user-img">
-                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
-                </span>
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
                 <span class="display-name">Rokas Budnikas</span>
             </a>
             <div class="contact-actions">
@@ -81,8 +88,74 @@
                 <button class="action btn btn-danger"><i class="glyphicon glyphicon-earphone"></i></button>
                 <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
             </div>
-        </li>*/ ?>
-
+        </li>
+        <li>
+            <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                <span class="display-name">Simas</span>
+                <span class="new-message-num">83</span>
+            </a>
+            <div class="contact-actions">
+                <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+            </div>
+        </li>
+        <li>
+            <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                <span class="display-name">Elvis</span>
+            </a>
+            <div class="contact-actions">
+                <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+            </div>
+        </li>
+        <li>
+            <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                <span class="display-name">Ernestas</span>
+                <span class="new-message-num">9+</span>
+            </a>
+            <div class="contact-actions">
+                <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+            </div>
+        </li>
+        <li>
+            <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
+            </a>
+            <div class="contact-actions">
+                <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+            </div>
+        </li>
+        <li>
+            <a href="#">
+                                <span class="user-img">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
+                                </span>
+                <span class="display-name">Senasis_Greideris</span>
+            </a>
+            <div class="contact-actions">
+                <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+            </div>
+        </li>
     </ul>
 </div>
 <div class="tab-pane chat-history" id="recent">
@@ -91,7 +164,7 @@
     <li>
         <a href="#">
                                 <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
             <span class="display-name">Aidas Klimas</span>
             <span class="new-message-num">5</span>
@@ -105,7 +178,7 @@
     <li class="active">
         <a href="#">
                                 <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
             <span class="display-name">Rokas Budnikas</span>
         </a>
@@ -118,7 +191,7 @@
     <li>
         <a href="#">
                                 <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
             <span class="display-name">Simas</span>
             <span class="new-message-num">83</span>
@@ -132,7 +205,7 @@
     <li>
         <a href="#">
                                 <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
             <span class="display-name">Elvis</span>
         </a>
@@ -148,7 +221,7 @@
     <li>
         <a href="#">
                                 <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
             <span class="display-name">Ernestas</span>
             <span class="new-message-num">9+</span>
@@ -165,7 +238,7 @@
     <li>
         <a href="#">
                                 <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
             <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
         </a>
@@ -178,7 +251,7 @@
     <li>
         <a href="#">
                                 <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
             <span class="display-name">Senasis_Greideris</span>
         </a>
@@ -191,7 +264,7 @@
     <li>
         <a href="#">
                                 <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
             <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
         </a>
@@ -204,7 +277,7 @@
     <li>
         <a href="#">
                                 <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
             <span class="display-name">Senasis_Greideris</span>
         </a>
@@ -217,7 +290,7 @@
     <li>
         <a href="#">
                                 <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
             <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
         </a>
@@ -230,7 +303,7 @@
     <li>
         <a href="#">
                                 <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
             <span class="display-name">Senasis_Greideris</span>
         </a>
@@ -243,7 +316,7 @@
     <li>
         <a href="#">
                                 <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
             <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
         </a>
@@ -256,7 +329,7 @@
     <li>
         <a href="#">
                                 <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
             <span class="display-name">Senasis_Greideris</span>
         </a>
@@ -269,7 +342,7 @@
     <li>
         <a href="#">
                                 <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
             <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
         </a>
@@ -282,7 +355,7 @@
     <li>
         <a href="#">
                                 <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
             <span class="display-name">Senasis_Greideris</span>
         </a>
@@ -295,7 +368,7 @@
     <li>
         <a href="#">
                                 <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
             <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
         </a>
@@ -308,7 +381,7 @@
     <li>
         <a href="#">
                                 <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
             <span class="display-name">Senasis_Greideris</span>
         </a>
@@ -321,7 +394,7 @@
     <li>
         <a href="#">
                                 <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
             <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
         </a>
@@ -334,7 +407,7 @@
     <li>
         <a href="#">
                                 <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
+                                    <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
             <span class="display-name">Senasis_Greideris</span>
         </a>
@@ -350,47 +423,113 @@
 </div>
 </aside>
 <div class="main-content">
-
-    <div class="profile-view">
+    <div class="profile-edit">
         <div class="row">
             <div class="col-sm-3">
                 <div class="profile-img">
                     <div class="profile-img-wrapper">
-                        <img src="../_design_/assets/img/user-blank.jpg" alt="UserName">
+                        <img src="../assets/img/user-blank.jpg" alt="Simas">
                     </div>
+                    <!-- this will open popup-->
+                    <button class="btn btn-default btn-xs">change image</button>
                 </div>
             </div>
-            <div class="col-sm-6">
-                <div class="profile-info-row row">
-                    <div class="info-label col-md-5">
-                        Name
-                    </div>
-                    <div class="info-value col-md-7">
-                        Rokas Budnikas
-                    </div>
-                </div>
-                <div class="profile-info-row row">
-                    <div class="info-label col-md-5">
-                        Zwazaaz name
-                    </div>
-                    <div class="info-value col-md-7">
-                        rokasbud
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="contact-actions">
-                    <a href="#" class="action btn btn-success btn-lg"><i class="glyphicon glyphicon-earphone"></i><span class="text">Call</span></a>
-                </div>
-                <div class="contact-actions pull-right">
-                    <a href="#" class="action btn btn-warning btn-xs"><i class="glyphicon glyphicon-trash"></i><span class="text">Remove</span></a>
-                    <a href="#" class="action btn btn-danger btn-xs"><i class="glyphicon glyphicon-ban-circle"></i><span class="text">Block</span></a>
-                </div>
+            <div class="col-sm-9">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <legend>Personal information</legend>
+                        <div class="form-group">
+                            <label class="control-label col-lg-4" for="edit-first-name">First name<span class="required">*</span></label>
+                            <div class="col-lg-8">
+                                <input type="text" class="form-control" id="edit-first-name" value="zwazaazius" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-lg-4" for="edit-last-name">Last name<span class="required">*</span></label>
+                            <div class="col-lg-8">
+                                <input type="text" class="form-control" id="edit-last-name" value="" required>
+                            </div>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-sm btn-success">Update information</button>
+                        </div>
+                    </fieldset>
+                </form>
+                <!--<form class="form-horizontal">-->
+                    <!--<fieldset>-->
+                        <!--<legend>Change email:</legend>-->
+                        <!--<div class="form-group">-->
+                            <!--<label class="control-label col-lg-4" for="edit-email">Your email address<span class="required">*</span></label>-->
+                            <!--<div class="col-lg-8">-->
+                                <!--<input type="email" class="form-control" id="edit-email" placeholder="example@example.exm" required>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                            <!--<label class="control-label col-lg-4" for="edit-email-current-password">Current password<span class="required">*</span></label>-->
+                            <!--<div class="col-lg-8">-->
+                                <!--<input type="password" class="form-control" id="edit-email-current-password" value="sgaahf" required>-->
+                                <!--<p class="help-block">We need you to confirm your password to change your email.</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="form-submit">-->
+                            <!--<button type="submit" class="btn btn-sm btn-success">Change</button>-->
+                        <!--</div>-->
+                    <!--</fieldset>-->
+                <!--</form>-->
+                <form class="form-horizontal">
+                    <fieldset>
+                        <legend>Change password</legend>
+                        <div class="form-group">
+                            <label class="control-label col-lg-4" for="edit-password-current-password">Current password<span class="required">*</span></label>
+                            <div class="col-lg-8">
+                                <input type="password" class="form-control" id="edit-password-current-password" value="sgaahf" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-lg-4" for="edit-password-new-password">New password<span class="required">*</span></label>
+                            <div class="col-lg-8">
+                                <input type="password" class="form-control" id="edit-password-new-password" value="sgasdgasdghahf" required>
+                            </div>
+                        </div>
+                        <div class="form-group has-error">
+                            <label class="control-label col-lg-4" for="edit-password-repeat-password">Repeat password<span class="required">*</span></label>
+                            <div class="col-lg-8">
+                                <input type="password" class="form-control" id="edit-password-repeat-password" value="sgasghahf" required>
+                                <p class="help-block">Passwords do not match!</p>
+                            </div>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-sm btn-success">Change</button>
+                        </div>
+                    </fieldset>
+                </form>
             </div>
         </div>
     </div>
+</div>
+</div>
 
-</div>
-</div>
+
+
+</div> <!-- /container -->
+
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../assets/jQuery/jquery-1.10.2.min.js"></script>
+<script src="../assets/bootstrap-3.0.0/dist/js/bootstrap.min.js"></script>
+
+<script src="../assets/bootstrap-3.0.0/assets/js/holder.js"></script>
+
+<script src="../assets/bootstrap-3.0.0/assets/js/application.js"></script>
+
+
+<script src="../assets/js/script.js"></script>
+
+
+</body>
+
+</html>
+

@@ -31,6 +31,11 @@
                     </select>
                 </form>
             </div>
+            <div class="contact-search">
+                <form>
+                    <input type="search" placeholder="Search contacts" class="form-control">
+                </form>
+            </div>
             <div class="tabs">
             <ul class="nav nav-tabs" id="sidebarTabs1">
                 <li class="active"><a href="#contacts">Contacts</a></li>
@@ -53,7 +58,7 @@
                             <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
                         </div>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="#">
                                 <span class="user-img">
                                     <img src="../assets/img/user-blank.jpg" alt="username">
@@ -432,27 +437,27 @@
                                 </div>
                             </fieldset>
                         </form>
-                        <form class="form-horizontal">
-                            <fieldset>
-                                <legend>Change email:</legend>
-                                <div class="form-group">
-                                    <label class="control-label col-lg-4" for="edit-email">Your email address<span class="required">*</span></label>
-                                    <div class="col-lg-8">
-                                        <input type="email" class="form-control" id="edit-email" placeholder="example@example.exm" required>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-lg-4" for="edit-email-current-password">Current password<span class="required">*</span></label>
-                                    <div class="col-lg-8">
-                                        <input type="password" class="form-control" id="edit-email-current-password" value="sgaahf" required>
-                                        <p class="help-block">We need you to confirm your password to change your email.</p>
-                                    </div>
-                                </div>
-                                <div class="form-submit">
-                                    <button type="submit" class="btn btn-sm btn-success">Change</button>
-                                </div>
-                            </fieldset>
-                        </form>
+<!--                        <form class="form-horizontal">-->
+<!--                            <fieldset>-->
+<!--                                <legend>Change email:</legend>-->
+<!--                                <div class="form-group">-->
+<!--                                    <label class="control-label col-lg-4" for="edit-email">Your email address<span class="required">*</span></label>-->
+<!--                                    <div class="col-lg-8">-->
+<!--                                        <input type="email" class="form-control" id="edit-email" placeholder="example@example.exm" required>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="form-group">-->
+<!--                                    <label class="control-label col-lg-4" for="edit-email-current-password">Current password<span class="required">*</span></label>-->
+<!--                                    <div class="col-lg-8">-->
+<!--                                        <input type="password" class="form-control" id="edit-email-current-password" value="sgaahf" required>-->
+<!--                                        <p class="help-block">We need you to confirm your password to change your email.</p>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="form-submit">-->
+<!--                                    <button type="submit" class="btn btn-sm btn-success">Change</button>-->
+<!--                                </div>-->
+<!--                            </fieldset>-->
+<!--                        </form>-->
                         <form class="form-horizontal">
                             <fieldset>
                                 <legend>Change password</legend>
