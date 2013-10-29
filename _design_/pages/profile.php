@@ -405,7 +405,7 @@
                     <div class="col-sm-3">
                         <div class="profile-img">
                             <div class="profile-img-wrapper">
-                                <img src="../assets/img/user-blank.jpg" alt="Simas">
+                                <img src="../public/assets/img/user-blank.jpg" alt="Simas">
                             </div>
                             <!-- this will open popup-->
                             <button class="btn btn-default btn-xs">change image</button>

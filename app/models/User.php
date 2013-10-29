@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Auth\UserInterface;
+
 use Illuminate\Auth\Reminders\RemindableInterface;
 
 class User extends Eloquent implements UserInterface, RemindableInterface {
@@ -94,6 +95,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         return 'OK';
     }
 
+
     /**
      * Create user session named 'members'
      *
@@ -102,5 +104,4 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     public function createUserSession($user) {
         Session::put('members', $user);
     }
-
 }

@@ -20,8 +20,22 @@ Route::get('/registration', 'HomeController@showRegistration');
 
 // Show user profile page
 Route::get('/profile', 'HomeController@showProfile');
+//Route::put('profile/update', array('uses'=>'HomeController@get_update'));
 
-// Show dashboard
+Route::model('user', 'User');
+Route::post('profile/update/name/{user}', array(
+    'uses'=>'ProfileController@profileNamePost',
+    'as' => 'user.update.name'
+));
+Route::post('profile/update/email/{user}', array(
+    'uses'=>'ProfileController@profileEmailPost',
+    'as' => 'user.update.email'
+));
+Route::post('profile/update/password/{user}', array(
+    'uses'=>'ProfileController@profilePasswordPost',
+    'as' => 'user.update.password'
+));
+
 Route::get('/dashboard', 'HomeController@showDashboard');
 
 // For registration AJAX query

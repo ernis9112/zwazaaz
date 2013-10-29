@@ -41,6 +41,10 @@ body.sign-in-page form,
 body.register-page form {
     padding: 50px 0;
 }
+.logo-link {
+    margin: 10px 0;
+    display: inline-block;
+}
 
 .main-sidebar {
     transition: width 1s;
@@ -48,26 +52,75 @@ body.register-page form {
     width: 30%;
     float: left;
     position: relative;
-    background: #501;
+    background: #fff;
     border: 1px solid #eee;
     border-right: none;
-    padding: 10px;
+    padding: 15px;
+    overflow: auto;
 }
 .main-content {
     float: right;
     height: 100%;
     width: 70%;
-    background: #000;
+    background: #fff;
     position: relative;
     border: 1px solid #eee;
-    padding: 10px;
+    padding: 15px;
+    overflow: auto;
 }
 .main-content .web-cam-wrapper {
+    background: #222;
     height: 100%;
     position: relative;
     font-size: 0;
 }
-
+.main-content .web-cam-wrapper .call-controls {
+    position: absolute;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    margin: 0 auto 20px;
+    width: 200px;
+    max-width: 90%;
+    opacity: 0;
+    transition: all 0.5s;
+}
+.main-content .web-cam-wrapper:hover .call-controls {
+    opacity: 0.25;
+}
+.main-content .web-cam-wrapper .call-controls:hover {
+    opacity: 1;
+}
+.main-content .web-cam-wrapper .call-controls .action {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border-radius: 100%;
+    padding: 0;
+    margin: 5px;
+    outline: none;
+}
+.profile-edit {
+    padding: 15px;
+}
+.profile-edit .profile-img {
+    text-align: center;
+}
+.profile-edit .profile-img-wrapper {
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #ddd;
+    width: 150px;
+    height: 150px;
+    max-width: 100%;
+}
+.profile-edit .form-submit {
+    text-align: right;
+}
 
 .main-content .web-cam-wrapper:before {
     content: '';
@@ -85,9 +138,151 @@ body.register-page form {
     max-width: 100%;
     max-height: 100%;
 }
-
-
-
+.mobile-navigation {
+    position: fixed;
+    z-index: 10;
+}
+.mobile-navigation .toggle-sidebar {
+    height: 30px;
+    border-radius: 5px;
+    width: 40px;
+    background: #444;
+    border: 1px solid #000;
+    outline: none;
+    margin: 5px 0 5px 5px;
+    padding: 7px;
+}
+.mobile-navigation .toggle-sidebar:hover {
+    box-shadow: inset 0 0 10px 0 #222;
+}
+.mobile-navigation .toggle-sidebar:active {
+    box-shadow: inset 0 0 10px 0 #000;
+}
+.mobile-navigation .toggle-sidebar .icon-bar {
+    display: block;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #ddd;
+}
+.mobile-navigation .toggle-sidebar .icon-bar+.icon-bar {
+    margin-top: 4px;
+}
+.main-sidebar .tab-content {
+    border: 1px solid #ddd;
+    border-top: none;
+}
+.chat-history .chat-time {
+    border-bottom: 1px solid #aaa;
+    margin: 0 5px;
+    padding: 5px 5px 0;
+    display: block;
+}
+.contacts-list {
+    margin: 0;
+    padding: 0;
+}
+.contacts-list li {
+    overflow: hidden;
+    list-style: none none;
+    position: relative;
+}
+.contacts-list li a {
+    height: 40px;
+    color: #000;
+    display: block;
+    position: relative;
+}
+.contacts-list li a:hover {
+    text-decoration: none;
+    background-color: #ccc;
+}
+.contacts-list li.active a {
+    background-color: #0095cc;
+    color: #fff;
+}
+.contacts-list li a .display-name {
+    display: inline-block;
+    vertical-align: middle;
+}
+.contacts-list li a .new-message-num {
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-weight: 800;
+    line-height: 20px;
+    font-size: 10px;
+    display: block;
+    background: #ff6500;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin: -10px 20px -10px 0;
+}
+.contacts-list li a .user-img {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px;
+    height: 30px;
+    max-width: 30px;
+}
+.contacts-list li a .user-img img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.contacts-list li .contact-actions {
+    position: absolute;
+    top: 0;
+    padding: 5px;
+    right:-10px;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    max-width: 0;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+.contacts-list li .contact-actions .action {
+    text-align: center;
+    padding: 0;
+    margin: 0 1px;
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    outline: none;
+}
+.contacts-list li:hover .contact-actions {
+    right: 0px;
+    max-width: 500px;
+    opacity: 1;
+}
+.user-status {
+    position: relative;
+}
+.user-status .online-status {
+    position: absolute;
+    top: 50%;
+    margin: -10px 0 -10px 5px;
+    height: 20px;
+    left: 0;
+}
+.user-status .profile-link {
+    margin-bottom: 5px;
+    padding-left: 80px;
+    line-height: 40px;
+    position: relative;
+    display: block;
+    height: 40px;
+}
+.user-status .profile-link:hover {
+    background-color: #ccc;
+    text-decoration: none;
+}
+.user-status .profile-link.active {
+    background-color: #0095cc;
+    color: #fff;
+}
 
 @media (min-width: 992px) {
     .container {
@@ -97,14 +292,24 @@ body.register-page form {
 @media (max-width: 992px)
 {
     .main-sidebar {
+        transition: left 0.5s;
         padding: 0;
         border: none;
         position: absolute;
-        right: 100%;
+        left: -100%;
     }
     .main-content {
         padding: 0;
         border: none;
         width: 100%;
+    }
+    .main-sidebar.active {
+        border-right: 1px solid #eee;
+        left: 0%;
+        right: 10%;
+        width: 100%;
+        max-width: 400px;
+        padding: 35px 15px 15px;
+        z-index: 5;
     }
 }
