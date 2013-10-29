@@ -48,55 +48,6 @@ class HomeController extends BaseController
         }
     }
 
-    public function profileNamePost(User $user)
-    {
-        $rules = array('name' => 'required|min:3|max:80|alpha',
-            'last_name' => 'required|min:3|max:80|alpha');
-
-        $validator = Validator::make(Input::all(), $rules);
-        if ($validator->fails()) {
-            return Redirect::to('profile')->withErrors($validator);
-        } else {
-            $user->name = Input::get('name');
-            $user->last_name = Input::get('last_name');
-            $user->save();
-            return Redirect::to('profile');
-        }
-    }
-
-    public function get_update()
-    {
-        // trink lauk sita
-        // tai man paaiškink, kodel mano hujovas? :D
-        var_dump(Input::get('id'), \Illuminate\Support\Facades\Input::get());
-        $id = Input::get('id');
-        $rules = array('name' => 'required|min:3|max:80|alpha',
-            'last_name' => 'required|min:3|max:80|alpha');
-
-        $validator = Validator::make(Input::all(), $rules);
-        if ($validator->fails()) {
-            var_dump($validator->errors());
-//            return Redirect::to('profile')->withErrors($validator);
-        } else {
-            //User::update($id, array('first_name' => 'asdasdasd',
-            //                 'last_name' => Input::get('last_name')));
-            DB::table('users')
-                ->where('id', $id)
-                ->update(array('name' => Input::get('name')));
-//            return Redirect::to('profile');
-//del ko cia pakeite??????
-                // gal nemokejai paziuret :D?
-                // nemokėjau, bet kad tu tik redirectus užkomentavai
-                // pl pabandom sutvarkyt cia :D oke
-            var_dump("succeess");
-        }
-
-
-        //DB::update('update users set name = ? where id = ?',$input->name, $input->id);
-
-
-    }
-
 
     /**
      * Show the dashboard page.
