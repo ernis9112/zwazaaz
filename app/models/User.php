@@ -91,7 +91,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         $user->last_name = ucfirst($input['last_name']);
         $user->save();
         Session::put('just_reg', 'yes');
-        self::createUserSession($user);
+        self::createUserSession($input['username'], $input['password']);
         return 'OK';
     }
 
@@ -101,7 +101,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
      *
      * @return string
      */
-    public function createUserSession($user) {
-        Session::put('members', $user);
+    public function createUserSession($username, $password) {
+        if(Auth::attempt(array('username' => 'ernis9112', 'password' => 'password')));
     }
 }

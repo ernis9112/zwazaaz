@@ -12,11 +12,18 @@
 */
 
 // Show main page - login page
-Route::get('/', 'HomeController@showWelcome');
+Route::get('/', array(
+  'uses' => 'HomeController@showWelcome',
+  'as' => 'hello'
+));
+
 Route::get('/call', 'HomeController@showCall');
 
 // Show registration page
-Route::get('/registration', 'HomeController@showRegistration');
+Route::get('/registration', array(
+  'uses' => 'HomeController@showRegistration',
+  'as' => 'registration'
+));
 
 // Show user profile page
 Route::get('/profile', 'HomeController@showProfile');
@@ -43,3 +50,11 @@ Route::post('validate-registration', array(
   'uses' => 'RegistrationController@storeGet',
   'as' => 'registration.store'
 ));
+
+// For login AJAX query
+Route::post('validate-login', array(
+  'uses' => 'RegistrationController@tryLogin',
+  'as' => 'login.try'
+));
+
+Route::get('/logout', 'RegistrationController@userLogout');
