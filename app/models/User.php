@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Auth\UserInterface;
+
 use Illuminate\Auth\Reminders\RemindableInterface;
 
 class User extends Eloquent implements UserInterface, RemindableInterface {
@@ -90,17 +91,17 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         $user->last_name = ucfirst($input['last_name']);
         $user->save();
         Session::put('just_reg', 'yes');
-        self::createUserSession($user);
+        self::createUserSession($input['username'], $input['password']);
         return 'OK';
     }
+
 
     /**
      * Create user session named 'members'
      *
      * @return string
      */
-    public function createUserSession($user) {
-        Session::put('members', $user);
+    public function createUserSession($username, $password) {
+        if(Auth::attempt(array('username' => 'ernis9112', 'password' => 'password')));
     }
-
 }
