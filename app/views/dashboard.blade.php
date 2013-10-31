@@ -47,6 +47,7 @@
 </ul>
 <div class="tab-content">
 <div class="tab-pane active" id="contacts">
+    {{ Form::open() }}
 
     <ul class="contacts-list">
 
@@ -64,7 +65,8 @@
                 <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
                 <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
             </div>
-
+            <input type="hidden" name="active" value="{{ $contacts[$i] }}">
+            {{-- Form::submit('Click Me!') --}}
         </li>
 
         @endfor
@@ -81,7 +83,7 @@
                 <button class="action btn btn-danger"><i class="glyphicon glyphicon-earphone"></i></button>
                 <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
             </div>
-        </li>*/ ?>
+        </li>*/?>
 
     </ul>
 </div>
@@ -391,6 +393,7 @@
             </div>
         </div>
     </div>
-
+    {{ Form::token() }}
+    {{ Form::close() }}
 </div>
 </div>

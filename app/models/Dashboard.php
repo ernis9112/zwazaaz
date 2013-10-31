@@ -127,17 +127,4 @@ class Dashboard extends Eloquent implements UserInterface, RemindableInterface {
         return $user['0'];
     }
 
-    public function getPostData() {
-        $username =  Input::get('active');
-
-        /*
-        else
-        {
-            // auth failure, go back to the login
-            return Redirect::to('login')->with('login_errors', true);
-        }*/
-        return $username;
-    }
-
-
 }

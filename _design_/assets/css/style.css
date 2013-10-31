@@ -277,6 +277,12 @@ body.register-page form {
     background-color: #0095cc;
     color: #fff;
 }
+/*xMx eddition*/
+.contacts-list li.hover a {
+    background-color: #0095cc;
+    color: #fff;
+}
+
 .contacts-list li a .display-name {
     display: inline-block;
     vertical-align: middle;

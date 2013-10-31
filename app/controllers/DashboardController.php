@@ -5,7 +5,8 @@ class DashboardController extends BaseController {
     protected $layout = 'layouts.master';
 
     public static function setDataVars($content){
-        $ID = 97;
+
+        $ID = Auth::user()->id;
 
         $dashModel = new Dashboard();
 
