@@ -58,16 +58,17 @@ class ModelsCommand extends Command {
         $this->write = $this->option('write');
         $this->dir = $this->option('dir');
         $model = $this->argument('model');
+        $ignore = $this->option('ignore');
         $this->reset = $this->option('reset');
 
         //If filename is default and Write is not specified, ask what to do
-        if(!$this->write && $filename === $this->filename){
+        if(!$this->write && $filename === $this->filename && !$this->option('nowrite')){
             if($this->confirm("Do you want to overwrite the existing model files for '$model'? Choose no to write to $filename instead? (Yes/No): ")){
                 $this->write = true;
             }
         }
 
-        $content = $this->generateDocs($model);
+        $content = $this->generateDocs($model, $ignore);
 
         if(!$this->write){
             $written = \File::put($filename, $content);
@@ -89,7 +90,6 @@ class ModelsCommand extends Command {
     {
         return array(
             array('model', InputArgument::OPTIONAL, 'Which models to include', '*'),
-
         );
     }
 
@@ -104,11 +104,13 @@ class ModelsCommand extends Command {
             array('filename', 'F', InputOption::VALUE_OPTIONAL, 'The path to the helper file', $this->filename),
             array('dir', 'D', InputOption::VALUE_OPTIONAL, 'The model dir','app/models'),
             array('write', 'W', InputOption::VALUE_NONE, 'Write to Model file'),
+            array('nowrite', 'N', InputOption::VALUE_NONE, 'Don\'t write to Model file'),
             array('reset', 'R', InputOption::VALUE_NONE, 'Remove the original phpdocs instead of appending'),
+            array('ignore', 'I', InputOption::VALUE_OPTIONAL, 'Which models to ignore', ''),
         );
     }
 
-    protected function generateDocs($model){
+    protected function generateDocs($model, $ignore = ''){
 
 
         $output = "<?php
@@ -127,7 +129,15 @@ class ModelsCommand extends Command {
             $models = explode(',', $model);
         }
 
+        $ignore = explode(',', $ignore);
+
         foreach($models as $name){
+            if(in_array($name, $ignore)){
+                $this->comment("Ignoring model '$name'");
+                continue;
+            }else{
+                $this->comment("Loading model '$name'");
+            }
             $this->properties = array();
             $this->methods = array();
             if(class_exists($name)){

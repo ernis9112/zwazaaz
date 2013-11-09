@@ -291,6 +291,19 @@ class FormBuilder {
 	}
 
 	/**
+	 * Create a url input field.
+	 *
+	 * @param  string  $name
+	 * @param  string  $value
+	 * @param  array   $options
+	 * @return string
+	 */
+	public function url($name, $value = null, $options = array())
+	{
+		return $this->input('url', $name, $value, $options);
+	}
+
+	/**
 	 * Create a file input field.
 	 *
 	 * @param  string  $name
@@ -469,7 +482,7 @@ class FormBuilder {
 	 * @param  string  $selected
 	 * @return string
 	 */
-	protected function getSelectOption($display, $value, $selected)
+	public function getSelectOption($display, $value, $selected)
 	{
 		if (is_array($display))
 		{
@@ -848,7 +861,7 @@ class FormBuilder {
 	 * @param  array   $attributes
 	 * @return string
 	 */
-	protected function getIdAttribute($name, $attributes)
+	public function getIdAttribute($name, $attributes)
 	{
 		if (array_key_exists('id', $attributes))
 		{
