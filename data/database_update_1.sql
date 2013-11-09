@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `contacts` (
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,
-  `password` char(32) NOT NULL,
+  `password` char(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,

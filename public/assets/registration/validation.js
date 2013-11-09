@@ -30,7 +30,7 @@ jQuery(document).ready(function(){
                     }
                 }).done(function( msg ) {
                     if( msg == "OK" )
-                        window.location.replace("/dashboard");
+                        window.location.replace("/dashboard");// Really?
                     else if( msg == "GOOD" ){
                         restoreFields(); 
                         jQuery('#registration .alert-danger').hide("slow");
