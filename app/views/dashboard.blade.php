@@ -11,10 +11,16 @@
 {{ Session::forget('just_reg') }}
 @endif
 {{----------------------------------------------------------------------------}}
+<div class="incoming-call">
+    <div class="caller-info">
+        <span class="who"></span> calling...
+    </div>
+    <div class="call-actions">
+        <a href="#" class="action btn btn-success btn-lg answer"><i class="glyphicon glyphicon-earphone"></i><span class="text">Answer</span></a>
+        <a href="#" class="action btn btn-danger btn-lg decline"><i class="glyphicon glyphicon-remove-circle"></i><span class="text">Decline</span></a>
+    </div>
+</div>
 
-<h1>Dashboard</h1>
-
-<body class="home-page">
 <div class="mobile-navigation hidden-md hidden-lg">
     <button class="toggle-sidebar" type="button" data-target=".main-sidebar">
         <span class="sr-only">Toggle navigation</span>
@@ -52,18 +58,21 @@
     <ul class="contacts-list">
 
         @for ($i = 0; $i < sizeOf($contacts); $i++)
-        <li>
+        <li class="webrtc-user" id="webrtc-user-{{ $contacts[$i] }}" data-username="{{ $contacts[$i] }}">
             <a href="#">
                     <span class="user-img">
                         <img src="../_design_/assets/img/user-blank.jpg" alt="username">
                     </span>
                 <span class="display-name">{{ $contacts[$i] }}</span>
-                <span class="new-message-num">9+</span>
+                <span class="status webrtc-status"></span>
             </a>
             <div class="contact-actions">
-                <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-                <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-                <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                <span class="action btn btn-success webrtc-call">
+	                <i class="glyphicon glyphicon-earphone"></i>
+                </span>
+                <button class="action btn btn-info">
+	                <i class="glyphicon glyphicon-info-sign"></i>
+                </button>
             </div>
             <input type="hidden" name="active" value="{{ $contacts[$i] }}">
             {{-- Form::submit('Click Me!') --}}
@@ -90,53 +99,13 @@
 <div class="tab-pane chat-history" id="recent">
 <time class="chat-time" datetime="2013-10-09">Today</time>
 <ul class="contacts-list">
-    <li>
+     <li>
         <a href="#">
                                 <span class="user-img">
                                     <img src="../_design_/assets/img/user-blank.jpg" alt="username">
                                 </span>
             <span class="display-name">Aidas Klimas</span>
             <span class="new-message-num">5</span>
-        </a>
-        <div class="contact-actions">
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-        </div>
-    </li>
-    <li class="active">
-        <a href="#">
-                                <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
-                                </span>
-            <span class="display-name">Rokas Budnikas</span>
-        </a>
-        <div class="contact-actions">
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-            <button class="action btn btn-danger"><i class="glyphicon glyphicon-earphone"></i></button>
-            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-        </div>
-    </li>
-    <li>
-        <a href="#">
-                                <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
-                                </span>
-            <span class="display-name">Simas</span>
-            <span class="new-message-num">83</span>
-        </a>
-        <div class="contact-actions">
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-        </div>
-    </li>
-    <li>
-        <a href="#">
-                                <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
-                                </span>
-            <span class="display-name">Elvis</span>
         </a>
         <div class="contact-actions">
             <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
@@ -154,191 +123,6 @@
                                 </span>
             <span class="display-name">Ernestas</span>
             <span class="new-message-num">9+</span>
-        </a>
-        <div class="contact-actions">
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-        </div>
-    </li>
-</ul>
-<time class="chat-time" datetime="2013-10-05">2013-10-05</time>
-<ul class="contacts-list">
-    <li>
-        <a href="#">
-                                <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
-                                </span>
-            <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
-        </a>
-        <div class="contact-actions">
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-        </div>
-    </li>
-    <li>
-        <a href="#">
-                                <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
-                                </span>
-            <span class="display-name">Senasis_Greideris</span>
-        </a>
-        <div class="contact-actions">
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-        </div>
-    </li>
-    <li>
-        <a href="#">
-                                <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
-                                </span>
-            <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
-        </a>
-        <div class="contact-actions">
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-        </div>
-    </li>
-    <li>
-        <a href="#">
-                                <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
-                                </span>
-            <span class="display-name">Senasis_Greideris</span>
-        </a>
-        <div class="contact-actions">
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-        </div>
-    </li>
-    <li>
-        <a href="#">
-                                <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
-                                </span>
-            <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
-        </a>
-        <div class="contact-actions">
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-        </div>
-    </li>
-    <li>
-        <a href="#">
-                                <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
-                                </span>
-            <span class="display-name">Senasis_Greideris</span>
-        </a>
-        <div class="contact-actions">
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-        </div>
-    </li>
-    <li>
-        <a href="#">
-                                <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
-                                </span>
-            <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
-        </a>
-        <div class="contact-actions">
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-        </div>
-    </li>
-    <li>
-        <a href="#">
-                                <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
-                                </span>
-            <span class="display-name">Senasis_Greideris</span>
-        </a>
-        <div class="contact-actions">
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-        </div>
-    </li>
-    <li>
-        <a href="#">
-                                <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
-                                </span>
-            <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
-        </a>
-        <div class="contact-actions">
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-        </div>
-    </li>
-    <li>
-        <a href="#">
-                                <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
-                                </span>
-            <span class="display-name">Senasis_Greideris</span>
-        </a>
-        <div class="contact-actions">
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-        </div>
-    </li>
-    <li>
-        <a href="#">
-                                <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
-                                </span>
-            <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
-        </a>
-        <div class="contact-actions">
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-        </div>
-    </li>
-    <li>
-        <a href="#">
-                                <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
-                                </span>
-            <span class="display-name">Senasis_Greideris</span>
-        </a>
-        <div class="contact-actions">
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-        </div>
-    </li>
-    <li>
-        <a href="#">
-                                <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
-                                </span>
-            <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
-        </a>
-        <div class="contact-actions">
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-        </div>
-    </li>
-    <li>
-        <a href="#">
-                                <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
-                                </span>
-            <span class="display-name">Senasis_Greideris</span>
         </a>
         <div class="contact-actions">
             <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
@@ -395,5 +179,35 @@
     </div>
     {{ Form::token() }}
     {{ Form::close() }}
+
+    <div class="web-cam-wrapper">
+        <div class="video-container friend-camera va-middle" id="remoteVideos">
+        </div>
+        <div class="video-container my-camera" id="localVideo">
+        </div>
+        <div class="call-controls">
+            <span class="action btn btn-danger webrtc-decline"><i class="glyphicon glyphicon-earphone"></i></span>
+            <button id="video-full-screen-toggle" class="action btn btn-primary"><i class="glyphicon glyphicon-fullscreen"></i></button>
+        </div>
+    </div>
 </div>
 </div>
+
+
+{{ HTML::script('assets/js/socket.io.js') }}
+{{ HTML::script('assets/js/simplewebrtc.bundle.js') }}
+{{ HTML::script('assets/js/dashboard-webrtc.js') }}
+{{ HTML::script('assets/js/dashboard.js') }}
+<script>
+    dashboard.init({
+        url: "http://144.76.59.98:8888",
+        debug: true,
+        // the id/element dom element that will hold "our" video
+        localVideoEl: 'localVideo',
+        // the id/element dom element that will hold remote videos
+        remoteVideosEl: 'remoteVideos',
+        // immediately ask for camera access
+//        autoRequestMedia: true,
+        username: '{{ $userName }}'
+    });
+</script>

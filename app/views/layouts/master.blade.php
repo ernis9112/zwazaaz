@@ -12,34 +12,29 @@
 
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
-    <!-- Required stules for dashboard page -->
-    <link href="assets/css/style.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="assets/bootstrap-3.0.0/assets/js/html5shiv.js"></script>
     <script src="assets/bootstrap-3.0.0/assets/js/respond.min.js"></script>
     <![endif]-->
+    {{ HTML::script('assets/bootstrap-3.0.0/assets/js/jquery.js') }}
 </head>
 
 <body class="{{ $bodyclass }}">
 <div class="container">
     {{ $content }}
 </div> <!-- /container -->
-
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="assets/bootstrap-3.0.0/assets/js/jquery.js"></script>
-<script src="assets/bootstrap-3.0.0/dist/js/bootstrap.js"></script>
-<script src="assets/bootstrap-3.0.0/assets/js/holder.js"></script>
-<script src="assets/bootstrap-3.0.0/assets/js/application.js"></script>
 
-<!-- Required script for registration page -->
-<script src="assets/registration/validation.js"></script>
+{{ HTML::script('assets/bootstrap-3.0.0/dist/js/bootstrap.js') }}
+{{ HTML::script('assets/bootstrap-3.0.0/assets/js/holder.js') }}
+{{ HTML::script('assets/bootstrap-3.0.0/assets/js/application.js') }}
 
 <!-- Required script for dashboard page -->
-<script src="assets/js/script.js"></script>
+{{ HTML::script('assets/js/script.js') }}
 
 
 </body>

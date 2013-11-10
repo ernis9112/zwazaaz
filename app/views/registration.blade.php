@@ -83,3 +83,6 @@
         <button id="submit-form" class="btn btn-lg btn-primary">@lang('registration.submit_registration')</button>         
     </div>
 </div>
+
+<!-- Required script for registration page -->
+{{ HTML::script('assets/registration/validation.js') }}
