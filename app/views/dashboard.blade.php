@@ -42,10 +42,11 @@
     </form>
 </div>
 <div class="contact-search">
-    <form>
+    {{ Form::open(array('route' => 'search.friend', 'id' => 'search-form')) }}
         <input type="search" placeholder="Search contacts" class="form-control" name="friend-search" id="friend-search">
         <ul id="livesearch"></ul>
-    </form>
+    {{ Form::token() }}
+    {{ Form::close() }}
 </div>
 <div class="tabs">
 <ul class="nav nav-tabs" id="sidebarTabs1">

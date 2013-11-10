@@ -21,7 +21,7 @@ class Search extends Eloquent {
     public function findFriend($input) {
     
         return "<li><a href='#'>Jonas</a></li>
-            <li><a href='#'>Jonus</a></li>
+            <li><a href='#'>".$input."k</a></li>
             <li><a href='#'>Jons54</a></li>";
         
     }

@@ -7,7 +7,7 @@ class SearchController extends BaseController {
      */
     public function searchFriend() {
         $search = new Search;
-        $input = Input::get('friend-search');
+        $input = Input::get('nick');
         return $search->findFriend($input);
     }
 

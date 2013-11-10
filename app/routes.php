@@ -54,7 +54,7 @@ Route::post('validate-registration', array(
 // For user search AJAX query
 Route::post('search-contacts', array(
   'uses' => 'SearchController@searchFriend',
-  'as' => 'search.search'
+  'as' => 'search.friend'
 ));
 
 // For login AJAX query
