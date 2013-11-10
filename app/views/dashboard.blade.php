@@ -43,7 +43,8 @@
 </div>
 <div class="contact-search">
     <form>
-        <input type="search" placeholder="Search contacts" class="form-control">
+        <input type="search" placeholder="Search contacts" class="form-control" name="friend-search" id="friend-search">
+        <ul id="livesearch"></ul>
     </form>
 </div>
 <div class="tabs">
@@ -193,6 +194,8 @@
 </div>
 </div>
 
+<!-- Required script for contacts search and add -->
+{{ HTML::script('assets/contacts/search-and-add.js') }}
 
 {{ HTML::script('assets/js/socket.io.js') }}
 {{ HTML::script('assets/js/simplewebrtc.bundle.js') }}
