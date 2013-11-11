@@ -11,6 +11,11 @@ jQuery(document).ready(function(){
                         nick: jQuery('input[name="friend-search"]').val()
                     }
                 }).done(function( msg ) {
+                    jQuery('#livesearch').css('display', 'inline-block');
+                    jQuery('#livesearch').css('position', 'absolute');
+                    jQuery('#livesearch').css('width', '91.5%');
+                    jQuery('#livesearch').css('z-index', '99999');
+
                     jQuery('#livesearch').html(msg);
                     done = true;
                     jQuery('.loading').removeClass('loading');

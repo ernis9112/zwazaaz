@@ -9,6 +9,7 @@ class SearchController extends BaseController {
         $search = new Search;
         $input = Input::get('nick');
         return $search->findFriend($input);
+        //$search->list = $search->findFriend($input);
     }
 
     public function tryLogin() {

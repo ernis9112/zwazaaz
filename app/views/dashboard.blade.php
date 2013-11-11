@@ -44,7 +44,7 @@
 <div class="contact-search">
     {{ Form::open(array('route' => 'search.friend', 'id' => 'search-form')) }}
         <input type="search" placeholder="Search contacts" class="form-control" name="friend-search" id="friend-search">
-        <ul id="livesearch"></ul>
+        <ul id="livesearch" class="contacts-list"></ul>
     {{ Form::token() }}
     {{ Form::close() }}
 </div>
@@ -55,16 +55,15 @@
 </ul>
 <div class="tab-content">
 <div class="tab-pane active" id="contacts">
-    {{ Form::open() }}
 
     <ul class="contacts-list">
 
         @for ($i = 0; $i < sizeOf($contacts); $i++)
         <li class="webrtc-user" id="webrtc-user-{{ $contacts[$i] }}" data-username="{{ $contacts[$i] }}">
             <a href="#">
-                    <span class="user-img">
-                        <img src="../_design_/assets/img/user-blank.jpg" alt="username">
-                    </span>
+                <span class="user-img">
+                    <img src="assets/img/user-blank.jpg" alt="{{ $contacts[$i] }}">
+                </span>
                 <span class="display-name">{{ $contacts[$i] }}</span>
                 <span class="status webrtc-status"></span>
             </a>
@@ -76,8 +75,6 @@
 	                <i class="glyphicon glyphicon-info-sign"></i>
                 </button>
             </div>
-            <input type="hidden" name="active" value="{{ $contacts[$i] }}">
-            {{-- Form::submit('Click Me!') --}}
         </li>
 
         @endfor
@@ -179,8 +176,6 @@
             </div>
         </div>
     </div>
-    {{ Form::token() }}
-    {{ Form::close() }}
 
     <div class="web-cam-wrapper">
         <div class="video-container friend-camera va-middle" id="remoteVideos">
