@@ -31,7 +31,8 @@ class HomeController extends BaseController
     {
         $this->layout->content = View::make('profile');
         $this->layout->bodyclass = "home-page";
-        $value = Session::get('user.id', 114);
+        //114
+        $value = Session::get('user.id', Auth::user()->id);
 
         $this->layout->content = View::make('profile', array('user' => User::find($value)));
     }

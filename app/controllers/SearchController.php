@@ -6,9 +6,20 @@ class SearchController extends BaseController {
      * Store registration form data to variable
      */
     public function searchFriend() {
+        $currentUserId = Auth::user()->id;
+
         $search = new Search;
+        if(!Input::get('nick'))
+            return "";
         $input = Input::get('nick');
-        return $search->findFriend($input);
+        return $search->findFriend($input, $currentUserId);
+    }
+
+    public function addFriend() {
+        $currentUserId = Auth::user()->id;
+
+        $search = new Search;
+        return $search->addFriend(Input::get('nickname'));
     }
 
     public function tryLogin() {

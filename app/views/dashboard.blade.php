@@ -33,7 +33,8 @@
 <div class="row">
 <aside class="main-sidebar">
 <div class="user-status">
-    <a href="#profile" class="profile-link">{{ $userName }}</a>
+    <!--<a href="#profile" class="profile-link">{{ $userName }}</a>-->
+    {{ HTML::link('/profile', $userName, array('class' => 'profile-link active')) }}
     <form class="online-status">
         <select>
             <option>Online</option>
@@ -44,18 +45,18 @@
 <div class="contact-search">
     {{ Form::open(array('route' => 'search.friend', 'id' => 'search-form')) }}
         <input type="search" placeholder="Search contacts" class="form-control" name="friend-search" id="friend-search">
-        <ul id="livesearch"></ul>
-    {{ Form::token() }}
-    {{ Form::close() }}
+    <!--    <ul id="livesearch" class="contacts-list"></ul>
+    {-{ Form::token() }-}
+    {-{ Form::close() }-}-->
 </div>
 <div class="tabs">
 <ul class="nav nav-tabs" id="sidebarTabs1">
     <li class="active"><a href="#contacts">Contacts</a></li>
     <li><a href="#recent">Recent</a></li>
+    <li class="hidden"><a href="#contact-search">Search</a></li>
 </ul>
 <div class="tab-content">
 <div class="tab-pane active" id="contacts">
-    {{ Form::open() }}
 
     <ul class="contacts-list">
 
@@ -63,7 +64,7 @@
         <li class="webrtc-user" id="webrtc-user-{{ $contacts[$i] }}" data-username="{{ $contacts[$i] }}">
             <a href="#">
                     <span class="user-img">
-                        <img src="../_design_/assets/img/user-blank.jpg" alt="username">
+                        <img src="assets/img/user-blank.jpg" alt="username">
                     </span>
                 <span class="display-name">{{ $contacts[$i] }}</span>
                 <span class="status webrtc-status"></span>
@@ -76,8 +77,6 @@
 	                <i class="glyphicon glyphicon-info-sign"></i>
                 </button>
             </div>
-            <input type="hidden" name="active" value="{{ $contacts[$i] }}">
-            {{-- Form::submit('Click Me!') --}}
         </li>
 
         @endfor
@@ -134,6 +133,13 @@
     </li>
 </ul>
 </div>
+
+<div class="tab-pane" id="contact-search">
+    <ul id="livesearch" class="contacts-list"></ul>
+    {{ Form::token() }}
+    {{ Form::close() }}
+</div>
+
 </div>
 </div>
 </aside>
@@ -179,8 +185,6 @@
             </div>
         </div>
     </div>
-    {{ Form::token() }}
-    {{ Form::close() }}
 
     <div class="web-cam-wrapper">
         <div class="video-container friend-camera va-middle" id="remoteVideos">
