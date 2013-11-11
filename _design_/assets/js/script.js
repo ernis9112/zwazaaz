@@ -28,4 +28,16 @@ $(document).ready(function(){
         }
     });
 
+    $(".contact-search input").keyup(function(){
+        var input = $(this);
+
+        if( input.val() == "" ) {
+            $('a[href="#contact-search"]').parent().addClass("hidden");
+            $('#sidebarTabs1 a[href="#contacts"]').tab('show');
+        } else {
+            $('a[href="#contact-search"]').parent().removeClass("hidden");
+            $('#sidebarTabs1 a[href="#contact-search"]').tab('show');
+        }
+    });
+
 });

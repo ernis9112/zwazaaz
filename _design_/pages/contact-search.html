@@ -51,17 +51,17 @@
 </div>
 <div class="contact-search">
     <form>
-        <input type="search" placeholder="Search contacts" class="form-control" value="An">
+        <input type="search" placeholder="Search contacts" class="form-control">
     </form>
 </div>
 <div class="tabs">
 <ul class="nav nav-tabs" id="sidebarTabs1">
-    <li><a href="#contacts">Contacts</a></li>
+    <li class="active"><a href="#contacts">Contacts</a></li>
     <li><a href="#recent">Recent</a></li>
-    <li class="active"><a href="#contact-search">Search</a></li>
+    <li class="hidden"><a href="#contact-search">Search</a></li>
 </ul>
 <div class="tab-content">
-<div class="tab-pane" id="contacts">
+<div class="tab-pane active" id="contacts">
     <ul class="contacts-list">
         <li>
             <a href="#">
@@ -447,7 +447,7 @@
 </ul>
 </div>
 
-<div class="tab-pane active" id="contact-search">
+<div class="tab-pane" id="contact-search">
     <ul class="contacts-list">
         <li class="active">
             <a href="#">
@@ -471,7 +471,6 @@
             </a>
 
             <div class="contact-actions">
-                <button class="action btn btn-success"><i class="glyphicon glyphicon-plus"></i></button>
                 <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
                 <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
             </div>
