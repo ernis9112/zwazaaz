@@ -10,7 +10,7 @@ $(document).ready(function(){
 
     $(".contacts-list li").click(function (event){
         $(this).siblings().removeClass("hover");
-        if (!$(this).hasClass("hover")) {
+        if (!$(this).hasClass("hover") && ($(".contact-actions", $(this)).has($(event.target)).length == 0)) {
             $(this).addClass("hover");
             event.preventDefault ? event.preventDefault() : event.returnValue = false;
         } else {
