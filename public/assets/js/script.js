@@ -41,9 +41,9 @@ $(document).ready(function(){
         }
     });
 
-//    $("audio[autoplay]").ended(function(){
-//        alert("baigėsi");
-//        $(this).currentTime = 0;
-//    }, false);
+    $("audio[loop]").ended(function(){
+        $(this).currentTime = 0;
+        $(this).play();
+    });
 
 });
