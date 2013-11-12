@@ -132,14 +132,14 @@
             <div class="col-sm-3">
                 <div class="profile-img">
                     <div class="profile-img-wrapper">
-                        <img src="{{URL::to('http://www.gravatar.com/avatar/' . md5( strtolower( trim( $user->email ) ) ) . '?d=' . urlencode( '../public/assets/img/user-blank.jpg' ) . '&s=' . 140)}}" alt="Simas">
+                        <img src="{{URL::to('http://www.gravatar.com/avatar/' . md5( strtolower( trim( $user->email ) ) ) . '?d=' . urlencode( '../public/assets/img/user-blank.jpg' ) . '&s=' . 140)}}" alt="username">
                     </div>
                     <!-- this will open popup-->
                     <button class="btn btn-default btn-xs">change image</button>
                 </div>
             </div>
             <div class="col-sm-9">
-                {{Form::model($user, array('route' => array('user.update.name', $user->id)))}}
+                {{ Form::model($user, array('route' => array('user.update.name', $user->id), 'class' => 'form-horizontal')) }}
                     <fieldset>
                         <legend>Personal information</legend>
                         <div class="form-group">
@@ -160,7 +160,7 @@
                     </fieldset>
                 {{ Form::token() }}
                 {{ Form::close() }}
-                {{Form::model($user, array('route' => array('user.update.email', $user->id))) }}
+                {{Form::model($user, array('route' => array('user.update.email', $user->id), 'class' => 'form-horizontal')) }}
                     <fieldset>
                         <legend>Change email:</legend>
                         <div class="form-group">
@@ -186,7 +186,7 @@
                     </fieldset>
                 {{ Form::token() }}
                 {{ Form::close() }}
-                {{Form::model($user, array('route' => array('user.update.password', $user->id))) }}
+                {{Form::model($user, array('route' => array('user.update.password', $user->id), 'class' => 'form-horizontal')) }}
                     <fieldset>
                         <legend>Change password</legend>
                         <div class="form-group">
