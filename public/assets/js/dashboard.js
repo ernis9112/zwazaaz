@@ -1,11 +1,11 @@
-$('.webrtc-call').click(function () {
-//$('body').delegate(".webrtc-call", "click",function () {
+//$('.webrtc-call').click(function () {
+$('body').delegate(".webrtc-call", "click",function () {
     var username = $(this).parents('.webrtc-user').data('username');
     dashboard.call(username);
     answerCall(username);
 });
-//$('body').delegate(".webrtc-decline", "click",function () {
-$('.webrtc-decline').click(function () {
+//$('.webrtc-decline').click(function () {
+$('body').delegate(".webrtc-decline", "click",function () {
     declineCall();
     dashboard.leave();
 });
