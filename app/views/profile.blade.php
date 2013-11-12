@@ -34,7 +34,7 @@
 <aside class="main-sidebar">
 <div class="user-status">
     <!--<a href="#profile" class="profile-link">{{ $userName }}</a>-->
-    {{ HTML::link('/profile', $userName, array('class' => 'profile-link active')) }}
+    {{ HTML::link('/dashboard', $userName, array('class' => 'profile-link active')) }}
     <form class="online-status">
         <select>
             <option>Online</option>
@@ -45,9 +45,8 @@
 <div class="contact-search">
     {{ Form::open(array('route' => 'search.friend', 'id' => 'search-form')) }}
         <input type="search" placeholder="Search contacts" class="form-control" name="friend-search" id="friend-search" autocomplete="off">
-    <!--    <ul id="livesearch" class="contacts-list"></ul>
-    {-{ Form::token() }-}
-    {-{ Form::close() }-}-->
+    {{ Form::token() }}
+    {{ Form::close() }}
 </div>
 <div class="tabs">
 <ul class="nav nav-tabs" id="sidebarTabs1">
@@ -121,8 +120,6 @@
 
 <div class="tab-pane" id="contact-search">
     <ul id="livesearch" class="contacts-list"></ul>
-    {{ Form::token() }}
-    {{ Form::close() }}
 </div>
 
 </div>
