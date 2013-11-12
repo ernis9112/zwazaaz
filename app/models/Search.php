@@ -78,7 +78,9 @@ class Search extends Eloquent {
             return 1;
         }
         else{
-            DB::insert('insert into contacts (owner_id, friend_id) values (?, ?)', array($ID, $friend_ID));
+            if(!$records && $friend_ID != $ID){
+                DB::insert('insert into contacts (owner_id, friend_id) values (?, ?)', array($ID, $friend_ID));
+            }
             //return 0;
             return $username;
         }

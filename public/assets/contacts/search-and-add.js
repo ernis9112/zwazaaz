@@ -38,9 +38,9 @@ jQuery(document).ready(function(){
                 nickname: username
             }
         }).done(function( msg ) {
-                alert(msg);
+                //alert(msg);
 
-                if(msg != 1){
+                if(msg != 1 && msq != username){
                     $('#contacts').children().append('<li class="webrtc-user" id="webrtc-user-'+msg+'" data-username="'+msg+'">'+
                             '<a href="#">'+
                         '<span class="user-img">'+
@@ -58,6 +58,7 @@ jQuery(document).ready(function(){
                     '</button>'+
                     '</div>'+
                     '</li>');
+                    //alert('Added');
                 }
             });
 
