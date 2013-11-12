@@ -46,5 +46,7 @@
             </div>
         </div>
     </div>
+<!-- Required script for browser check -->
+{{ HTML::script('assets/js/browser-support.js') }}
 {{ Form::token() }}
 {{ Form::close() }}

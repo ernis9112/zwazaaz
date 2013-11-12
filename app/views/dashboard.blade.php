@@ -201,7 +201,6 @@
 
 <!-- Required script for contacts search and add -->
 {{ HTML::script('assets/contacts/search-and-add.js') }}
-
 {{ HTML::script('assets/js/socket.io.js') }}
 {{ HTML::script('assets/js/simplewebrtc.bundle.js') }}
 {{ HTML::script('assets/js/dashboard-webrtc.js') }}
