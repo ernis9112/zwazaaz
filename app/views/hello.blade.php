@@ -23,8 +23,8 @@
                 <label class="control-label" for="sign-in-password">Password</label>
                 <input name="password" type="password" class="form-control" id="sign-in-password" value="" required>
             </div>
-            <div class="form-group btn-group" data-toggle="buttons">
-                <label class="btn custom-checkbox">
+            <div class="checkbox">
+                <label>
                     <input type="checkbox"> Remember me
                 </label>
             </div>
