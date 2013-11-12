@@ -9,9 +9,9 @@ class SearchController extends BaseController {
         $currentUserId = Auth::user()->id;
 
         $search = new Search;
-        if(!Input::get('nick'))
-            return "";
         $input = Input::get('nick');
+        if(!$input)
+            return "";
         return $search->findFriend($input, $currentUserId);
     }
 
@@ -19,7 +19,8 @@ class SearchController extends BaseController {
         $currentUserId = Auth::user()->id;
 
         $search = new Search;
-        return $search->addFriend(Input::get('nickname'));
+        $addThe = Input::get('nickname');
+        return $search->addFriend($addThe, $currentUserId);
     }
 
     public function tryLogin() {

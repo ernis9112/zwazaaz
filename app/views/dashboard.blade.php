@@ -44,7 +44,7 @@
 </div>
 <div class="contact-search">
     {{ Form::open(array('route' => 'search.friend', 'id' => 'search-form')) }}
-        <input type="search" placeholder="Search contacts" class="form-control" name="friend-search" id="friend-search">
+        <input type="search" placeholder="Search contacts" class="form-control" name="friend-search" id="friend-search" autocomplete="off">
     <!--    <ul id="livesearch" class="contacts-list"></ul>
     {-{ Form::token() }-}
     {-{ Form::close() }-}-->
@@ -52,7 +52,7 @@
 <div class="tabs">
 <ul class="nav nav-tabs" id="sidebarTabs1">
     <li class="active"><a href="#contacts">Contacts</a></li>
-    <li><a href="#recent">Recent</a></li>
+    <!--<li><a href="#recent">Recent</a></li>-->
     <li class="hidden"><a href="#contact-search">Search</a></li>
 </ul>
 <div class="tab-content">
