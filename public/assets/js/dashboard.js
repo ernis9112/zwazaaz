@@ -36,16 +36,19 @@ function declineCall(from) {
 }
 function incomingCall(from) {
     var dfd = new jQuery.Deferred();
+    $('.incoming-call audio')[0].play();
     $('.incoming-call').show()
         .find('.who').text(from).end()
         .find('.answer').click(function () {
             dfd.resolve(from);
             $('.incoming-call').hide();
+            $('.incoming-call audio')[0].pause();
             return false;
         }).end()
         .find('.decline').click(function () {
             dfd.reject(from);
             $('.incoming-call').hide();
+            $('.incoming-call audio')[0].pause();
             return false;
         });
     return dfd.promise();
