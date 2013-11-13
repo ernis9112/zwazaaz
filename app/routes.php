@@ -27,8 +27,10 @@ Route::get('/registration', array(
 
 // Show user profile page
 Route::get('/profile', 'HomeController@showProfile');
-//Route::put('profile/update', array('uses'=>'HomeController@get_update'));
 
+Route::get('user/{name}', 'HomeController@showUserProfile');
+//-------------------------
+//------------------------
 Route::model('user', 'User');
 Route::post('profile/update/name/{user}', array(
     'uses'=>'ProfileController@profileNamePost',
@@ -56,6 +58,7 @@ Route::post('search-contacts', array(
   'uses' => 'SearchController@searchFriend',
   'as' => 'search.friend'
 ));
+
 Route::post('add-friend', array(
     'uses' => 'SearchController@addFriend',
     'as' => 'search.add'

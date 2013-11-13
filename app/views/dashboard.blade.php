@@ -43,6 +43,7 @@
     </form>
 </div>
 <div class="contact-search">
+
     {{ Form::open(array('route' => 'search.friend', 'id' => 'search-form')) }}
         <input type="search" placeholder="Search contacts" class="form-control" name="friend-search" id="friend-search" autocomplete="off">
     <!--    <ul id="livesearch" class="contacts-list"></ul>
@@ -75,6 +76,7 @@
                 </span>
                 <button class="action btn btn-info">
 	                <i class="glyphicon glyphicon-info-sign"></i>
+
                 </button>
             </div>
         </li>

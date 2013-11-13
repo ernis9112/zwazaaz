@@ -37,6 +37,17 @@ class HomeController extends BaseController
         $this->layout->content = View::make('profile', array('user' => User::find($value)));
     }
 
+    public function showUserProfile($name)
+    {
+        $this->layout->content = View::make('user');
+        $this->layout->bodyclass = "home-page";
+        $all = DB::select('select * from users where username = ?', array($name));
+        //114
+        $value = Session::get('user.id', $all[0]->id);
+
+        $this->layout->content = View::make('user', array('user' => User::find($value)));
+    }
+
 
     public function showProfilePost()
     {
