@@ -41,4 +41,9 @@ $(document).ready(function(){
         }
     });
 
+    $("audio[loop]").ended(function(){
+        $(this).currentTime = 0;
+        $(this).play();
+    });
+
 });

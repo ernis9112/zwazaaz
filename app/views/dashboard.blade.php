@@ -1,12 +1,12 @@
 {{-----------------------------Do not delete this code------------------------}}
 @if (Session::get('just_reg') == "yes")
 
-    <div class="col-sm-12">
-        <div class="alert alert-success">
-            <strong>@lang('registration.great')</strong>
-            @lang('registration.success')
-        </div>
+<div class="col-sm-12">
+    <div class="alert alert-success">
+        <strong>@lang('registration.great')</strong>
+        @lang('registration.success')
     </div>
+</div>
 
 {{ Session::forget('just_reg') }}
 @endif
@@ -34,7 +34,7 @@
 <aside class="main-sidebar">
 <div class="user-status">
     <!--<a href="#profile" class="profile-link">{{ $userName }}</a>-->
-    {{ HTML::link('/profile', $userName, array('class' => 'profile-link active')) }}
+    {{ HTML::link('/profile', $userName, array('class' => 'profile-link')) }}
     <form class="online-status">
         <select>
             <option>Online</option>
@@ -46,9 +46,8 @@
 
     {{ Form::open(array('route' => 'search.friend', 'id' => 'search-form')) }}
         <input type="search" placeholder="Search contacts" class="form-control" name="friend-search" id="friend-search" autocomplete="off">
-    <!--    <ul id="livesearch" class="contacts-list"></ul>
-    {-{ Form::token() }-}
-    {-{ Form::close() }-}-->
+    {{ Form::token() }}
+    {{ Form::close() }}
 </div>
 <div class="tabs">
 <ul class="nav nav-tabs" id="sidebarTabs1">
@@ -100,46 +99,44 @@
     </ul>
 </div>
 <div class="tab-pane chat-history" id="recent">
-<time class="chat-time" datetime="2013-10-09">Today</time>
-<ul class="contacts-list">
-     <li>
-        <a href="#">
-                                <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
-                                </span>
-            <span class="display-name">Aidas Klimas</span>
-            <span class="new-message-num">5</span>
-        </a>
-        <div class="contact-actions">
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-        </div>
-    </li>
-</ul>
-<time class="chat-time" datetime="2013-10-08">Yesterday</time>
-<ul class="contacts-list">
-    <li>
-        <a href="#">
-                                <span class="user-img">
-                                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
-                                </span>
-            <span class="display-name">Ernestas</span>
-            <span class="new-message-num">9+</span>
-        </a>
-        <div class="contact-actions">
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-            <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-        </div>
-    </li>
-</ul>
+    <time class="chat-time" datetime="2013-10-09">Today</time>
+    <ul class="contacts-list">
+         <li>
+            <a href="#">
+                                    <span class="user-img">
+                                        <img src="../_design_/assets/img/user-blank.jpg" alt="username">
+                                    </span>
+                <span class="display-name">Aidas Klimas</span>
+                <span class="new-message-num">5</span>
+            </a>
+            <div class="contact-actions">
+                <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+            </div>
+        </li>
+    </ul>
+    <time class="chat-time" datetime="2013-10-08">Yesterday</time>
+    <ul class="contacts-list">
+        <li>
+            <a href="#">
+                                    <span class="user-img">
+                                        <img src="../_design_/assets/img/user-blank.jpg" alt="username">
+                                    </span>
+                <span class="display-name">Ernestas</span>
+                <span class="new-message-num">9+</span>
+            </a>
+            <div class="contact-actions">
+                <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+            </div>
+        </li>
+    </ul>
 </div>
 
 <div class="tab-pane" id="contact-search">
     <ul id="livesearch" class="contacts-list"></ul>
-    {{ Form::token() }}
-    {{ Form::close() }}
 </div>
 
 </div>
@@ -152,7 +149,7 @@
             <div class="col-sm-3">
                 <div class="profile-img">
                     <div class="profile-img-wrapper">
-                        <img src="../_design_/assets/img/user-blank.jpg" alt="UserName">
+                        <img src="assets/img/user-blank.jpg" alt="UserName">
                     </div>
                 </div>
             </div>

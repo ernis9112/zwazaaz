@@ -11,12 +11,8 @@ jQuery(document).ready(function(){
                         nick: jQuery('input[name="friend-search"]').val()
                     }
                 }).done(function( msg ) {
-                    //jQuery('#livesearch').css('display', 'inline-block');
-                    //jQuery('#livesearch').css('position', 'absolute');
-                    //jQuery('#livesearch').css('width', '91.5%');
-                    //jQuery('#livesearch').css('z-index', '1');
-
                     jQuery('#livesearch').html(msg);
+
                     done = true;
                     jQuery('.loading').removeClass('loading');
                 });    
@@ -27,7 +23,7 @@ jQuery(document).ready(function(){
         searchContacts();
     });
 
-    jQuery('body').delegate(".add-to-list", "click",function () {
+    jQuery('body').delegate(".add-or-del-to-list", "click",function () {
         var username = $(this).parents('.webrtc-user').data('username');
         //alert(username);
 
@@ -38,9 +34,13 @@ jQuery(document).ready(function(){
                 nickname: username
             }
         }).done(function( msg ) {
-                alert(msg);
-
-                if(msg != 1){
+                //alert(msg);
+                if(msg == 1)
+                    alert('Deleted');
+                else
+                    alert('Added');
+                window.location.reload();
+                if(msg != 1 && msg != username){
                     $('#contacts').children().append('<li class="webrtc-user" id="webrtc-user-'+msg+'" data-username="'+msg+'">'+
                             '<a href="#">'+
                         '<span class="user-img">'+

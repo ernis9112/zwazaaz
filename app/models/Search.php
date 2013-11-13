@@ -20,6 +20,9 @@ class Search extends Eloquent {
      */
     public function findFriend($input, $currentUserId) {
 
+        $a = DB::table('users')->where('id', $currentUserId)->lists('username');
+        $currentUserName = $a['0'];
+
         // Fill up array with names
         $a = DB::table('users')->lists('username');
 
@@ -30,24 +33,18 @@ class Search extends Eloquent {
         if (strlen($q) > 0)
         {
             $hint="";
-            $ii = 0;
             for($i=0; $i<count($a); $i++)
             {
                 if (strtolower($q) == strtolower(substr($a[$i],0,strlen($q))))
                 {
-                    if ($hint == "")
-                    {
-                        //if(is_user_in_friend_list($a[$i], $currentUserId) == 0)
+                    if ($hint == ""){
+                        if($a[$i] != $currentUserName)
                             $hint = single_friend_element_block($a[$i], $currentUserId);
-                        //else
-                            //$hint = single_friend_element_block2($a[$i], $currentUserId);
                     }
                 else
                     {
-                        //if(is_user_in_friend_list($a[$i], $currentUserId) == 0)
+                        if($a[$i] != $currentUserName)
                             $hint = $hint.single_friend_element_block($a[$i], $currentUserId);
-                        //else
-                            //$hint = single_friend_element_block2($a[$i], $currentUserId);
                     }
                 }
             }
@@ -78,36 +75,36 @@ class Search extends Eloquent {
             return 1;
         }
         else{
-            DB::insert('insert into contacts (owner_id, friend_id) values (?, ?)', array($ID, $friend_ID));
+            if(!$records && $friend_ID != $ID){
+                DB::insert('insert into contacts (owner_id, friend_id) values (?, ?)', array($ID, $friend_ID));
+            }
             //return 0;
             return $username;
         }
-        //return $username;
-        //return $friend_ID;
+
     }
 
-    public function is_user_in_friend_list($friendName, $ID){
-        $a = DB::table('users')->where('username', $friendName)->lists('id');
-        $friend_ID = $a['0'];
-        $records = DB::select('select id from contacts where owner_id = ? and friend_id = ?', array($ID, $friend_ID));
-        if ( $records)
-            return 1;
-        else{
-            return 0;
-        }
-    }
 }
 
 function single_friend_element_block($username, $ID){
-    //if(!is_user_in_friend_list($username, $ID))
-    return '<li class="webrtc-user" id="webrtc-user-'.$username.'" data-username="'.$username.'"><a href="#"><span class="user-img"><img src="assets/img/user-blank.jpg" alt="username"></span><span class="display-name">'.$username.'</span></a><div class="contact-actions"><span class="action btn btn-success webrtc-call"><i class="glyphicon glyphicon-earphone"></i></span><button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button><button class="action btn btn-success add-to-list"><i class="glyphicon glyphicon-plus"></i></button></div></li>';
-    /*else
-        return '<li class="webrtc-user" id="webrtc-user-'.$username.'" data-username="'.$username.'"><a href="#"><span class="user-img"><img src="assets/img/user-blank.jpg" alt="username"></span><span class="display-name">'.$username.'</span></a><div class="contact-actions"><span class="action btn btn-success webrtc-call"><i class="glyphicon glyphicon-earphone"></i></span><button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button><button class="action btn btn-warning trash-from-list"><i class="glyphicon glyphicon-trash"></i></button></div></li>';
-*/
+    if(is_user_in_friend_list($username, $ID) == 0)
+        return '<li class="webrtc-user" id="webrtc-user-'.$username.'" data-username="'.$username.'"><a href="#"><span class="user-img"><img src="assets/img/user-blank.jpg" alt="username"></span><span class="display-name">'.$username.'</span></a><div class="contact-actions"><span class="action btn btn-success webrtc-call"><i class="glyphicon glyphicon-earphone"></i></span><button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button><button class="action btn btn-success add-or-del-to-list"><i class="glyphicon glyphicon-plus"></i></button></div></li>';
+    else
+        return '<li class="webrtc-user" id="webrtc-user-'.$username.'" data-username="'.$username.'"><a href="#"><span class="user-img"><img src="assets/img/user-blank.jpg" alt="username"></span><span class="display-name">'.$username.'</span></a><div class="contact-actions"><span class="action btn btn-success webrtc-call"><i class="glyphicon glyphicon-earphone"></i></span><button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button><button class="action btn btn-warning add-or-del-to-list"><i class="glyphicon glyphicon-trash"></i></button></div></li>';
 }
-function single_friend_element_block2($username, $ID){
-    return '<li class="webrtc-user" id="webrtc-user-'.$username.'" data-username="'.$username.'"><a href="#"><span class="user-img"><img src="assets/img/user-blank.jpg" alt="username"></span><span class="display-name">'.$username.'</span></a><div class="contact-actions"><span class="action btn btn-success webrtc-call"><i class="glyphicon glyphicon-earphone"></i></span><button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button><button class="action btn btn-warning trash-from-list"><i class="glyphicon glyphicon-trash"></i></button></div></li>';
-}
+
 function single_no_results_element_block($username){
-    return '<li class="webrtc-user"><a href="#"><span class="display-name">'.$username.'</span></a></li>'; // style="background-color:#ace3f0;"
+    return '<li class="webrtc-user"><a href="#"><span class="display-name">'.$username.'</span></a></li>';
+}
+
+function is_user_in_friend_list($username, $ID){
+    $a = DB::table('users')->where('username', $username)->lists('id');
+    $friend_ID = $a['0'];
+    $records = DB::select('select id from contacts where owner_id = ? and friend_id = ?', array($ID, $friend_ID));
+    if ($records){
+        return 1;
+    }
+    else{
+        return 0;
+    }
 }

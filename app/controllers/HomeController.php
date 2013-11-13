@@ -35,6 +35,9 @@ class HomeController extends BaseController
         $value = Session::get('user.id', Auth::user()->id);
 
         $this->layout->content = View::make('profile', array('user' => User::find($value)));
+
+        $dash = new DashboardController();
+        $dash->setDataVars($this->layout->content);
     }
 
     public function showUserProfile($name)

@@ -4,8 +4,8 @@ $('body').delegate(".webrtc-call", "click",function () {
     dashboard.call(username);
     answerCall(username);
 });
-$('body').delegate(".webrtc-decline", "click",function () {
 //$('.webrtc-decline').click(function () {
+$('body').delegate(".webrtc-decline", "click",function () {
     declineCall();
     dashboard.leave();
 });
