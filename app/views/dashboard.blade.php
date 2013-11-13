@@ -65,7 +65,7 @@
 
         @for ($i = 0; $i < sizeOf($contacts); $i++)
         <li class="webrtc-user" id="webrtc-user-{{ $contacts[$i] }}" data-username="{{ $contacts[$i] }}">
-            <a href="#">
+            <a href="user/{{ $contacts[$i] }}">
                     <span class="user-img">
                         <img src="assets/img/user-blank.jpg" alt="username">
                     </span>
@@ -73,13 +73,13 @@
                 <span class="status webrtc-status"></span>
             </a>
             <div class="contact-actions">
-                <span class="action btn btn-success webrtc-call">
+                <button type="button" class="action btn btn-success webrtc-call">
 	                <i class="glyphicon glyphicon-earphone"></i>
-                </span>
-
-                <button onclick="location.href='user/{{ $contacts[$i] }}'" class="action btn btn-info">
-	                <i class="glyphicon glyphicon-info-sign"></i>
                 </button>
+
+                <a href="user/{{ $contacts[$i] }}" class="action btn btn-info">
+	                <i class="glyphicon glyphicon-info-sign"></i>
+                </a>
             </div>
         </li>
 

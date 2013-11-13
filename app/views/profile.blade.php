@@ -73,9 +73,9 @@
                 <span class="status webrtc-status"></span>
             </a>
             <div class="contact-actions">
-                <span class="action btn btn-success webrtc-call">
+                <button type="button" class="action btn btn-success webrtc-call">
 	                <i class="glyphicon glyphicon-earphone"></i>
-                </span>
+                </button>
                 <button class="action btn btn-info">
                     <i class="glyphicon glyphicon-info-sign"></i>
                 </button>

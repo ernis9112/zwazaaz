@@ -410,6 +410,7 @@ body.register-page form {
     max-width: 0;
     transition: all 0.5s;
     overflow: hidden;
+    white-space: nowrap;
 }
 
 .contacts-list li .contact-actions .action {
