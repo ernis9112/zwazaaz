@@ -64,7 +64,7 @@ Route::post('add-friend', array(
 ));
 Route::post('user/add-friend', array(
     'uses' => 'SearchController@addFriend',
-    'as' => 'search.add'
+    'as' => 'search.add2'
 ));
 
 // For login AJAX query
