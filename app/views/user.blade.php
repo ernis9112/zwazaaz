@@ -448,6 +448,14 @@
                         {{$user->username}}
                     </div>
                 </div>
+                <div class="profile-info-row row">
+                    <div class="info-label col-md-5">
+                        E-mail
+                    </div>
+                    <div class="info-value col-md-7">
+                        {{$user->email}}
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row">
