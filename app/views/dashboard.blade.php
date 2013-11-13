@@ -19,7 +19,7 @@
         <a href="#" class="action btn btn-success btn-lg answer"><i class="glyphicon glyphicon-earphone"></i><span class="text">Answer</span></a>
         <a href="#" class="action btn btn-danger btn-lg decline"><i class="glyphicon glyphicon-remove-circle"></i><span class="text">Decline</span></a>
     </div>
-    <audio loop>
+    <audio preload loop>
         <source src="assets/sounds/Matrix_Phone.ogg" type="audio/ogg">
         <source src="assets/sounds/Matrix_Phone.mp3" type="audio/mpeg">
     </audio>
