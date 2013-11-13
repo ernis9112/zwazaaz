@@ -547,3 +547,7 @@ body.register-page form {
         left: 0%;
     }
 }
+
+.loading {
+    background: white url(../img/packman.gif)  no-repeat right center;
+}

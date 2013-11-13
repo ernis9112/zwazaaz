@@ -134,7 +134,7 @@
                                 <span class="user-img">
                                     <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
-                <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
+                <span class="display-name">-=?=[M] a ž v i s=?=-</span>
             </a>
             <div class="contact-actions">
                 <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
@@ -239,7 +239,7 @@
                                 <span class="user-img">
                                     <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
-            <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
+            <span class="display-name">-=?=[M] a ž v i s=?=-</span>
         </a>
         <div class="contact-actions">
             <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
@@ -265,7 +265,7 @@
                                 <span class="user-img">
                                     <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
-            <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
+            <span class="display-name">-=?=[M] a ž v i s=?=-</span>
         </a>
         <div class="contact-actions">
             <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
@@ -291,7 +291,7 @@
                                 <span class="user-img">
                                     <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
-            <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
+            <span class="display-name">-=?=[M] a ž v i s=?=-</span>
         </a>
         <div class="contact-actions">
             <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
@@ -317,7 +317,7 @@
                                 <span class="user-img">
                                     <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
-            <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
+            <span class="display-name">-=?=[M] a ž v i s=?=-</span>
         </a>
         <div class="contact-actions">
             <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
@@ -343,7 +343,7 @@
                                 <span class="user-img">
                                     <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
-            <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
+            <span class="display-name">-=?=[M] a ž v i s=?=-</span>
         </a>
         <div class="contact-actions">
             <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
@@ -369,7 +369,7 @@
                                 <span class="user-img">
                                     <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
-            <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
+            <span class="display-name">-=?=[M] a ž v i s=?=-</span>
         </a>
         <div class="contact-actions">
             <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
@@ -395,7 +395,7 @@
                                 <span class="user-img">
                                     <img src="../assets/img/user-blank.jpg" alt="username">
                                 </span>
-            <span class="display-name">-=Ξ=[M] a ž v i s=Ξ=-</span>
+            <span class="display-name">-=?=[M] a ž v i s=?=-</span>
         </a>
         <div class="contact-actions">
             <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
@@ -463,8 +463,8 @@
                 <div class="contact-actions">
                     <a href="#" class="action btn btn-success btn-lg"><i class="glyphicon glyphicon-earphone"></i><span class="text">Call</span></a>
                 </div>
-                <div class="contact-actions pull-right">
-                    <a href="#" class="action btn btn-warning btn-xs"><i class="glyphicon glyphicon-trash"></i><span class="text">Remove</span></a>
+                <div class="contact-actions pull-right webrtc-user" data-username="{{$user->username}}">
+                    <button class="action btn btn-warning btn-xs add-or-del-to-list"><i class="glyphicon glyphicon-trash"></i><span class="text">Remove</span></button>
                     <a href="#" class="action btn btn-danger btn-xs"><i class="glyphicon glyphicon-ban-circle"></i><span class="text">Block</span></a>
                 </div>
             </div>
@@ -482,6 +482,9 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
+
+<!-- Required script for contacts search and add -->
+{{ HTML::script('assets/contacts/search-and-add.js') }}
 <script src="../assets/jQuery/jquery-1.10.2.min.js"></script>
 <script src="../assets/bootstrap-3.0.0/dist/js/bootstrap.min.js"></script>
 
