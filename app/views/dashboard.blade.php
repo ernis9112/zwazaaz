@@ -43,7 +43,6 @@
     </form>
 </div>
 <div class="contact-search">
-
     {{ Form::open(array('route' => 'search.friend', 'id' => 'search-form')) }}
         <input type="search" placeholder="Search contacts" class="form-control" name="friend-search" id="friend-search" autocomplete="off">
     {{ Form::token() }}
@@ -73,9 +72,9 @@
                 <span class="action btn btn-success webrtc-call">
 	                <i class="glyphicon glyphicon-earphone"></i>
                 </span>
-                <button class="action btn btn-info">
-	                <i class="glyphicon glyphicon-info-sign"></i>
 
+                <button onclick="location.href='user/{{ $contacts[$i] }}'" class="action btn btn-info">
+	                <i class="glyphicon glyphicon-info-sign"></i>
                 </button>
             </div>
         </li>

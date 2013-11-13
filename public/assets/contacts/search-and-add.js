@@ -15,12 +15,13 @@ jQuery(document).ready(function(){
 
                     done = true;
                     jQuery('.loading').removeClass('loading');
-                });    
+                });
             }, 700);
         }
     }
     jQuery('#friend-search').keyup(function(){
         searchContacts();
+        jQuery('#friend-search').addClass('loading');
     });
 
     jQuery('body').delegate(".add-or-del-to-list", "click",function () {
@@ -39,8 +40,8 @@ jQuery(document).ready(function(){
                     alert('Deleted');
                 else
                     alert('Added');
-                window.location.reload();
-                if(msg != 1 && msg != username){
+                //window.location.reload();
+                if(msg != 1){
                     $('#contacts').children().append('<li class="webrtc-user" id="webrtc-user-'+msg+'" data-username="'+msg+'">'+
                             '<a href="#">'+
                         '<span class="user-img">'+

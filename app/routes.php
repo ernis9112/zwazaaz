@@ -58,8 +58,11 @@ Route::post('search-contacts', array(
   'uses' => 'SearchController@searchFriend',
   'as' => 'search.friend'
 ));
-
 Route::post('add-friend', array(
+    'uses' => 'SearchController@addFriend',
+    'as' => 'search.add'
+));
+Route::post('user/add-friend', array(
     'uses' => 'SearchController@addFriend',
     'as' => 'search.add'
 ));
