@@ -80,6 +80,10 @@
                 <a href="{{ asset('user/'.$contacts[$i].'') }}" class="action btn btn-info">
 	                <i class="glyphicon glyphicon-info-sign"></i>
                 </a>
+
+                <button class="action btn btn-warning add-or-del-to-list">
+                    <i class="glyphicon glyphicon-trash"></i>
+                </button>
             </div>
         </li>
         @endfor
