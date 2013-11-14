@@ -20,8 +20,8 @@
         <a href="#" class="action btn btn-danger btn-lg decline"><i class="glyphicon glyphicon-remove-circle"></i><span class="text">Decline</span></a>
     </div>
     <audio preload loop>
-        <source src="assets/sounds/Matrix_Phone.ogg" type="audio/ogg">
-        <source src="assets/sounds/Matrix_Phone.mp3" type="audio/mpeg">
+        <source src="{{ asset('assets/sounds/Matrix_Phone.ogg') }}" type="audio/ogg">
+        <source src="{{ asset('assets/sounds/Matrix_Phone.mp3') }}" type="audio/mpeg">
     </audio>
 </div>
 
@@ -55,7 +55,7 @@
 <div class="tabs">
 <ul class="nav nav-tabs" id="sidebarTabs1">
     <li class="active"><a href="#contacts">Contacts</a></li>
-    <!--<li><a href="#recent">Recent</a></li>-->
+    <!--<li><a href="#recent">Recent</a></li> (then will be resent)-->
     <li class="hidden"><a href="#contact-search">Search</a></li>
 </ul>
 <div class="tab-content">
@@ -65,9 +65,9 @@
 
         @for ($i = 0; $i < sizeOf($contacts); $i++)
         <li class="webrtc-user" id="webrtc-user-{{ $contacts[$i] }}" data-username="{{ $contacts[$i] }}">
-            <a href="user/{{ $contacts[$i] }}">
+            <a href="{{ asset('user/'.$contacts[$i].'') }}">
                     <span class="user-img">
-                        <img src="assets/img/user-blank.jpg" alt="username">
+                        {{ HTML::image('assets/img/user-blank.jpg', 'username') }}
                     </span>
                 <span class="display-name">{{ $contacts[$i] }}</span>
                 <span class="status webrtc-status"></span>
@@ -77,27 +77,12 @@
 	                <i class="glyphicon glyphicon-earphone"></i>
                 </button>
 
-                <a href="user/{{ $contacts[$i] }}" class="action btn btn-info">
+                <a href="{{ asset('user/'.$contacts[$i].'') }}" class="action btn btn-info">
 	                <i class="glyphicon glyphicon-info-sign"></i>
                 </a>
             </div>
         </li>
-
         @endfor
-
-        <?php /*<li class="active">
-            <a href="#">
-                <span class="user-img">
-                    <img src="../_design_/assets/img/user-blank.jpg" alt="username">
-                </span>
-                <span class="display-name">Rokas Budnikas</span>
-            </a>
-            <div class="contact-actions">
-                <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-                <button class="action btn btn-danger"><i class="glyphicon glyphicon-earphone"></i></button>
-                <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
-            </div>
-        </li>*/?>
 
     </ul>
 </div>
@@ -106,9 +91,9 @@
     <ul class="contacts-list">
          <li>
             <a href="#">
-                                    <span class="user-img">
-                                        <img src="../_design_/assets/img/user-blank.jpg" alt="username">
-                                    </span>
+                <span class="user-img">
+                    {{ HTML::image('assets/img/user-blank.jpg', 'username') }}
+                </span>
                 <span class="display-name">Aidas Klimas</span>
                 <span class="new-message-num">5</span>
             </a>
@@ -123,9 +108,9 @@
     <ul class="contacts-list">
         <li>
             <a href="#">
-                                    <span class="user-img">
-                                        <img src="../_design_/assets/img/user-blank.jpg" alt="username">
-                                    </span>
+                <span class="user-img">
+                    {{ HTML::image('assets/img/user-blank.jpg', 'username') }}
+                </span>
                 <span class="display-name">Ernestas</span>
                 <span class="new-message-num">9+</span>
             </a>
@@ -145,6 +130,8 @@
 </div>
 </div>
 </aside>
+
+<!-- main content -->
 <div class="main-content">
 
     <article>
@@ -166,6 +153,8 @@
         </div>
     </div>
 </div>
+<!-- main content end -->
+
 </div>
 
 <!-- Required script for contacts search and add -->

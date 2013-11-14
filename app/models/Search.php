@@ -87,12 +87,40 @@ class Search extends Eloquent {
 }
 
 function single_friend_element_block($username, $ID){
+    $buttonAdd =
+        '<button class="action btn btn-success add-or-del-to-list">'.
+            '<i class="glyphicon glyphicon-plus"></i>'.
+        '</button>';
+    $buttonRemove =
+        '<button class="action btn btn-warning add-or-del-to-list">'.
+            '<i class="glyphicon glyphicon-trash"></i>'.
+        '</button>';
+
     if(is_user_in_friend_list($username, $ID) == 0)
-        return '<li class="webrtc-user" id="webrtc-user-'.$username.'" data-username="'.$username.'"><a href="#"><span class="user-img"><img src="assets/img/user-blank.jpg" alt="username"></span><span class="display-name">'.$username.'</span></a><div class="contact-actions"><span class="action btn btn-success webrtc-call"><i class="glyphicon glyphicon-earphone"></i></span><button onclick="location.href=\'user/'.$username.'\'" class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button><button class="action btn btn-success add-or-del-to-list"><i class="glyphicon glyphicon-plus"></i></button></div></li>';
+        $button = $buttonAdd;
     else
-        return '<li class="webrtc-user" id="webrtc-user-'.$username.'" data-username="'.$username.'"><a href="#"><span class="user-img"><img src="assets/img/user-blank.jpg" alt="username"></span><span class="display-name">'.$username.'</span></a><div class="contact-actions"><span class="action btn btn-success webrtc-call"><i class="glyphicon glyphicon-earphone"></i></span><button onclick="location.href=\'user/'.$username.'\'" class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button><button class="action btn btn-warning add-or-del-to-list"><i class="glyphicon glyphicon-trash"></i></button></div></li>';
+        $button = $buttonRemove;
+
+    return '<li class="webrtc-user" id="webrtc-user-'.$username.'" data-username="'.$username.'">'.
+                '<a href="'.asset('user/'.$username.'').'">'.
+                    '<span class="user-img">'.
+                        '<img src="'.asset('assets/img/user-blank.jpg').'" alt="username">'.
+                    '</span>'.
+                    '<span class="display-name">'.$username.'</span>'.
+                '</a>'.
+                '<div class="contact-actions">'.
+                    '<button type="button" class="action btn btn-success webrtc-call">'.
+                        '<i class="glyphicon glyphicon-earphone"></i>'.
+                    '</button>'.
+                    '<a href="'.asset('user/'.$username.'').'" class="action btn btn-info">'.
+                        '<i class="glyphicon glyphicon-info-sign"></i>'.
+                    '</a>'.
+                    $button.
+                '</div>'.
+            '</li>';
 }
 
+//Out of class functions
 function single_no_results_element_block($username){
     return '<li class="webrtc-user"><a href="#"><span class="display-name">'.$username.'</span></a></li>';
 }

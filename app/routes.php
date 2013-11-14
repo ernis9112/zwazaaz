@@ -58,6 +58,11 @@ Route::post('search-contacts', array(
   'uses' => 'SearchController@searchFriend',
   'as' => 'search.friend'
 ));
+Route::post('user/search-contacts', array(
+    'uses' => 'SearchController@searchFriend',
+    'as' => 'search.friend2'
+));
+// For add/delete user AJAX query
 Route::post('add-friend', array(
     'uses' => 'SearchController@addFriend',
     'as' => 'search.add'

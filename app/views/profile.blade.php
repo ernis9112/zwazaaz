@@ -20,8 +20,8 @@
         <a href="#" class="action btn btn-danger btn-lg decline"><i class="glyphicon glyphicon-remove-circle"></i><span class="text">Decline</span></a>
     </div>
     <audio preload loop>
-        <source src="assets/sounds/Matrix_Phone.ogg" type="audio/ogg">
-        <source src="assets/sounds/Matrix_Phone.mp3" type="audio/mpeg">
+        <source src="{{ asset('assets/sounds/Matrix_Phone.ogg') }}" type="audio/ogg">
+        <source src="{{ asset('assets/sounds/Matrix_Phone.mp3') }}" type="audio/mpeg">
     </audio>
 </div>
 
@@ -36,99 +36,101 @@
 <div class="container">
 <div class="row">
 <aside class="main-sidebar">
-<div class="user-status">
-    <!--<a href="#profile" class="profile-link">{{ $userName }}</a>-->
-    {{ HTML::link('/dashboard', $userName, array('class' => 'profile-link active')) }}
-    <form class="online-status">
-        <select>
-            <option>Online</option>
-            <option>Away</option>
-        </select>
-    </form>
-</div>
-<div class="contact-search">
-    {{ Form::open(array('route' => 'search.friend', 'id' => 'search-form')) }}
+    <div class="user-status">
+        {{ HTML::link('/', $userName, array('class' => 'profile-link active')) }}
+        <form class="online-status">
+            <select>
+                <option>Online</option>
+                <option>Away</option>
+            </select>
+        </form>
+    </div>
+    <div class="contact-search">
+        {{ Form::open(array('route' => 'search.friend', 'id' => 'search-form')) }}
         <input type="search" placeholder="Search contacts" class="form-control" name="friend-search" id="friend-search" autocomplete="off">
-    {{ Form::token() }}
-    {{ Form::close() }}
-</div>
-<div class="tabs">
-<ul class="nav nav-tabs" id="sidebarTabs1">
-    <li class="active"><a href="#contacts">Contacts</a></li>
-    <!--<li><a href="#recent">Recent</a></li>-->
-    <li class="hidden"><a href="#contact-search">Search</a></li>
-</ul>
-<div class="tab-content">
-<div class="tab-pane active" id="contacts">
+        {{ Form::token() }}
+        {{ Form::close() }}
+    </div>
+    <div class="tabs">
+        <ul class="nav nav-tabs" id="sidebarTabs1">
+            <li class="active"><a href="#contacts">Contacts</a></li>
+            <!--<li><a href="#recent">Recent</a></li> (then will be resent)-->
+            <li class="hidden"><a href="#contact-search">Search</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="contacts">
 
-    <ul class="contacts-list">
+                <ul class="contacts-list">
 
-        @for ($i = 0; $i < sizeOf($contacts); $i++)
-        <li class="webrtc-user" id="webrtc-user-{{ $contacts[$i] }}" data-username="{{ $contacts[$i] }}">
-            <a href="#">
+                    @for ($i = 0; $i < sizeOf($contacts); $i++)
+                    <li class="webrtc-user" id="webrtc-user-{{ $contacts[$i] }}" data-username="{{ $contacts[$i] }}">
+                        <a href="{{ asset('user/'.$contacts[$i].'') }}">
                     <span class="user-img">
-                        <img src="assets/img/user-blank.jpg" alt="username">
+                        {{ HTML::image('assets/img/user-blank.jpg', 'username') }}
                     </span>
-                <span class="display-name">{{ $contacts[$i] }}</span>
-                <span class="status webrtc-status"></span>
-            </a>
-            <div class="contact-actions">
-                <button type="button" class="action btn btn-success webrtc-call">
-	                <i class="glyphicon glyphicon-earphone"></i>
-                </button>
-                <button class="action btn btn-info">
-                    <i class="glyphicon glyphicon-info-sign"></i>
-                </button>
-            </div>
-        </li>
+                            <span class="display-name">{{ $contacts[$i] }}</span>
+                            <span class="status webrtc-status"></span>
+                        </a>
+                        <div class="contact-actions">
+                            <button type="button" class="action btn btn-success webrtc-call">
+                                <i class="glyphicon glyphicon-earphone"></i>
+                            </button>
 
-        @endfor
-    </ul>
-</div>
-<div class="tab-pane chat-history" id="recent">
-    <time class="chat-time" datetime="2013-10-09">Today</time>
-    <ul class="contacts-list">
-        <li>
-            <a href="#">
+                            <a href="{{ asset('user/'.$contacts[$i].'') }}" class="action btn btn-info">
+                                <i class="glyphicon glyphicon-info-sign"></i>
+                            </a>
+                        </div>
+                    </li>
+                    @endfor
+
+                </ul>
+            </div>
+            <div class="tab-pane chat-history" id="recent">
+                <time class="chat-time" datetime="2013-10-09">Today</time>
+                <ul class="contacts-list">
+                    <li>
+                        <a href="#">
                             <span class="user-img">
-                                <img src="../_design_/assets/img/user-blank.jpg" alt="username">
+                                {{ HTML::image('assets/img/user-blank.jpg', 'username') }}
                             </span>
-                <span class="display-name">Aidas Klimas</span>
-                <span class="new-message-num">5</span>
-            </a>
-            <div class="contact-actions">
-                <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-                <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-                <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                            <span class="display-name">Aidas Klimas</span>
+                            <span class="new-message-num">5</span>
+                        </a>
+                        <div class="contact-actions">
+                            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                            <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                        </div>
+                    </li>
+                </ul>
+                <time class="chat-time" datetime="2013-10-08">Yesterday</time>
+                <ul class="contacts-list">
+                    <li>
+                        <a href="#">
+                                    <span class="user-img">
+                                        {{ HTML::image('assets/img/user-blank.jpg', 'username') }}
+                                    </span>
+                            <span class="display-name">Ernestas</span>
+                            <span class="new-message-num">9+</span>
+                        </a>
+                        <div class="contact-actions">
+                            <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
+                            <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
+                            <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+                        </div>
+                    </li>
+                </ul>
             </div>
-        </li>
-    </ul>
-    <time class="chat-time" datetime="2013-10-08">Yesterday</time>
-    <ul class="contacts-list">
-        <li>
-            <a href="#">
-                            <span class="user-img">
-                                <img src="../_design_/assets/img/user-blank.jpg" alt="username">
-                            </span>
-                <span class="display-name">Ernestas</span>
-                <span class="new-message-num">9+</span>
-            </a>
-            <div class="contact-actions">
-                <button class="action btn btn-success"><i class="glyphicon glyphicon-facetime-video"></i></button>
-                <button class="action btn btn-success"><i class="glyphicon glyphicon-earphone"></i></button>
-                <button class="action btn btn-info"><i class="glyphicon glyphicon-info-sign"></i></button>
+
+            <div class="tab-pane" id="contact-search">
+                <ul id="livesearch" class="contacts-list"></ul>
             </div>
-        </li>
-    </ul>
-</div>
 
-<div class="tab-pane" id="contact-search">
-    <ul id="livesearch" class="contacts-list"></ul>
-</div>
-
-</div>
-</div>
+        </div>
+    </div>
 </aside>
+
+<!-- main content -->
 <div class="main-content">
 
     <div class="profile-edit">
@@ -241,6 +243,8 @@
     </div>
 
 </div>
+<!-- main content end -->
+
 </div>
 
 <!-- Required script for contacts search and add -->

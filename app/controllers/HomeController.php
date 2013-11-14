@@ -49,6 +49,9 @@ class HomeController extends BaseController
         $value = Session::get('user.id', $all[0]->id);
 
         $this->layout->content = View::make('user', array('user' => User::find($value)));
+
+        $dash = new DashboardController();
+        $dash->setDataVars($this->layout->content);
     }
 
 
