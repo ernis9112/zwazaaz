@@ -25,12 +25,12 @@ Route::get('/registration', array(
   'as' => 'registration'
 ));
 
-// Show user profile page
+// Show user edit profile page
 Route::get('/profile', 'HomeController@showProfile');
 
+// Show single user profile page
 Route::get('user/{name}', 'HomeController@showUserProfile');
 //-------------------------
-//------------------------
 Route::model('user', 'User');
 Route::post('profile/update/name/{user}', array(
     'uses'=>'ProfileController@profileNamePost',
@@ -45,8 +45,10 @@ Route::post('profile/update/password/{user}', array(
     'as' => 'user.update.password'
 ));
 
+// Show dashboard page
 Route::get('/dashboard', 'HomeController@showDashboard');
 
+//--------------------------------------------------------------------------------------------------------------------//
 // For registration AJAX query
 Route::post('validate-registration', array(
   'uses' => 'RegistrationController@storeGet',
@@ -58,6 +60,11 @@ Route::post('search-contacts', array(
   'uses' => 'SearchController@searchFriend',
   'as' => 'search.friend'
 ));
+Route::post('user/search-contacts', array(
+    'uses' => 'SearchController@searchFriend',
+    'as' => 'search.friend2'
+));
+// For add/delete user AJAX query
 Route::post('add-friend', array(
     'uses' => 'SearchController@addFriend',
     'as' => 'search.add'
