@@ -40,8 +40,9 @@ jQuery(document).ready(function(){
                     alert('Deleted');
                 else
                     alert('Added');
-                //window.location.reload();
+                    //window.location.reload();
                 if (msg != 1) {
+                    // Pasenes->
                     $('#contacts').children().append('<li class="webrtc-user" id="webrtc-user-' + msg + '" data-username="' + msg + '">' +
                         '<a href="#">' +
                         '<span class="user-img">' +

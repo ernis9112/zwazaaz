@@ -29,12 +29,13 @@ class HomeController extends BaseController
      */
     public function showProfile()
     {
-        $this->layout->content = View::make('profile');
+        $this->layout->content = View::make('layouts.master2');
         $this->layout->bodyclass = "home-page";
+        $this->layout->content->content2 = View::make('profile');
         //114
         $value = Session::get('user.id', Auth::user()->id);
 
-        $this->layout->content = View::make('profile', array('user' => User::find($value)));
+        $this->layout->content->content2 = View::make('profile', array('user' => User::find($value)));
 
         $dash = new DashboardController();
         $dash->setDataVars($this->layout->content);
@@ -42,13 +43,15 @@ class HomeController extends BaseController
 
     public function showUserProfile($name)
     {
-        $this->layout->content = View::make('user');
+        $this->layout->content = View::make('layouts.master2');
         $this->layout->bodyclass = "home-page";
+        $this->layout->content->content2 = View::make('user');
+
         $all = DB::select('select * from users where username = ?', array($name));
         //114
         $value = Session::get('user.id', $all[0]->id);
 
-        $this->layout->content = View::make('user', array('user' => User::find($value)));
+        $this->layout->content->content2 = View::make('user', array('user' => User::find($value)));
 
         $dash = new DashboardController();
         $dash->setDataVars($this->layout->content);
@@ -72,8 +75,9 @@ class HomeController extends BaseController
      */
     public function showDashboard()
     {
-        $this->layout->content = View::make('dashboard');
+        $this->layout->content = View::make('layouts.master2');
         $this->layout->bodyclass = "home-page";
+        $this->layout->content->content2 = View::make('dashboard');
 
         $dash = new DashboardController();
         $dash->setDataVars($this->layout->content);
