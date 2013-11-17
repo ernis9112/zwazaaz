@@ -1,4 +1,3 @@
-console.log("test");
 $(document).ready(function(){
     $('#sidebarTabs1 a').click(function (e) {
         e.preventDefault();
@@ -40,10 +39,4 @@ $(document).ready(function(){
             $('#sidebarTabs1 a[href="#contact-search"]').tab('show');
         }
     });
-
-    $("audio[loop]").ended(function(){
-        $(this).currentTime = 0;
-        $(this).play();
-    });
-
 });

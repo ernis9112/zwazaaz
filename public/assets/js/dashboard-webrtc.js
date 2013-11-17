@@ -5,6 +5,7 @@
     var $localVideoEl;
     var $remoteVideosEl;
     var localVideoStarted;
+    var incommingCall;
 
     function bind() {
         webrtc.connection.emit('online', username, function (usernames) {
@@ -23,13 +24,14 @@
         });
         webrtc.connection.on('call', function (data) {
             console.log('call from ', data.username, 'to join', data.room);
-            var answer = function answer() {
+            var dfd = new $.Deferred();
+            incommingCall = dfd;
+            dfd.promise().done(function () {
                 join(data.room);
-            };
-            var decline = function decline() {
+            }).fail(function () {
                 webrtc.connection.emit('decline', data.room);
-            };
-            $.event.trigger('webrtc-call', [data.username, answer, decline]);
+            });
+            $.event.trigger('webrtc-call', [data.username, dfd]);
         });
         webrtc.connection.on('decline', function (data) {
             console.log('decline from ', data.username, 'to join', data.room);
@@ -56,6 +58,15 @@
         return localVideoStarted;
     }
 
+    function stopLocalVideo() {
+        if (localVideoStarted) {
+            localVideoStarted.done(function () {
+                webrtc.stopLocalVideo();
+            });
+            localVideoStarted = null;
+        }
+    }
+
     function join(room) {
         var dfd = new $.Deferred();
         leaveRoom();
@@ -67,13 +78,18 @@
         return dfd.promise();
     }
     function leaveRoom() {
+        if (incommingCall) {
+            incommingCall.reject();
+        }
         $remoteVideosEl.empty();
+        $localVideoEl.empty();
+        stopLocalVideo();
+        webrtc.leaveRoom();
         if (!currentRoom) {
             return ;
         }
         currentRoom = null;
         webrtc.connection.emit('decline', currentRoom);
-        webrtc.leaveRoom();
     }
 
 
@@ -81,10 +97,16 @@
         init: function init(options) {
             username = options.username;
             webrtc = new SimpleWebRTC(options);
-            $localVideoEl = $(options.localVideoEl);
-            $remoteVideosEl = $(options.remoteVideosEl);
+            $localVideoEl = $('#' + options.localVideoEl);
+            $remoteVideosEl = $('#' + options.remoteVideosEl);
             webrtc.connection.on('connect', function () {
                 bind();
+            });
+
+            webrtc.on('*', function (error) {
+                if (error && error.name == 'PermissionDeniedError') {
+                    alert('Please check your web camera configuration. Make sure it has correct permissions.');
+                }
             });
         },
         call: function call(username) {

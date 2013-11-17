@@ -158,6 +158,7 @@
             remoteVideosEl: 'remoteVideos',
             // immediately ask for camera access
 //        autoRequestMedia: true,
+            autoRemoveVideos: false,
             username: '{{ $userName }}'
         });
     </script>
