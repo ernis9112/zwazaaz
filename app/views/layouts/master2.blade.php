@@ -83,8 +83,8 @@
                 {{ HTML::link('/profile', $userName, array('class' => 'profile-link')) }}
                 <form class="online-status">
                     <select>
-                        <option>Online</option>
-                        <option>Away</option>
+                        <option selected>online</option>
+                        <option>invisible</option>
                     </select>
                 </form>
             </div>
