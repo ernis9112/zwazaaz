@@ -8,10 +8,10 @@
 </div>
 <div class="row">
     <div class="col-sm-12">
-        <div class="alert alert-danger">            
+        <div class="alert alert-danger" style="display:none">            
             @lang('registration.failed')
         </div>
-        <div class="alert alert-success">            
+        <div class="alert alert-success" style="display:none">            
             @lang('registration.click_submit')
         </div>
     </div>
