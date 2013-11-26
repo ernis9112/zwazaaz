@@ -120,12 +120,12 @@ body.register-page form {
     margin: 0 auto 10px;
     width: 300px;
     max-width: 90%;
-    opacity: 0;
+    opacity: 0.1;
     transition: all 0.5s;
 }
 
 .main-content .web-cam-wrapper:hover .call-controls {
-    opacity: 0.25;
+    opacity: 0.3;
 }
 
 .main-content .web-cam-wrapper .call-controls:hover {
@@ -141,9 +141,12 @@ body.register-page form {
     width: 40px;
     line-height: 40px;
     border-radius: 100%;
-    padding: 0;
+    padding: 10px;
     margin: 5px;
     outline: none;
+}
+.main-content .web-cam-wrapper .call-controls .action i {
+    top: 0;
 }
 
 .profile-view,
@@ -166,6 +169,10 @@ body.register-page form {
     height: 150px;
     max-width: 100%;
     font-size: 0;
+}
+.profile-img-wrapper img {
+    width: 100%;
+    height: auto;
 }
 
 .profile-view .profile-img-wrapper:before,
@@ -416,13 +423,17 @@ body.register-page form {
 
 .contacts-list li .contact-actions .action {
     text-align: center;
-    padding: 0;
     margin: 0 1px;
     border-radius: 100%;
     height: 30px;
     width: 30px;
     line-height: 30px;
     outline: none;
+    padding: 6px;
+}
+
+.contacts-list li .contact-actions .action>i {
+    top: 0;
 }
 
 .contacts-list > li.hover .contact-actions,
@@ -523,9 +534,8 @@ body.register-page form {
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .main-sidebar {
-        padding: 0;
         border: none;
         position: absolute;
         left: -100%;
@@ -533,7 +543,6 @@ body.register-page form {
         right: 10%;
         width: 100%;
         max-width: 400px;
-        padding: 35px 15px 15px;
         z-index: 5;
         box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
     }
@@ -549,5 +558,5 @@ body.register-page form {
 }
 
 .loading {
-    background: white url(../img/packman.gif)  no-repeat right center;
+    background: white url(../img/snake-loader.gif)  no-repeat calc(100% - 10px) 50%;
 }

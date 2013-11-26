@@ -39,4 +39,11 @@ $(document).ready(function(){
             $('#sidebarTabs1 a[href="#contact-search"]').tab('show');
         }
     });
+
+    $(".webrtc-call").click(function(){
+        $($('.toggle-sidebar').attr('data-target')).removeClass("active");
+    });
+    $(".incoming-call .call-actions .answer").click(function(){
+        $($('.toggle-sidebar').attr('data-target')).removeClass("active");
+    });
 });
