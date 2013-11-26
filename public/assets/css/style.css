@@ -387,11 +387,11 @@ body.register-page form {
     margin: -10px 20px -10px 0;
 }
 
-.contacts-list li a .status.online {
+.contacts-list li.online a .status {
     background-color: #63e342;
 }
 
-.contacts-list li a .status.away {
+.contacts-list li.away a .status {
     background-color: #e3e200;
 }
 
@@ -441,6 +441,20 @@ body.register-page form {
     right: 0;
     max-width: 500px;
     opacity: 1;
+}
+.contacts-list li .contact-actions .webrtc-call,
+.contacts-list li .contact-actions .webrtc-decline{
+    display: none;
+}
+.contacts-list li.online .contact-actions .webrtc-call,
+.contacts-list li.away .contact-actions .webrtc-call {
+    display: inline-block;
+}
+.contacts-list li.talking .contact-actions .webrtc-call {
+    display: none!important;
+}
+.contacts-list li.talking .contact-actions .webrtc-decline {
+    display: inline-block!important;
 }
 
 .user-status {

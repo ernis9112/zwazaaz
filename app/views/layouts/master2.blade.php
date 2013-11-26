@@ -120,6 +120,10 @@
                                         <i class="glyphicon glyphicon-earphone"></i>
                                     </button>
 
+                                    <button type="button" class="action btn btn-danger webrtc-decline">
+                                        <i class="glyphicon glyphicon-earphone"></i>
+                                    </button>
+
                                     <a href="{{ asset('user/'.$contacts[$i].'') }}" class="action btn btn-info">
                                         <i class="glyphicon glyphicon-info-sign"></i>
                                     </a>

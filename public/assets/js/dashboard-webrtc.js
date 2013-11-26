@@ -119,5 +119,8 @@
             leaveRoom();
         }
     };
+    $(window).on('unload', function(){
+        leaveRoom();
+    });
     window.dashboard = api;
 }(window);
