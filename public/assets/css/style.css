@@ -90,6 +90,7 @@ body.register-page form {
 }
 
 .main-content .web-cam-wrapper.full-screen {
+    z-index: 1100px;
     position: fixed;
     font-size: 0;
     right: 0;
@@ -173,7 +174,9 @@ body.register-page form {
     font-size: 0;
 }
 .profile-img-wrapper img {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
     height: auto;
 }
 
