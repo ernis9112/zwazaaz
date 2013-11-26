@@ -31,6 +31,11 @@ Route::get('/profile', 'HomeController@showProfile');
 // Show single user profile page
 Route::get('user/{name}', 'HomeController@showUserProfile');
 //-------------------------
+Route::post('upload',array(
+    'uses'=>'ProfileController@uploadProfilePic',
+    'as'=>'user.upload.pic'
+));
+
 Route::model('user', 'User');
 Route::post('profile/update/name/{user}', array(
     'uses'=>'ProfileController@profileNamePost',

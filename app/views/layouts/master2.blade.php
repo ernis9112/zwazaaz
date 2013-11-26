@@ -181,6 +181,10 @@
         <!-- main content -->
         {{ $content2 }}
         <!-- main content end -->
+        @section('form_modals')
+        @if(Auth::check())
+        @include('plugins.upload_modal')
+        @endif
 
         </div>
 </div>

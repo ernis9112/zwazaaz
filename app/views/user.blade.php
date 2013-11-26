@@ -4,7 +4,7 @@
             <div class="col-sm-3">
                 <div class="profile-img">
                     <div class="profile-img-wrapper">
-                        {{ HTML::image('assets/img/user-blank.jpg', 'username') }}
+                        <img width="140" height="140" src=" {{URL::asset('uploads/'.$user->id.'.jpg')}} " alt="username">
                     </div>
                 </div>
             </div>

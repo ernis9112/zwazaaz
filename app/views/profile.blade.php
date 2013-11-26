@@ -5,10 +5,16 @@
             <div class="col-sm-3">
                 <div class="profile-img">
                     <div class="profile-img-wrapper">
-                        <img src="{{URL::to('http://www.gravatar.com/avatar/' . md5( strtolower( trim( $user->email ) ) ) . '?d=' . urlencode( '../public/assets/img/user-blank.jpg' ) . '&s=' . 140)}}" alt="username">
+                       <img width="140" height="140" src=" {{URL::asset('uploads/'.$user->id.'.jpg')}} " alt="username">
+                        <!-- <img src="{{URL::to('http://www.gravatar.com/avatar/' . md5( strtolower( trim( $user->email ) ) ) . '?d=' . urlencode( '../public/assets/img/user-blank.jpg' ) . '&s=' . 140)}}" alt="username"> -->
                     </div>
                     <!-- this will open popup-->
-                    <button class="btn btn-default btn-xs">change image</button>
+                      <button type="button" class="btn btn-default btn-xs" onclick="$('#upload_modal').modal();">Change image<i class
+                              ="icon-plus-sign icon-plus"></i></button>
+
+                    @if (Session::has('upload_file'))
+                    <p class="help-block">{{ Session::get('upload_file') }}</p>
+                    @endif
                 </div>
             </div>
             <div class="col-sm-9">
@@ -76,15 +82,13 @@
                                 {{ Form::password('password', array('placeholder' => 'Password','class'=>'form-control', 'id' => 'edit-password-new-password'))}}
                             </div>
                         </div>
-                        <div class="form-group has-error">
+                        <div class="form-group">
                             <label class="control-label col-lg-4" for="edit-password-repeat-password">Repeat password<span class="required">*</span></label>
                             <div class="col-lg-8">
                                 <!-- <input type="password" class="form-control" id="edit-password-repeat-password" value="sgasghahf" required> -->
                                  {{ Form::password('password_confirmation', array('placeholder' => 'Password','class'=>'form-control', 'id' => 'edit-password-repeat-password'))}}
                                  @if (Session::has('password_changed'))
                                  <p class="help-block">{{Session::get('password_changed') }}</p>
-                                 @else
-                                 <p class="help-block">Passwords do not match!</p>
                                  @endif
                              </div>
                          </div>
