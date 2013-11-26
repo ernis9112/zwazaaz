@@ -35,15 +35,7 @@
             </div>
         </div>
         <div class="col-sm-6">
-            <div class="form-group">
-                <label class="control-label">Alternatively, sign in with</label>
-            </div>
-            <div class="form-group">
-                <a href="#"><img class="icon" src="assets/img/icon-facebook.png" alt="fb">&nbsp;<span class="va-middle">Facebook</span></a>
-            </div>
-            <div class="form-group">
-                <a href="#"><img class="icon" src="assets/img/icon-google.png" alt="g+">&nbsp;<span class="va-middle">Google+</span></a>
-            </div>
+            <img style="max-width: 100%;" class="pull-right" src="{{ asset('assets/img/which-one-are-you.png') }}" alt="Sign In">
         </div>
     </div>
 {{ Form::token() }}

@@ -20,7 +20,7 @@ class ProfileController extends BaseController
             $user->name = Input::get('name');
             $user->last_name = Input::get('last_name');
             $user->save();
-            return Redirect::to('profile');
+            return Redirect::to('profile')->with('profile_info', 'Data changed successful!');
         }
     }
 
@@ -37,10 +37,10 @@ class ProfileController extends BaseController
             {
                 $user->email = Input::get('email');
                 $user->save();
-                return Redirect::to('profile');
+                return Redirect::to('profile')->with('email_update','Email changed successful!');
             }
             else {
-                return Redirect::to('profile')->with('login_errors', true);
+                return Redirect::to('profile')->with('email_update','Incorrect password.');
             }
         }
     }

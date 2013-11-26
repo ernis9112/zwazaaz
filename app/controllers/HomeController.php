@@ -97,5 +97,9 @@ class HomeController extends BaseController
         $this->layout->content = View::make('call');
         $this->layout->bodyclass = "sign-in-page";
     }
+    
+    public function showInfoPage($name)
+    {
+    }
 
 }
