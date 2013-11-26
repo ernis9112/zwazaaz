@@ -2,10 +2,9 @@
 
     <article>
         <h1>Zwazaaz</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia ac odio vulputate mattis. Maecenas
-            ligula nulla, vehicula quis feugiat sed, pellentesque quis mi. Curabitur eu eleifend eros. Vivamus porttitor
-            lacus ut turpis posuere gravida. Pellentesque luctus a massa sit amet malesuada. Aenean eget arcu ut nulla
-            semper venenatis at faucibus leo.</p>
+        <img style="max-width: 40%;" class="pull-right" src="{{ asset('assets/img/mergelike-zwazaaz.png') }}" alt="Zwazaaz">
+        <p>You're in! Now you can call your family or friends who use on zwazaaz.</p>
+        <p>Choose or add new contact in the left dashboard side and start the conversation.</p>
     </article>
 
     <div class="web-cam-wrapper">
