@@ -46,4 +46,25 @@ $(document).ready(function(){
     $(".incoming-call .call-actions .answer").click(function(){
         $($('.toggle-sidebar').attr('data-target')).removeClass("active");
     });
+
+    var statusSelectContainer = $(".user-status .online-status");
+    var listElements = "";
+    $("select option", statusSelectContainer).each(function(){
+        listElements += "<li><i class='icon icon-"+$(this).text()+"'></i>"+$(this).text()+"</li>";
+    });
+    var styledStatusSelect = "<div class='custom-status-select'><span class='selected'><i class='icon icon-online'></i> </span><ul>"+listElements+"</ul></div>";
+    statusSelectContainer.append(styledStatusSelect);
+    $(".custom-status-select", statusSelectContainer).not(".open").click(function(){
+        $(this).addClass("open");
+    });
+    $("li", statusSelectContainer).click(function(event){
+        event.stopPropagation();
+        $(".custom-status-select").removeClass("open");
+        $(".online-status select option:selected").prop('selected', false);
+        $(".online-status select option").eq($(this).index()).prop('selected', true);
+        $(".online-status select").trigger("change");
+    });
+    $(".online-status select").change(function(){
+        $(".custom-status-select .selected i").attr("class", "icon icon-"+$(".online-status select option:selected").text());
+    })
 });
