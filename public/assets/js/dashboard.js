@@ -1,3 +1,4 @@
+var status = {};
 $('body').delegate(".webrtc-call", "click",function () {
     var username = $(this).parents('.webrtc-user').data('username');
     dashboard.call(username);
@@ -8,11 +9,14 @@ $('body').delegate(".webrtc-call", "click",function () {
 });
 $(document)
 .on("webrtc-online", function (event, username) {
-    $('#webrtc-user-' + username).find('.status').addClass('online').removeClass('away offline');
+    status[username] = 'online';
+    $('#webrtc-user-' + username).addClass('online').removeClass('away offline');
 }).on("webrtc-offline", function (event, username) {
-    $('#webrtc-user-' + username).find('.status').addClass('offline').removeClass('away online');
+    status[username] = null;
+    $('#webrtc-user-' + username).addClass('offline').removeClass('away online');
 }).on("webrtc-away", function (event, username) {
-    $('#webrtc-user-' + username).find('.status').addClass('away').removeClass('online offline');
+    status[username] = 'away';
+    $('#webrtc-user-' + username).addClass('away').removeClass('online offline');
 }).on('webrtc-call', function (event, username, dfd) {
     incomingCall(username).done(function () {
         dfd.resolve();
@@ -29,9 +33,11 @@ $(document)
     declineCall();
 });
 function answerCall(from) {
+    $('#webrtc-user-' + from).addClass('talking');
     $('.web-cam-wrapper').show();
 }
 function declineCall(from) {
+    $('.webrtc-user').removeClass('talking');
     $('.web-cam-wrapper').hide();
 }
 function incomingCall(from) {
