@@ -48,13 +48,15 @@ class ProfileController extends BaseController
     public function profilePasswordPost(User $user)
     {
         $rules = array('old_password' => 'required|min:6|max:40',
-                       'password' => 'required|min:6|max:40|confirmed',
+                       'password' => 'required|min:6|max:40',
                        'password_confirmation' => 'required|min:6|max:40',
                        );
         $validator = Validator::make(Input::all(), $rules);
+
         if ($validator->fails()) {
             return Redirect::to('profile')->withErrors($validator);
-        } else {
+        }
+
             $pass = Input::get('old_password');
             if (Hash::check($pass, $user->password))
             {
@@ -63,11 +65,45 @@ class ProfileController extends BaseController
                     $user->save();
                     return Redirect::to('profile')->with('password_changed', 'Password changed successful');
                 }
+                    //var_dump('bbbbb');
                     return Redirect::to('profile')->with('password_changed', 'New password do not match');
             }
             else {
+                //var_dump('aaaa');
                 return Redirect::to('profile')->with('password_changed', 'Current password do not match');
             }
+
+    }
+
+    public function uploadProfilePic(){
+        $filename = mysql_real_escape_string(Auth::user()->id).'.jpg';
+        $input = Input::all();
+        if ($handle = opendir('uploads')) {
+            while (false !== ($entry = readdir($handle))) {
+                if ($entry != "." && $entry != "..") {
+                    if($entry == $filename) {
+                        @unlink($entry);
+                    }
+                }
+            }
+            closedir($handle);
+        }
+        $rules = array(
+                'photo' => 'mimes:jpeg,jpg,bmp,png,gif|max:3000'
+                );
+        $validator = Validator::make($input, $rules);
+        if($validator->fails()){
+            return Redirect::to('profile')->with('upload_file','Error. You use wrong file format. Please try again!');
+        }
+        $destinationPath = 'uploads';
+        $uploadSuccess = Input::file('photo')->move($destinationPath, $filename);
+
+        if( $uploadSuccess ) {
+            //return Response::json('success', 200); // or do a redirect with some message that file was uploaded
+            return Redirect::to('profile')->with('upload_file','Image successful changed!');
+        } else {
+            return Redirect::to('profile')->with('upload_file','Uploading failed. Please try again.');
         }
     }
+
 }
