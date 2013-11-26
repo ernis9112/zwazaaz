@@ -26,6 +26,7 @@ jQuery(document).ready(function(){
 
     jQuery('body').delegate(".add-or-del-to-list", "click",function () {
         var username = $(this).parents('.webrtc-user').data('username');
+        var thiss = $(this).parents('.webrtc-user');
         //alert(username);
 
         jQuery.ajax({
@@ -36,11 +37,20 @@ jQuery(document).ready(function(){
             }
         }).done(function( msg ) {
                 //alert(msg);
-                if(msg == 1)
-                    alert('Deleted');
-                else
-                    alert('Added');
-                    //window.location.reload();
+                if(msg == 1){
+                    thiss.html(
+                    '<span class="user-img">'+
+                        '<li class="alert alert-info" style="margin-bottom: 0px; border: 0px solid transparent; border-radius: 0px;">Contact deleted Successfully</li>'+
+                    '</span>'
+                    );
+                }
+                else{
+                    thiss.html(
+                    '<span class="user-img">'+
+                       '<li class="alert alert-info" style="margin-bottom: 0px; border: 0px solid transparent; border-radius: 0px;">Contact added Successfully</li>'+
+                    '</span>');
+                }
+
                 if (msg != 1) {
                     // Pasenes->
                     $('#contacts').children().append('<li class="webrtc-user" id="webrtc-user-' + msg + '" data-username="' + msg + '">' +

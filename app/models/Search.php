@@ -122,7 +122,8 @@ function single_friend_element_block($username, $ID){
 
 //Out of class functions
 function single_no_results_element_block($username){
-    return '<li class="webrtc-user"><a href="#"><span class="display-name">'.$username.'</span></a></li>';
+    //return '<li class="webrtc-user"><a href="#"><span class="display-name">'.$username.'</span></a></li>';
+    return '<li class="alert alert-info" style="margin-bottom: 0px; border: 0px solid transparent; border-radius: 0px;">User not found.</li>';
 }
 
 function is_user_in_friend_list($username, $ID){

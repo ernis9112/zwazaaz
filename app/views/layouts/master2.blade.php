@@ -105,6 +105,13 @@
 
                         <ul class="contacts-list">
 
+                            @if(sizeOf($contacts) < 1)
+                            <li class="webrtc-user">
+                                <span class="user-img">
+                                    <li class="alert alert-info" style="margin-bottom: 0px; border: 0px solid transparent; border-radius: 0px;">There is no users in your contacts list. You can add with search.</li>
+                                </span>
+                            </li>
+                            @endif
                             @for ($i = 0; $i < sizeOf($contacts); $i++)
                             <li class="webrtc-user" id="webrtc-user-{{ $contacts[$i] }}" data-username="{{ $contacts[$i] }}">
                                 <a href="{{ asset('user/'.$contacts[$i].'') }}">
