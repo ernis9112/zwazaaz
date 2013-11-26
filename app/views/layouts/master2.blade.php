@@ -26,9 +26,8 @@
 </div>
 
 <div class="container">
-
         <div style="position: relative;">
-            <nav class="navbar navbar-default" role="navigation">
+            <nav class="navbar navbar-default navbar-absolute" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button class="toggle-sidebar navbar-toggle" type="button" data-target=".main-sidebar" title="Toggle sidebar">

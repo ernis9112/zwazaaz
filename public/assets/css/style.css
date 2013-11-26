@@ -27,9 +27,11 @@ body.home-page .container > .row {
     padding-top: 50px;
 }
 .navbar {
+    border-radius: 0;
+}
+.navbar-absolute {
     position: absolute;
     margin: 0;
-    border-radius: 0;
     right: 0;
     left: 0;
 }
