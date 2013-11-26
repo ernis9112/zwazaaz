@@ -4,7 +4,7 @@ html {
 
 body {
     min-height: 100%;
-    background: #ace3f0;
+    background: url("../img/strange_bullseyes/strange_bullseyes/strange_bullseyes.png") repeat;
 }
 
 body.sign-in-page {
@@ -20,8 +20,19 @@ body.home-page {
 body.home-page .container,
 body.home-page .container > .row {
     height: 100%;
+    padding: 0;
 }
-
+.page-content {
+    height: 100%;
+    padding-top: 50px;
+}
+.navbar {
+    position: absolute;
+    margin: 0;
+    border-radius: 0;
+    right: 0;
+    left: 0;
+}
 .va-middle {
     vertical-align: middle;
 }
@@ -262,20 +273,10 @@ body.register-page form {
     width: 100%;
 }
 
-.mobile-navigation {
-    position: fixed;
-    z-index: 10;
-}
-
-.mobile-navigation .toggle-sidebar {
-    height: 30px;
-    border-radius: 5px;
-    width: 40px;
-    background: #00bdff;
-    border: 1px solid #0095cc;
-    outline: none;
-    margin: 5px 0 5px 5px;
-    padding: 7px;
+.toggle-sidebar {
+    margin-right: 0;
+    margin-left: 15px;
+    float: left;
 }
 
 .mobile-navigation .toggle-sidebar:hover {
@@ -503,7 +504,6 @@ body.register-page form {
 @media (min-width: 992px) {
     .container {
         transition: max-width 0.5s;
-        padding: 10px 0;
     }
 
     .info-label {
@@ -529,17 +529,16 @@ body.register-page form {
         border: none;
         position: absolute;
         left: -100%;
-
         border-right: 1px solid #eee;
         right: 10%;
         width: 100%;
         max-width: 400px;
         padding: 35px 15px 15px;
         z-index: 5;
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
     }
 
     .main-content {
-        padding: 0;
         border: none;
         width: 100%;
     }
