@@ -102,6 +102,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
      * @return string
      */
     public function createUserSession($username, $password) {
-        if(Auth::attempt(array('username' => 'ernis9112', 'password' => 'password')));
+        if(Auth::attempt(array('username' => $username, 'password' => $password)));
     }
 }

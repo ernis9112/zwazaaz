@@ -86,3 +86,6 @@ Route::post('validate-login', array(
 ));
 
 Route::get('/logout', 'RegistrationController@userLogout');
+
+// Info pages
+Route::get('page/{name}', 'HomeController@showInfoPage');
