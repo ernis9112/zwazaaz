@@ -31,8 +31,12 @@
                             <label class="control-label col-lg-4" for="edit-last-name">Last name<span class="required">*</span></label>
                             <div class="col-lg-8">
                                 {{ Form::text('last_name', null, array('class'=>'form-control', 'id' => 'edit-last-name')) }}
+                                @if (Session::has('profile_info'))
+                                <p class="help-block">{{Session::get('profile_info') }}</p>
+                                @endif
                             </div>
                         </div>
+
                         <div class="form-submit">
                             <button type="submit" class="btn btn-sm btn-success">Update information</button>
                         </div>
@@ -52,10 +56,8 @@
                             <label class="control-label col-lg-4" for="edit-email-current-password">Current password<span class="required">*</span></label>
                             <div class="col-lg-8">
                                 {{ Form::password('password', array('placeholder' => 'Password','class'=>'form-control', 'id' => 'edit-email-current-password')) }}
-                                @if (Session::has('login_errors'))
-                                <p class="help-block">Password incorrect.</p>
-                                @else
-                                <p class="help-block">We need you to confirm your password to change your email.</p>
+                                @if (Session::has('email_update'))
+                                <p class="help-block">{{Session::get('email_update') }}</p>
                                 @endif
                             </div>
                         </div>
