@@ -76,7 +76,7 @@ class ProfileController extends BaseController
     }
 
     public function uploadProfilePic(){
-        $filename = mysql_real_escape_string(Auth::user()->id).'.jpg';
+        $filename = (string)Auth::user()->id.'.jpg';
         $input = Input::all();
         if ($handle = opendir('uploads')) {
             while (false !== ($entry = readdir($handle))) {
