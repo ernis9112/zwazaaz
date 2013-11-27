@@ -100,6 +100,9 @@ class HomeController extends BaseController
     
     public function showInfoPage($name)
     {
+        $this->layout->content = View::make('pages');
+        $this->layout->bodyclass = "home-page";
+        $this->layout->content->userName = "zuikis";
     }
 
 }
