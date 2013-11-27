@@ -26,6 +26,12 @@ body.home-page .container > .row {
     height: 100%;
     padding-top: 50px;
 }
+.copyright {
+    padding: 10px;
+    line-height: 20px;
+    height: 40px;
+    text-align: center;
+}
 .navbar {
     border-radius: 0;
 }
