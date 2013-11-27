@@ -5,7 +5,7 @@
             <div class="col-sm-3">
                 <div class="profile-img">
                     <div class="profile-img-wrapper">
-                       <img width="140" height="140" src=" {{URL::asset('uploads/'.$user->id.'.jpg')}} " alt="username">
+                       <img src=" {{URL::asset('uploads/'.$user->id.'.jpg')}} " alt="username">
                         <!-- <img src="{{URL::to('http://www.gravatar.com/avatar/' . md5( strtolower( trim( $user->email ) ) ) . '?d=' . urlencode( '../public/assets/img/user-blank.jpg' ) . '&s=' . 140)}}" alt="username"> -->
                     </div>
                     <!-- this will open popup-->

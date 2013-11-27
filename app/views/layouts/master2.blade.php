@@ -186,6 +186,9 @@
 
                 </div>
             </div>
+            <address class="copyright">
+                &copy; 2013 Zwazaaz
+            </address>
         </aside>
 
         <!-- main content -->
