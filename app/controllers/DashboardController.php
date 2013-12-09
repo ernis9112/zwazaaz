@@ -15,6 +15,10 @@ class DashboardController extends BaseController {
         $mas = $dashModel->getUserListFromDatabaseById($ID);
         $content->contacts = $mas;
 
+        //block data
+        $iBlocked = DB::select('select * from blocks '); //select blocks table
+        $content->iBlocked = $iBlocked;
+        $content->myId = $ID;
     }
 
 }
