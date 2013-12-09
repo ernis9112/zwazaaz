@@ -1,10 +1,10 @@
 <?php $ib = 0; ?>
 <?php $meb  =   0; ?>
 @for($i = 0; $i < sizeof($iBlocked); $i++)
-    @if($iBlocked[$i]->blocked_id == $user->id)
+    @if(($iBlocked[$i]->blocked_id == $user->id) and ($iBlocked[$i]->user_id == Auth::user()->id))
         <?php $ib = 1; ?>
     @endif
-    @if($iBlocked[$i]->user_id == $user->id)
+    @if(($iBlocked[$i]->user_id == $user->id) and ($iBlocked[$i]->blocked_id == Auth::user()->id))
         <?php $meb = 1; ?>
     @endif
 @endfor

@@ -119,17 +119,19 @@
                                         {{ HTML::image('assets/img/user-blank.jpg', 'username') }}
                                     </span>
                                     <span class="display-name">{{ $contacts[$i] }}</span>
+
                                     <span class="status webrtc-status"></span>
                                 </a>
                                 <div class="contact-actions">
                                     <?php $ib = 0; ?>
                                     <?php $meb = 0; ?>
+
                                     @for($j = 0; $j < sizeof($iBlocked); $j++)
-                                    @if($iBlocked[$j]->user_id == $myId)
-                                         <?php $meb = 1; ?>
+                                    @if(($iBlocked[$j]->blocked_id == $contactsId[$i]->friend_id) and ($iBlocked[$j]->user_id == Auth::user()->id))
+                                        <?php $ib = 1; ?>
                                     @endif
-                                    @if($iBlocked[$j]->blocked_id == $myId)
-                                         <?php $ib = 1; ?>
+                                    @if(($iBlocked[$j]->user_id == $contactsId[$i]->friend_id) and ($iBlocked[$j]->blocked_id == Auth::user()->id))
+                                        <?php $meb = 1; ?>
                                     @endif
                                     @endfor
                                     @if(( $ib == 0) and ($meb == 0))
