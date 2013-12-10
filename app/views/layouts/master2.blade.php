@@ -1,3 +1,4 @@
+@section('form_modals')
 {{-----------------------------Do not delete this code------------------------}}
 @if (Session::get('just_reg') == "yes")
 
@@ -207,7 +208,6 @@
         <!-- main content -->
         {{ $content2 }}
         <!-- main content end -->
-        @section('form_modals')
         @if(Auth::check())
         @include('plugins.upload_modal')
         @endif
