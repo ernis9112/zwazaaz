@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title> Wazzup! | Webuza's Bootstrap Landing Page template </title>
+    <title> Zwazzaz | Free online calling </title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/bootstrap-responsive.min.css"/>
     <link rel="stylesheet" href="css/styles.css"/>
     <link rel="stylesheet" href="css/prettyPhoto.css"/>
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
