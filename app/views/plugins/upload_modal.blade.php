@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="upload_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="upload_modal" tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class = "modal-header">
@@ -10,7 +10,7 @@
                 {{Form::open(array('route' => 'user.upload.pic', 'files'=> true))}}
 
                 <div class="form-group">
-                    <label for="exampleInputFile">Choose picture</label>
+                    <label>Choose picture</label>
                     {{Form::file('photo')}}
                     <p class="help-block"></p>
                 </div>
