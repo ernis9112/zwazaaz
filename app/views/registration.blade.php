@@ -2,7 +2,7 @@
 <div class="row">
     <div class="col-sm-12 text-center">
         <a href="{{ route('hello') }}">
-            <img src="assets/img/logo.png" alt="Zwazaaz">
+            <img src="assets/img/zwazaaz-logo.png" alt="Zwazaaz">
         </a>
     </div>
 </div>
