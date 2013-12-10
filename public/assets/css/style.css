@@ -96,7 +96,7 @@ body.register-page form {
 }
 
 .main-content .web-cam-wrapper.full-screen {
-    z-index: 1100px;
+    z-index: 1100;
     position: fixed;
     font-size: 0;
     right: 0;
@@ -148,14 +148,11 @@ body.register-page form {
 .main-content .web-cam-wrapper .call-controls .action {
     height: 40px;
     width: 40px;
-    line-height: 40px;
+    line-height: 20px;
     border-radius: 100%;
     padding: 10px;
     margin: 5px;
     outline: none;
-}
-.main-content .web-cam-wrapper .call-controls .action i {
-    top: 0;
 }
 
 .profile-view,
@@ -436,11 +433,11 @@ body.register-page form {
     text-align: center;
     margin: 0 1px;
     border-radius: 100%;
-    height: 30px;
     width: 30px;
-    line-height: 30px;
-    outline: none;
+    height: 30px;
     padding: 6px;
+    line-height: 18px;
+    outline: none;
 }
 
 .contacts-list li .contact-actions .action>i {
@@ -515,6 +512,8 @@ body.register-page form {
 
 }
 .user-status .custom-status-select {
+    position: relative;
+    z-index: 1;
 }
 .user-status .custom-status-select .selected {
     cursor: pointer;
