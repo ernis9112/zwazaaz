@@ -323,14 +323,14 @@ span.bold {
 
 .top-nav h1 {
     text-indent: -9999px;
-    background: url(../assets/img/logo.png) no-repeat left center;
+    background: url(../assets/img/zwazaaz-logo3.png) no-repeat 50%;
     width: 220px;
+    background-size: 120px;
     height: 37px;
     display: inline-block;
-    float: left;
     padding-right: 15px;
     border-right: 1px solid #e5e5e5;
-    float: left
+    float: left;
 }
 
 .top-nav.black h1 {
