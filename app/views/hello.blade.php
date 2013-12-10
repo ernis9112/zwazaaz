@@ -15,6 +15,7 @@
     </div>
     <div class="row">
         <div class="col-sm-6">
+            <h2>Authenticate yourself</h2>
             <div class="form-group">
                 <label class="control-label" for="sign-in-name">Zwazaaz Name</label>
                 <input name="username" type="text" class="form-control" id="sign-in-name" value="@if (Session::get('tried_login')){{ Session::get('tried_login') }}@endif" required>
