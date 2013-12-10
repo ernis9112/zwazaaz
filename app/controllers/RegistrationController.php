@@ -15,7 +15,7 @@ class RegistrationController extends BaseController {
         if (Auth::attempt(array('username' => Input::get('username'), 'password' => Input::get('password')))) {
             return Redirect::intended('dashboard');
         }else{
-            return Redirect::to('/')->with('tried_login', Input::get('username'));
+            return Redirect::to('/login')->with('tried_login', Input::get('username'));
         }
     }
     

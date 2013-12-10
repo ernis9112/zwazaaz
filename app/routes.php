@@ -13,6 +13,11 @@
 
 // Show main page - login page
 Route::get('/', array(
+  'uses' => 'IndexController@index',
+  'as' => 'index'
+));
+
+Route::get('/login', array(
   'uses' => 'HomeController@showWelcome',
   'as' => 'hello'
 ));

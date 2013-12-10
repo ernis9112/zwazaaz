@@ -1,7 +1,7 @@
 {{ Form::open(array('route' => 'login.try', 'id' => 'login')) }}
     <div class="row">
         <div class="col-sm-12 text-center">
-            <a class="logo-link" href="{{ route('hello') }}">
+            <a class="logo-link" href="{{ route('index') }}">
                 <img src="assets/img/zwazaaz-logo.png" alt="Zwazaaz">
             </a>
         </div>
