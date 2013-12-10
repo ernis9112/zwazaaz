@@ -24,7 +24,8 @@
             <div class="main-c1">
                 <h1 class="title"><span class="bold">Zwazzaz! is all</span> what you need</h1>
                 <div class="row-fluid">
-                    <h2>Do not hesitate, join our community and enjoy our free calls powered by WebRTC.</h2>
+                    <h2>Do not hesitate, join our community and enjoy free video calls.<br/>
+                        It is powered by latest <em><b>WebRTC</b></em> technology.</h2>
 
                     <div class="buttons">
                         <div class="buy-button"><a class="red-box style-white" href="{{ route('hello') }}">Login</a></div>
@@ -53,7 +54,7 @@
                                 <img src="img/fut-icon1.png" class="ft1" alt=""/>
                             </div>
                             <h1>Made with love</h1>
-                            <p>We care about our customers, because of this every feature works perfectly</p>
+                            <p>We care about our customers, because of this, every feature works perfectly</p>
                         </div>
                     </div>
 
