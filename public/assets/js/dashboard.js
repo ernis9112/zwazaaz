@@ -1,4 +1,4 @@
-var status = {};
+var onlineUsers = {};
 $('body').delegate(".webrtc-call", "click",function () {
     var username = $(this).parents('.webrtc-user').data('username');
     dashboard.call(username);
@@ -9,13 +9,13 @@ $('body').delegate(".webrtc-call", "click",function () {
 });
 $(document)
 .on("webrtc-online", function (event, username) {
-    status[username] = 'online';
+    onlineUsers[username] = 'online';
     $('#webrtc-user-' + username).addClass('online').removeClass('away offline');
 }).on("webrtc-offline", function (event, username) {
-    status[username] = null;
+    onlineUsers[username] = null;
     $('#webrtc-user-' + username).addClass('offline').removeClass('away online');
 }).on("webrtc-away", function (event, username) {
-    status[username] = 'away';
+    onlineUsers[username] = 'away';
     $('#webrtc-user-' + username).addClass('away').removeClass('online offline');
 }).on('webrtc-call', function (event, username, dfd) {
     incomingCall(username).done(function () {
@@ -31,6 +31,14 @@ $(document)
     declineCall();
 }).on('webrtc-close', function (event) {
     declineCall();
+}).on('list-updated', function (event) {
+    $.each(onlineUsers, function (username, status) {
+        if (status) {
+            $('#webrtc-user-' + username).addClass('online').removeClass('away offline');
+        } else {
+            $('#webrtc-user-' + username).addClass('offline').removeClass('away online');
+        }
+    });
 });
 function answerCall(from) {
     $('#webrtc-user-' + from).addClass('talking');

@@ -15,6 +15,7 @@ jQuery(document).ready(function(){
 
                     done = true;
                     jQuery('.loading').removeClass('loading');
+                    $.event.trigger('list-updated');
                 });
             }, 700);
         }
@@ -71,6 +72,7 @@ jQuery(document).ready(function(){
                         '</div>' +
                         '</li>');
                 }
+                $.event.trigger('list-updated');
             });
 
     });
