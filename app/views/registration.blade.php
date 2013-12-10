@@ -1,7 +1,7 @@
 {{ Form::open(array('route' => 'registration.store', 'id' => 'registration')) }}
 <div class="row">
     <div class="col-sm-12 text-center">
-        <a href="{{ route('hello') }}">
+        <a href="{{ route('index') }}">
             <img src="assets/img/zwazaaz-logo.png" alt="Zwazaaz">
         </a>
     </div>

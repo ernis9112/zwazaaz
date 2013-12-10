@@ -14,7 +14,7 @@
 App::before(function($request)
 {
     /* if logged in user goes to sign in or registration page */
-    $not_protected = array('/', 'validate-registration', 'validate-login', 'registration');
+    $not_protected = array('/', 'validate-registration', 'validate-login', 'registration', 'login');
     if (Auth::check() && in_array(Request::path(), $not_protected))
         return Redirect::intended('dashboard');
     /*------------------------------------------------------*/
