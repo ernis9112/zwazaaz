@@ -45,30 +45,30 @@
                 <a class="navbar-brand" href="{{ asset('') }}">Zwazaaz</a>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
+                        <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">About</a></li>
-                    <li><a href="#">Link</a></li>
+                    <li class="active"><a href="{{ asset('page/about') }}">About</a></li>
+                    <li><a href="{{ asset('page/team') }}">Team</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Zwazaaz team</a></li>
-                            <li><a href="#">About project</a></li>
-<!--                            <li><a href="#">Something else here</a></li>-->
-<!--                            <li class="divider"></li>-->
-<!--                            <li><a href="#">Separated link</a></li>-->
-<!--                            <li class="divider"></li>-->
-<!--                            <li><a href="#">One more separated link</a></li>-->
+                            <li><a href="{{ asset('page/how-to-use') }}">How to use</a></li>
+                            <li><a href="{{ asset('page/problems-with-mind') }}">Problems with mind</a></li>
+                            <!--                            <li><a href="#">Something else here</a></li>-->
+                            <!--                            <li class="divider"></li>-->
+                            <!--                            <li><a href="#">Separated link</a></li>-->
+                            <!--                            <li class="divider"></li>-->
+                            <!--                            <li><a href="#">One more separated link</a></li>-->
                         </ul>
                     </li>
                 </ul>
-<!--                <form class="navbar-form navbar-left" role="search">-->
-<!--                    <div class="form-group">-->
-<!--                        <input type="text" class="form-control" placeholder="Search">-->
-<!--                    </div>-->
-<!--                    <button type="submit" class="btn btn-default">Submit</button>-->
-<!--                </form>-->
+                <!--                <form class="navbar-form navbar-left" role="search">-->
+                <!--                    <div class="form-group">-->
+                <!--                        <input type="text" class="form-control" placeholder="Search">-->
+                <!--                    </div>-->
+                <!--                    <button type="submit" class="btn btn-default">Submit</button>-->
+                <!--                </form>-->
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{ asset('logout') }}">logout&nbsp;<i class="glyphicon glyphicon-log-out"></i></a></li>
                 </ul>
@@ -119,13 +119,26 @@
                                         {{ HTML::image('assets/img/user-blank.jpg', 'username') }}
                                     </span>
                                     <span class="display-name">{{ $contacts[$i] }}</span>
+
                                     <span class="status webrtc-status"></span>
                                 </a>
                                 <div class="contact-actions">
+                                    <?php $ib = 0; ?>
+                                    <?php $meb = 0; ?>
+
+                                    @for($j = 0; $j < sizeof($iBlocked); $j++)
+                                    @if(($iBlocked[$j]->blocked_id == $contactsId[$i]->friend_id) and ($iBlocked[$j]->user_id == Auth::user()->id))
+                                        <?php $ib = 1; ?>
+                                    @endif
+                                    @if(($iBlocked[$j]->user_id == $contactsId[$i]->friend_id) and ($iBlocked[$j]->blocked_id == Auth::user()->id))
+                                        <?php $meb = 1; ?>
+                                    @endif
+                                    @endfor
+                                    @if(( $ib == 0) and ($meb == 0))
                                     <button type="button" class="action btn btn-success webrtc-call">
                                         <i class="glyphicon glyphicon-earphone"></i>
                                     </button>
-
+                                    @endif
                                     <button type="button" class="action btn btn-danger webrtc-decline">
                                         <i class="glyphicon glyphicon-earphone"></i>
                                     </button>

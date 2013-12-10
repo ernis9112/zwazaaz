@@ -47,11 +47,15 @@ class HomeController extends BaseController
         $this->layout->bodyclass = "home-page";
         $this->layout->content->content2 = View::make('user');
 
+        $iBlocked = DB::select('select * from blocks '); //select blocks table
+
         $all = DB::select('select * from users where username = ?', array($name));
         //114
         $value = Session::get('user.id', $all[0]->id);
 
-        $this->layout->content->content2 = View::make('user', array('user' => User::find($value)));
+        $this->layout->content->content2 = View::make('user', array('user' => User::find($value),
+                                                                    'iBlocked' => $iBlocked
+        ));
 
         $dash = new DashboardController();
         $dash->setDataVars($this->layout->content);
@@ -100,7 +104,7 @@ class HomeController extends BaseController
     
     public function showInfoPage($name)
     {
-        $this->layout->content = View::make('pages');
+        $this->layout->content = View::make('pages.'.$name);
         $this->layout->bodyclass = "home-page";
         $this->layout->content->userName = "zuikis";
     }

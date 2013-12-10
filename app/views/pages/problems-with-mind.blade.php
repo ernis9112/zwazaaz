@@ -79,8 +79,8 @@
 
         <!-- main content -->
         <div class="main-content" style="width:100%">
-            <h1>Page title</h1>
-            <p>Info page content.</p>
+            <h1>Problems with mind?</h1>
+            <p>Text about our project.</p>
         </div>
         <!-- main content end -->
         @section('form_modals')

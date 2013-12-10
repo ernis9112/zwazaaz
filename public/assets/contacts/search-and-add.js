@@ -74,5 +74,35 @@ jQuery(document).ready(function(){
             });
 
     });
+    //Show that blocked user
+    jQuery('body').delegate(".block-user", "click",function () {
+        var username = $(this).parents('.webrtc-user').data('username');
+        var thiss = $(this).parents('.webrtc-user');
+        //alert(username);
+
+        jQuery.ajax({
+            type: "POST",
+            url: 'block-user',
+            data: {
+                nickname: username
+            }
+        }).done(function( msg ) {
+                //alert(msg);
+                if(msg == 1){
+                    thiss.html(
+                        '<span class="user-img">'+
+                            '<li class="alert alert-info" style="margin-bottom: 0px; border: 0px solid transparent; border-radius: 0px;">Contact blocked Successfully</li>'+
+                            '</span>'
+                    );
+                }
+                else{
+                    thiss.html(
+                        '<span class="user-img">'+
+                            '<li class="alert alert-info" style="margin-bottom: 0px; border: 0px solid transparent; border-radius: 0px;">Contact unblocked Successfully</li>'+
+                            '</span>');
+                }
+            });
+
+    });
 
 });

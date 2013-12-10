@@ -14,7 +14,11 @@ class DashboardController extends BaseController {
 
         $mas = $dashModel->getUserListFromDatabaseById($ID);
         $content->contacts = $mas;
-
+        //block data
+        $contactsId = DB::table('contacts')->where('owner_id', $ID)->get(); //contacts id
+        $iBlocked = DB::select('select * from blocks '); //select blocks table
+        $content->iBlocked = $iBlocked;
+        $content->contactsId = $contactsId; //contacts id
     }
 
 }

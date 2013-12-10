@@ -78,6 +78,11 @@ Route::post('user/add-friend', array(
     'uses' => 'SearchController@addFriend',
     'as' => 'search.add2'
 ));
+//for users block
+Route::post('user/block-user',array(
+    'uses'=> 'ProfileController@blockUser',
+    'as' => 'block.user'
+));
 
 // For login AJAX query
 Route::post('validate-login', array(

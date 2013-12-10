@@ -105,5 +105,25 @@ class ProfileController extends BaseController
             return Redirect::to('profile')->with('upload_file','Uploading failed. Please try again.');
         }
     }
+    //block user
+    public function blockUser(){
+        $data = Input::get('nickname');
+        $id = DB::select('select id from users where username = ?', array($data)); // who want block
+        $myid = Auth::user()->id;
+        $all = DB::select('select blocked_id from blocks where user_id = ?',array($myid)); //all users which I blocked
+        $deleted = 0;
+        for ($i=0;$i<sizeof($all);$i++)
+        {
+             if($all[$i]->blocked_id == $id[0]->id){
+                 DB::delete('delete from blocks where user_id = ? and blocked_id = ?', array($myid, $id[0]->id)); //unblock
+                 $deleted = 1;
+                 return 0;
+             }
+        }
+        if($deleted == 0){
+            DB::insert('insert into blocks (user_id, blocked_id) values (?, ?)', array($myid, $id[0]->id)); //block
+            return 1;
+        }
+    }
 
 }

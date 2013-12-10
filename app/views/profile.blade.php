@@ -32,7 +32,7 @@
                             <div class="col-lg-8">
                                 {{ Form::text('last_name', null, array('class'=>'form-control', 'id' => 'edit-last-name')) }}
                                 @if (Session::has('profile_info'))
-                                <p class="help-block">{{Session::get('profile_info') }}</p>
+                                    <p class="help-block">{{Session::get('profile_info') }}</p>
                                 @endif
                             </div>
                         </div>
