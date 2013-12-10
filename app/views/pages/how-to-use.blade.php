@@ -80,7 +80,7 @@
         <!-- main content -->
         <div class="main-content" style="width:100%">
             <h1>How to use</h1>
-            <p>Text about our project, instructions.</p>
+            <p>Instructions how to use our services in Lithuanian <a href="http://svetaine.zwazaaz.eu/dokumentacija/vartotojo-dokumentacija">here</a>.</p>
         </div>
         <!-- main content end -->
         @section('form_modals')

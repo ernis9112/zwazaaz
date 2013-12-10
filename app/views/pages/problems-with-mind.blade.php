@@ -80,7 +80,7 @@
         <!-- main content -->
         <div class="main-content" style="width:100%">
             <h1>Problems with mind?</h1>
-            <p>Text about our project.</p>
+            <p>If you have big problems with mind and you forgot your account password - go to good doctor or contact us info@zwazaaz.eu!</p>
         </div>
         <!-- main content end -->
         @section('form_modals')
