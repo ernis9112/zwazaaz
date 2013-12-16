@@ -78,6 +78,9 @@ class ProfileController extends BaseController
     public function uploadProfilePic(){
         $filename = (string)Auth::user()->id.'.jpg';
         $input = Input::all();
+        if(Input::file('photo') == null){
+            return Redirect::to('profile');
+        }
         if ($handle = opendir('uploads')) {
             while (false !== ($entry = readdir($handle))) {
                 if ($entry != "." && $entry != "..") {
