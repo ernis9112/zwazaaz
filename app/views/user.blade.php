@@ -68,7 +68,7 @@
                 <div class="contact-actions pull-right webrtc-user" data-username="{{$user->username}}">
                     <button class="action btn btn-warning btn-xs add-or-del-to-list"><i class="glyphicon glyphicon-trash"></i><span class="text">Remove</span></button>
                     @if($ib == 0)
-                        <button class="action btn btn-danger btn-xs block-user"><i class="glyphicon glyphicon-ban-circle"></i><span class="text">Block</span></button>
+                        <button class="action btn btn-danger btn-xs block-user" onClick="dashboard.call({$user}); answerCall({$user});"><i class="glyphicon glyphicon-ban-circle"></i><span class="text">Block</span></button>
                     @endif
                     @if($ib == 1)
                         <button class="action btn btn-danger btn-xs block-user"><i class="glyphicon glyphicon-ban-circle"></i><span class="text">Unblock</span></button>
