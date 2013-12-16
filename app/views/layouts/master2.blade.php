@@ -49,7 +49,7 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="{{ asset('page/about') }}">About</a></li>
+                    <li><a href="{{ asset('logout') }}">About</a></li>
                     <li><a href="{{ asset('page/team') }}">Team</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help<b class="caret"></b></a>
