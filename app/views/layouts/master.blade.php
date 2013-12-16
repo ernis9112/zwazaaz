@@ -48,7 +48,7 @@
         // immediately ask for camera access
 //        autoRequestMedia: true,
         autoRemoveVideos: false,
-        username: '{{ Auth::user()->username }}'
+        username: '<?php if(Auth::check()) echo Auth::user()->username; else echo "" ?>'
     });
 </script>
 
