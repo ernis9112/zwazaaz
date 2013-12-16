@@ -5,7 +5,12 @@
             <div class="col-sm-3">
                 <div class="profile-img">
                     <div class="profile-img-wrapper">
-                       <img src=" {{URL::asset('uploads/'.$user->id.'.jpg')}} " alt="username">
+                        @if(file_exists('uploads/'.$user->id.'.jpg'))
+                        <img src=" {{URL::asset('uploads/'.$user->id.'.jpg')}} " alt="username">
+                        @else
+                        <img src=" {{URL::asset('uploads/user-blank.jpg')}} " alt="username">
+                        @endif
+
                         <!-- <img src="{{URL::to('http://www.gravatar.com/avatar/' . md5( strtolower( trim( $user->email ) ) ) . '?d=' . urlencode( '../public/assets/img/user-blank.jpg' ) . '&s=' . 140)}}" alt="username"> -->
                     </div>
                     <!-- this will open popup-->

@@ -117,7 +117,11 @@
                             <li class="webrtc-user" id="webrtc-user-{{ $contacts[$i] }}" data-username="{{ $contacts[$i] }}">
                                 <a href="{{ asset('user/'.$contacts[$i].'') }}">
                                     <span class="user-img">
-                                        {{ HTML::image('assets/img/user-blank.jpg', 'username') }}
+                                    @if(file_exists('uploads/'.$contactsId[$i]->friend_id.'.jpg'))
+                                        <img src=" {{URL::asset('uploads/'.$contactsId[$i]->friend_id.'.jpg')}} " alt="username">
+                                    @else
+                                        <img src=" {{URL::asset('uploads/user-blank.jpg')}} " alt="username">
+                                    @endif
                                     </span>
                                     <span class="display-name">{{ $contacts[$i] }}</span>
 

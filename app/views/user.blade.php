@@ -14,7 +14,11 @@
             <div class="col-sm-3">
                 <div class="profile-img">
                     <div class="profile-img-wrapper">
+                        @if(file_exists('uploads/'.$user->id.'.jpg'))
                         <img src=" {{URL::asset('uploads/'.$user->id.'.jpg')}} " alt="username">
+                        @else
+                        <img src=" {{URL::asset('uploads/user-blank.jpg')}} " alt="username">
+                        @endif
                     </div>
                 </div>
             </div>
