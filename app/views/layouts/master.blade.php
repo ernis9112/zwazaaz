@@ -35,29 +35,9 @@
 {{ HTML::script('assets/bootstrap-3.0.0/assets/js/holder.js') }}
 {{ HTML::script('assets/bootstrap-3.0.0/assets/js/application.js') }}
 
-{{ HTML::script('assets/js/socket.io.js') }}
-{{ HTML::script('assets/js/simplewebrtc.bundle.js') }}
-{{ HTML::script('assets/js/dashboard-webrtc.js') }}
-{{ HTML::script('assets/js/dashboard.js') }}
-
-
-
 <!-- Required script for dashboard page -->
 {{ HTML::script('assets/js/script.js') }}
-<script>
-    dashboard.init({
-        url: "http://144.76.59.98:8888",
-        debug: true,
-        // the id/element dom element that will hold "our" video
-        localVideoEl: 'localVideo',
-        // the id/element dom element that will hold remote videos
-        remoteVideosEl: 'remoteVideos',
-        // immediately ask for camera access
-//        autoRequestMedia: true,
-        autoRemoveVideos: false,
-        username: '{{ $userName }}'
-    });
-</script>
+
 
 </body>
 

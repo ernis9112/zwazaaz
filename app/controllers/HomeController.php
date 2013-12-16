@@ -44,8 +44,6 @@ class HomeController extends BaseController
     public function showUserProfile($name)
     {
         $this->layout->content = View::make('layouts.master2');
-        $userName = DB::select('select id from users where username = ?',array($name));
-        $this->layout->userName = $userName;
         $this->layout->bodyclass = "home-page";
         $this->layout->content->content2 = View::make('user');
 
