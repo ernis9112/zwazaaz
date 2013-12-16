@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title> Zwazzaz | Free online calling </title>
-    <meta name="keywords" content=""/>
-    <meta name="description" content=""/>
+    <title> Zwazaaz | Free online calling </title>
+    <meta name="keywords" content="online, video, chat, WebRTC "/>
+    <meta name="description" content="Free online video chat system  based on  WebRTC   working on  web browsers with Real-Time Communications (RTC) capabilities "/>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/bootstrap-responsive.min.css"/>
     <link rel="stylesheet" href="css/styles.css"/>
@@ -37,7 +37,7 @@
         <div class="wrapper">
             <div class="row-fluid">
                 <div class="span6 copy">
-                    <p>© 2013 Zwazzaz</p>
+                    <p>© 2013 Zwazaaz</p>
                 </div>
 
                 <div class="span6 right visible-desktop">

@@ -6,7 +6,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}">
-    <title>Zwazzaz</title>
+    <title>Zwazaaz</title>
+    <meta name="keywords" content="online, video, chat, WebRTC "/>
+    <meta name="description" content="Free online video chat system  based on  WebRTC   working on  web browsers with Real-Time Communications (RTC) capabilities "/>
     <!-- Bootstrap core CSS -->
     {{ HTML::style('assets/bootstrap-3.0.0/dist/css/bootstrap.min.css') }}
 
