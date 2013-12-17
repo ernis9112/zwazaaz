@@ -53,7 +53,7 @@
             <div class="col-sm-12">
                 <div class="contact-actions">
                     @if(( $ib == 0) and ($meb == 0))
-                        <a href="#" class="action btn btn-success btn-lg"><i class="glyphicon glyphicon-earphone"></i><span class="text">Call</span></a>
+                        <a href="#" class="action btn btn-success btn-lg"><i class="glyphicon glyphicon-earphone" onClick="dashboard.call('{{$user->username}}'); answerCall('{{$user->username}}');"></i><span class="text">Call</span></a>
                     @endif
                     @if(($ib == 1) and ($meb == 1))
                         Both of you blocked each other
@@ -74,7 +74,7 @@
                     @endif
 
                     @if($ib == 0)
-                        <button class="action btn btn-danger btn-xs block-user" onClick="dashboard.call({$user}); answerCall({$user});"><i class="glyphicon glyphicon-ban-circle"></i><span class="text">Block</span></button>
+                        <button class="action btn btn-danger btn-xs block-user"><i class="glyphicon glyphicon-ban-circle"></i><span class="text">Block</span></button>
                     @endif
                     @if($ib == 1)
                         <button class="action btn btn-danger btn-xs block-user"><i class="glyphicon glyphicon-ban-circle"></i><span class="text">Unblock</span></button>
