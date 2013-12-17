@@ -53,7 +53,7 @@
             <div class="col-sm-12">
                 <div class="contact-actions">
                     @if(( $ib == 0) and ($meb == 0))
-                        <a href="#" class="action btn btn-success btn-lg"><i class="glyphicon glyphicon-earphone" onClick="dashboard.call('{{$user->username}}'); answerCall('{{$user->username}}');"></i><span class="text">Call</span></a>
+                        <a href="#" class="action btn btn-success btn-lg" onClick="dashboard.call('{{$user->username}}'); answerCall('{{$user->username}}');"><i class="glyphicon glyphicon-earphone"></i><span class="text">Call</span></a>
                     @endif
                     @if(($ib == 1) and ($meb == 1))
                         Both of you blocked each other
