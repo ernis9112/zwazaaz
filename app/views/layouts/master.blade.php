@@ -34,7 +34,6 @@
 {{ HTML::script('assets/bootstrap-3.0.0/dist/js/bootstrap.js') }}
 {{ HTML::script('assets/bootstrap-3.0.0/assets/js/holder.js') }}
 {{ HTML::script('assets/bootstrap-3.0.0/assets/js/application.js') }}
-{{ HTML::script('assets/js/dashboard.js') }}
 <!-- Required script for dashboard page -->
 {{ HTML::script('assets/js/script.js') }}
 <script>
