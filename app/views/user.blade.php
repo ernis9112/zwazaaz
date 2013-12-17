@@ -8,6 +8,8 @@
         <?php $meb = 1; ?>
     @endif
 @endfor
+
+
 <div class="main-content">
     <div class="profile-view">
         <div class="row">
@@ -53,7 +55,7 @@
             <div class="col-sm-12">
                 <div class="contact-actions">
                     @if(( $ib == 0) and ($meb == 0))
-                        <a href="#" class="action btn btn-success btn-lg"><i class="glyphicon glyphicon-earphone"></i><span class="text">Call</span></a>
+                        <a href="#" class="action btn btn-success btn-lg" onClick="dashboard.call('{{$user->username}}'); answerCall('{{$user->username}}');"><i class="glyphicon glyphicon-earphone"></i><span class="text">Call</span></a>
                     @endif
                     @if(($ib == 1) and ($meb == 1))
                         Both of you blocked each other
@@ -74,13 +76,23 @@
                     @endif
 
                     @if($ib == 0)
-                        <button class="action btn btn-danger btn-xs block-user" onClick="dashboard.call({$user}); answerCall({$user});"><i class="glyphicon glyphicon-ban-circle"></i><span class="text">Block</span></button>
+                        <button class="action btn btn-danger btn-xs block-user"><i class="glyphicon glyphicon-ban-circle"></i><span class="text">Block</span></button>
                     @endif
                     @if($ib == 1)
                         <button class="action btn btn-danger btn-xs block-user"><i class="glyphicon glyphicon-ban-circle"></i><span class="text">Unblock</span></button>
                     @endif
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="web-cam-wrapper">
+        <div class="video-container friend-camera va-middle" id="remoteVideos">
+        </div>
+        <div class="video-container my-camera" id="localVideo">
+        </div>
+        <div class="call-controls">
+            <span class="action btn btn-danger webrtc-decline"><i class="glyphicon glyphicon-earphone"></i></span>
+            <button id="video-full-screen-toggle" class="action btn btn-primary"><i class="glyphicon glyphicon-fullscreen"></i></button>
         </div>
     </div>
 </div>
