@@ -84,6 +84,18 @@ class Search extends Eloquent {
 
     }
 
+    public function is_user_in_friend_list2($username, $ID){
+        $a = DB::table('users')->where('username', $username)->lists('id');
+        $friend_ID = $a['0'];
+        $records = DB::select('select id from contacts where owner_id = ? and friend_id = ?', array($ID, $friend_ID));
+        if ($records){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
+
 }
 
 function single_friend_element_block($username, $ID){
@@ -102,17 +114,21 @@ function single_friend_element_block($username, $ID){
         $button = $buttonRemove;
 
     return '<li class="webrtc-user" id="webrtc-user-'.$username.'" data-username="'.$username.'">'.
-                '<a href="'.asset('user/'.$username.'').'">'.
+                '<a href="'.asset('user/'.$username).'">'.
                     '<span class="user-img">'.
                         '<img src="'.asset('assets/img/user-blank.jpg').'" alt="username">'.
                     '</span>'.
                     '<span class="display-name">'.$username.'</span>'.
+                    '<span class="status webrtc-status"></span>'.
                 '</a>'.
                 '<div class="contact-actions">'.
                     '<button type="button" class="action btn btn-success webrtc-call">'.
                         '<i class="glyphicon glyphicon-earphone"></i>'.
                     '</button>'.
-                    '<a href="'.asset('user/'.$username.'').'" class="action btn btn-info">'.
+                    '<button type="button" class="action btn btn-danger webrtc-decline">'.
+                        '<i class="glyphicon glyphicon-earphone"></i>'.
+                    '</button>'.
+                    '<a href="'.asset('user/'.$username).'" class="action btn btn-info">'.
                         '<i class="glyphicon glyphicon-info-sign"></i>'.
                     '</a>'.
                     $button.

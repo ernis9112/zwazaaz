@@ -50,7 +50,10 @@ Log::useDailyFiles(storage_path().'/logs/'.$logFile);
 
 App::error(function(Exception $exception, $code)
 {
-	Log::error($exception);
+	//Log::error($exception);
+    return '<div align="center"><h1>Error <font color="red">404</font></h1><p>The page is not found</p>
+    <p><a href="'.asset('dashboard').'">Got to dashboard page</a></p></div>';
+
 });
 
 /*

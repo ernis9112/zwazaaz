@@ -59,6 +59,9 @@ class HomeController extends BaseController
 
         $dash = new DashboardController();
         $dash->setDataVars($this->layout->content);
+
+        $search = new Search();
+        $this->layout->content->content2->isInFrienList = $search->is_user_in_friend_list2($name, Auth::user()->id);
     }
 
 

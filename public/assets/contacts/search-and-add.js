@@ -53,22 +53,27 @@ jQuery(document).ready(function(){
                 }
 
                 if (msg != 1) {
-                    // Pasenes->
                     $('#contacts').children().append('<li class="webrtc-user" id="webrtc-user-' + msg + '" data-username="' + msg + '">' +
-                        '<a href="#">' +
-                        '<span class="user-img">' +
-                        '<img src="assets/img/user-blank.jpg" alt="username">' +
-                        '</span>' +
-                        '<span class="display-name">' + msg + '</span>' +
-                        '<span class="status webrtc-status"></span>' +
+                        '<a href="http://www.zwazaaz.eu/user/' +msg + '">' +
+                            '<span class="user-img">' +
+                                '<img src="http://www.zwazaaz.eu/uploads/user-blank.jpg" alt="username">' +
+                            '</span>' +
+                            '<span class="display-name">' + msg + '</span>' +
+                            '<span class="status webrtc-status"></span>' +
                         '</a>' +
                         '<div class="contact-actions">' +
-                        '<button type="button" class="action btn btn-success webrtc-call">' +
-                        '<i class="glyphicon glyphicon-earphone"></i>' +
-                        '</button>' +
-                        '<button class="action btn btn-info">' +
-                        '<i class="glyphicon glyphicon-info-sign"></i>' +
-                        '</button>' +
+                            '<button type="button" class="action btn btn-success webrtc-call">' +
+                                '<i class="glyphicon glyphicon-earphone"></i>' +
+                            '</button>' +
+                            '<button type="button" class="action btn btn-danger webrtc-decline">' +
+                                '<i class="glyphicon glyphicon-earphone"></i>' +
+                            '</button>' +
+                            '<a href="http://www.zwazaaz.eu/user/' +msg + '" class="action btn btn-info">' +
+                                '<i class="glyphicon glyphicon-info-sign"></i>' +
+                            '</a>' +
+                            '<button class="action btn btn-warning add-or-del-to-list">' +
+                                '<i class="glyphicon glyphicon-trash"></i>' +
+                            '</button>' +
                         '</div>' +
                         '</li>');
                 }
