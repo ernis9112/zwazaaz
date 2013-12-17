@@ -70,6 +70,10 @@ body.register-page form {
 .logo-link {
     margin: 10px 0;
     display: inline-block;
+    max-width: 100%;
+}
+.logo-link img {
+    max-width: 100%;
 }
 
 .main-sidebar {
