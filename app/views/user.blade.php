@@ -8,6 +8,8 @@
         <?php $meb = 1; ?>
     @endif
 @endfor
+
+
 <div class="main-content">
     <div class="profile-view">
         <div class="row">
@@ -81,6 +83,16 @@
                     @endif
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="web-cam-wrapper">
+        <div class="video-container friend-camera va-middle" id="remoteVideos">
+        </div>
+        <div class="video-container my-camera" id="localVideo">
+        </div>
+        <div class="call-controls">
+            <span class="action btn btn-danger webrtc-decline"><i class="glyphicon glyphicon-earphone"></i></span>
+            <button id="video-full-screen-toggle" class="action btn btn-primary"><i class="glyphicon glyphicon-fullscreen"></i></button>
         </div>
     </div>
 </div>
