@@ -77,6 +77,9 @@ jQuery(document).ready(function(){
                         '</div>' +
                         '</li>');
                 }
+                else
+                    $('#webrtc-user-' + username).html("");
+
                 $.event.trigger('list-updated');
             });
 
